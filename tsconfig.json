@@ -8,7 +8,8 @@
     "target": "es6",
     "jsx": "react",
     "jsxFactory": "h",
-    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
+    "allowSyntheticDefaultImports": true
   },
   "include": ["./src/**/*.ts", "./src/**/*.tsx"],
   "exclude": ["**/*.pcss"]
