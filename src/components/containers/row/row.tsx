@@ -1,12 +1,12 @@
-import { FC } from 'preact/compat'
-import { ComponentChildren, h } from 'preact'
+import { FC } from 'preact/compat';
+import { ComponentChildren, h } from 'preact';
 
 type Props = {
-  children: ComponentChildren
-}
+  children: ComponentChildren;
+};
 
 export const Row: FC<Props> = ({ children }) => (
-  <div>
+  <section>
     <div className="bg-red-500 w-2/3 h-screen ml-auto">{children}</div>
-  </div>
-)
+  </section>
+);

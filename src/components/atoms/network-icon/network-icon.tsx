@@ -8,15 +8,15 @@ type Props = {
   imageClassName?: string;
 };
 
-export const RoundImage: FC<Props> = ({ src, alt, imageClassName }) => {
+export const NetworkIcon: FC<Props> = ({ src, alt, imageClassName }) => {
   const classes = classNames(
     imageClassName,
-    'rounded-full shadow-lg w-36 h-36 transition duration-300 transform hover:scale-110',
+    'rounded-full shadow-md w-36 h-36 transition duration-500 transform hover:scale-110',
   );
 
   return <img className={classes} src={src} alt={alt} />;
 };
 
-RoundImage.defaultProps = {
+NetworkIcon.defaultProps = {
   alt: 'Just a random image',
 };
