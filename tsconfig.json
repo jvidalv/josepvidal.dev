@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "outDir": "./dist",
     "sourceMap": true,
     "noImplicitAny": true,
@@ -8,8 +9,14 @@
     "target": "es6",
     "jsx": "react",
     "jsxFactory": "h",
+    "esModuleInterop": true,
+    "allowJs": true,
     "plugins": [{ "name": "typescript-plugin-css-modules" }],
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "paths" : {
+      "react": ["preact/compat"],
+      "react-dom": ["preact/compat"]
+    }
   },
   "include": ["./src/**/*.ts", "./src/**/*.tsx"],
   "exclude": ["**/*.pcss"]

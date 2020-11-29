@@ -1,12 +1,14 @@
 import { FC } from 'preact/compat';
 import { ComponentChildren, h } from 'preact';
 
+const styles = require('./row.pcss');
+
 type Props = {
   children: ComponentChildren;
 };
 
 export const Row: FC<Props> = ({ children }) => (
   <section>
-    <div className="bg-red-500 w-2/3 h-screen ml-auto">{children}</div>
+    <div className={styles.default}>{children}</div>
   </section>
 );
