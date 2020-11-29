@@ -6,15 +6,15 @@ import { Row } from './components/containers/row/row';
 import { FloatingRectangle } from './components/containers/floating-rectangle/floating-rectangle';
 import { VerticalSlice } from './components/containers/vertical-slice/vertical-slice';
 import { RoundImage } from './components/atoms/round-image/round-image';
-import { Github } from './components/icons/Github';
-import { Instagram } from './components/icons/Instagram';
-import { Linkedin } from './components/icons/Linkedin';
-import { Email } from './components/icons/Email';
-import { StackOverflow } from './components/icons/StackOverflow';
+import { Github } from './components/icons/github';
+import { Linkedin } from './components/icons/linkedin';
+import { Email } from './components/icons/email';
+import { StackOverflow } from './components/icons/stack-overflow';
 
 export const App: FC = () => (
   <div>
     <VerticalSlice>
+      <div className="absolute w-full height-full">{/* IMPLEMENT BACKGROUND ITEMS */}</div>
       <FloatingRectangle>
         <RoundImage
           src={

@@ -1,5 +1,5 @@
 import { FC } from 'preact/compat';
-import { Linkedin } from '../components/icons/Linkedin';
+import { Linkedin } from '../components/icons/linkedin';
 
 type Network = {
   name: string;
