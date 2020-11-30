@@ -14,6 +14,7 @@ import { HalfMoon } from './components/shapes/half-moon/half-moon';
 import { Triangle } from './components/shapes/red-triangle/triangle';
 import { Dots } from './components/shapes/dots/dots';
 import { Circle } from './components/shapes/circle/circle';
+import { networks } from './constants/networks';
 
 export const App: FC = () => (
   <div>
@@ -35,18 +36,15 @@ export const App: FC = () => (
           I'm Josep, a <b>full-stack</b> developer specialized in React and PHP
         </p>
         <div className="flex items-center justify-evenly w-5/6 mx-auto">
-          <a href="#" className="transition duration-300 transform hover:scale-110">
-            <Github width="4rem" height="4rem" />
-          </a>
-          <a href="#" className="transition duration-300 transform hover:scale-110">
-            <StackOverflow width="4rem" height="4rem" />
-          </a>
-          <a href="#" className="transition duration-300 transform hover:scale-110">
-            <Linkedin width="4rem" height="4rem" />
-          </a>
-          <a href="#" className="transition duration-300 transform hover:scale-110">
-            <Email width="4rem" height="4rem" />
-          </a>
+          {networks.map(({ url, Icon, name }) => (
+            <a
+              href={url}
+              className="transition duration-300 transform hover:scale-110"
+              title={name}
+              target="_blank">
+              <Icon width="4rem" height="4rem" />
+            </a>
+          ))}
         </div>
       </FloatingRectangle>
     </VerticalSlice>
