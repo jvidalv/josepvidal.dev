@@ -42,7 +42,7 @@ export const App: FC = () => (
               className="transition duration-300 transform hover:scale-110"
               title={name}
               target="_blank">
-              <Icon width="4rem" height="4rem" />
+              <Icon width="3rem" height="3rem" />
             </a>
           ))}
         </div>
