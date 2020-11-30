@@ -10,11 +10,20 @@ import { Github } from './components/icons/github';
 import { Linkedin } from './components/icons/linkedin';
 import { Email } from './components/icons/email';
 import { StackOverflow } from './components/icons/stack-overflow';
+import { HalfMoon } from './components/shapes/half-moon/half-moon';
+import { Triangle } from './components/shapes/red-triangle/triangle';
+import { Dots } from './components/shapes/dots/dots';
+import { Circle } from './components/shapes/circle/circle';
 
 export const App: FC = () => (
   <div>
     <VerticalSlice>
-      <div className="absolute w-full height-full">{/* IMPLEMENT BACKGROUND ITEMS */}</div>
+      <div className="absolute w-full h-full">
+        <Circle />
+        <Dots />
+        <Triangle />
+        <HalfMoon />
+      </div>
       <FloatingRectangle>
         <RoundImage
           src={
