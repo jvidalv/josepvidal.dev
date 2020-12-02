@@ -6,10 +6,6 @@ import { Row } from './components/containers/row/row';
 import { FloatingRectangle } from './components/containers/floating-rectangle/floating-rectangle';
 import { VerticalSlice } from './components/containers/vertical-slice/vertical-slice';
 import { RoundImage } from './components/atoms/round-image/round-image';
-import { Github } from './components/icons/github';
-import { Linkedin } from './components/icons/linkedin';
-import { Email } from './components/icons/email';
-import { StackOverflow } from './components/icons/stack-overflow';
 import { HalfMoon } from './components/shapes/half-moon/half-moon';
 import { Triangle } from './components/shapes/red-triangle/triangle';
 import { Dots } from './components/shapes/dots/dots';
@@ -17,7 +13,7 @@ import { Circle } from './components/shapes/circle/circle';
 import { networks } from './constants/networks';
 
 export const App: FC = () => (
-  <div>
+  <main>
     <VerticalSlice>
       <div className="absolute w-full h-full">
         <Circle />
@@ -51,7 +47,7 @@ export const App: FC = () => (
     <Row>1</Row>
     <Row>2</Row>
     <Row>3</Row>
-  </div>
+  </main>
 );
 
 render(<App />, document.getElementById('root'));

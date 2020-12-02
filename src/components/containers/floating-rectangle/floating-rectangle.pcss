@@ -1,3 +1,18 @@
 .default {
-  @apply relative w-4/5 self-center max-w-md mx-auto shadow-md shadow-lg p-3 py-8 bg-white z-10
+  @apply relative w-4/5 self-center max-w-md mx-auto shadow-lg p-3 py-8 bg-white z-10 rounded-3xl  opacity-0;
+  border-right: 5px dashed white;
+  animation: test .5s ease-in forwards;
+}
+
+
+@keyframes test  {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
 }
