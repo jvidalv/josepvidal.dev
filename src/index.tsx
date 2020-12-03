@@ -11,16 +11,17 @@ import { Triangle } from './components/shapes/red-triangle/triangle';
 import { Dots } from './components/shapes/dots/dots';
 import { Circle } from './components/shapes/circle/circle';
 import { networks } from './constants/networks';
+import { AboutMe } from './sections/about-me/about-me';
 
 export const App: FC = () => (
   <main>
+    <div className="absolute w-full h-full">
+      <Circle />
+      <Dots />
+      <Triangle />
+      <HalfMoon />
+    </div>
     <VerticalSlice>
-      <div className="absolute w-full h-full">
-        <Circle />
-        <Dots />
-        <Triangle />
-        <HalfMoon />
-      </div>
       <FloatingRectangle>
         <RoundImage
           src={
@@ -44,7 +45,15 @@ export const App: FC = () => (
         </div>
       </FloatingRectangle>
     </VerticalSlice>
-    <Row>1</Row>
+    <Row>
+      <AboutMe>
+        <h1 className="mb-3">Welcome 👋🏻</h1>
+        <p className="mb-3">
+          I'm currently working from home as a Senior Software Engineer for Zartis.
+        </p>
+        <p className="mb-3">My role is to lead the fronted part of Agreeable.</p>
+      </AboutMe>
+    </Row>
     <Row>2</Row>
     <Row>3</Row>
   </main>
