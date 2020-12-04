@@ -32,6 +32,9 @@ export const App: FC = () => (
         <p className="text-3xl w-5/6 text-center mx-auto my-10">
           I'm Josep, a <b>full-stack</b> developer specialized in React and PHP
         </p>
+        <p className="text-3xl w-5/6 text-center mx-auto my-10">
+          I'm Josep, a <b>full-stack</b> developer specialized in React and PHP
+        </p>
         <div className="flex items-center justify-evenly w-5/6 mx-auto">
           {networks.map(({ url, Icon, name }) => (
             <a
