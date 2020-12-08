@@ -9,6 +9,6 @@ type Props = {
 
 export const Row: FC<Props> = ({ children }) => (
   <section>
-    <div className={styles.default}>{children}</div>
+    <div className={styles.row}>{children}</div>
   </section>
 );

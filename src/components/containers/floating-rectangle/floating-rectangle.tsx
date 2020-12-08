@@ -8,5 +8,5 @@ type Props = {
 };
 
 export const FloatingRectangle: FC<Props> = ({ children }) => (
-  <div className={styles.default}>{children}</div>
+  <div className={styles.floating__rectangle}>{children}</div>
 );

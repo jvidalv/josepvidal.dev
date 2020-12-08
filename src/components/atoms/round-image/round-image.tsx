@@ -11,7 +11,7 @@ type Props = {
 };
 
 export const RoundImage: FC<Props> = ({ src, alt, imageClassName }) => (
-  <img className={classNames(imageClassName, styles.default)} src={src} alt={alt} />
+  <img className={classNames(imageClassName, styles.round__image)} src={src} alt={alt} />
 );
 
 RoundImage.defaultProps = {

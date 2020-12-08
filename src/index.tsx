@@ -13,14 +13,17 @@ import { Circle } from './components/shapes/circle/circle';
 import { networks } from './constants/networks';
 import { AboutMe } from './sections/about-me/about-me';
 
+if (process.env.NODE_ENV === 'development') {
+  require('preact/debug');
+}
+
+if (module.hot) {
+  module.hot.accept();
+}
+
 export const App: FC = () => (
   <main>
-    <div className="absolute w-full h-full">
-      <Circle />
-      <Dots />
-      <Triangle />
-      <HalfMoon />
-    </div>
+
     <VerticalSlice>
       <FloatingRectangle>
         <RoundImage
@@ -29,9 +32,6 @@ export const App: FC = () => (
           }
           imageClassName="mx-auto -mt-24"
         />
-        <p className="text-3xl w-5/6 text-center mx-auto my-10">
-          I'm Josep, a <b>full-stack</b> developer specialized in React and PHP
-        </p>
         <p className="text-3xl w-5/6 text-center mx-auto my-10">
           I'm Josep, a <b>full-stack</b> developer specialized in React and PHP
         </p>
@@ -56,9 +56,16 @@ export const App: FC = () => (
         </p>
         <p className="mb-3">My role is to lead the fronted part of Agreeable.</p>
       </AboutMe>
+      <div className="absolute w-full h-full top-0 left-0">
+        <Circle />
+        <Dots />
+        <Triangle />
+        <HalfMoon />
+      </div>
     </Row>
     <Row>2</Row>
     <Row>3</Row>
+
   </main>
 );
 

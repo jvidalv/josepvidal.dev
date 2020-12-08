@@ -11,7 +11,7 @@ type Props = {
 };
 
 export const NetworkIcon: FC<Props> = ({ src, alt, imageClassName }) => (
-  <img className={classNames(imageClassName, styles.default)} src={src} alt={alt} />
+  <img className={classNames(imageClassName, styles.network__icon)} src={src} alt={alt} />
 );
 
 NetworkIcon.defaultProps = {

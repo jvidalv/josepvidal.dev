@@ -8,5 +8,5 @@ type Props = {
 };
 
 export const VerticalSlice: FC<Props> = ({ children }) => (
-  <section className={styles.default}>{children}</section>
+  <section className={styles.vertical__slice}>{children}</section>
 );
