@@ -23,7 +23,6 @@ if (module.hot) {
 
 export const App: FC = () => (
   <main>
-
     <VerticalSlice>
       <FloatingRectangle>
         <RoundImage
@@ -63,8 +62,20 @@ export const App: FC = () => (
         <HalfMoon />
       </div>
     </Row>
-    <Row>2</Row>
-    <Row>3</Row>
+    <Row><AboutMe>
+      <h1 className="mb-3">Welcome 👋🏻</h1>
+      <p className="mb-3">
+        I'm currently working from home as a Senior Software Engineer for Zartis.
+      </p>
+      <p className="mb-3">My role is to lead the fronted part of Agreeable.</p>
+    </AboutMe></Row>
+    <Row><AboutMe>
+      <h1 className="mb-3">Welcome 👋🏻</h1>
+      <p className="mb-3">
+        I'm currently working from home as a Senior Software Engineer for Zartis.
+      </p>
+      <p className="mb-3">My role is to lead the fronted part of Agreeable.</p>
+    </AboutMe></Row>
 
   </main>
 );
