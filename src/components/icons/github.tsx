@@ -1,8 +1,8 @@
 import { h } from 'preact';
 import { FC } from 'preact/compat';
-import { TIcon } from './TIcon';
+import { IJvIcon } from './IJvIcon';
 
-export const Github: FC<TIcon> = (props) => (
+export const Github: FC<IJvIcon> = (props) => (
   <svg height="1em" viewBox="0 0 32 32" width="1em" {...props}>
     <path
       clipRule="evenodd"

@@ -1,8 +1,8 @@
 import { h } from 'preact';
 import { FC } from 'preact/compat';
-import { TIcon } from './TIcon';
+import { IJvIcon } from './IJvIcon';
 
-export const Instagram: FC<TIcon> = (props) => (
+export const Instagram: FC<IJvIcon> = (props) => (
   <svg viewBox="0 0 291.319 291.319" width="1em" height="1em" {...props}>
     <path d="M145.659 0c80.44 0 145.66 65.219 145.66 145.66S226.1 291.319 145.66 291.319 0 226.1 0 145.66 65.21 0 145.659 0z" />
     <path

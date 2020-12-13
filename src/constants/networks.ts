@@ -3,12 +3,12 @@ import { Linkedin } from '../components/icons/linkedin';
 import { StackOverflow } from '../components/icons/stack-overflow';
 import { Github } from '../components/icons/github';
 import { Email } from '../components/icons/email';
-import { TIcon } from '../components/icons/TIcon';
+import { IJvIcon } from '../components/icons/TIcon';
 
 type Network = {
   name: string;
   url: string;
-  Icon: FC<TIcon>;
+  Icon: FC<IJvIcon>;
 };
 
 export const networks: Array<Network> = [

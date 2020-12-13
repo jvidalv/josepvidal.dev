@@ -23,6 +23,12 @@ if (module.hot) {
 
 export const App: FC = () => (
   <main>
+    <div className="absolute w-full h-full top-0 left-0">
+      <Circle />
+      <Dots />
+      <Triangle />
+      <HalfMoon />
+    </div>
     <VerticalSlice>
       <FloatingRectangle>
         <RoundImage
@@ -55,28 +61,25 @@ export const App: FC = () => (
         </p>
         <p className="mb-3">My role is to lead the fronted part of Agreeable.</p>
       </AboutMe>
-      <div className="absolute w-full h-full top-0 left-0">
-        <Circle />
-        <Dots />
-        <Triangle />
-        <HalfMoon />
-      </div>
     </Row>
-    <Row><AboutMe>
-      <h1 className="mb-3">Welcome 👋🏻</h1>
-      <p className="mb-3">
-        I'm currently working from home as a Senior Software Engineer for Zartis.
-      </p>
-      <p className="mb-3">My role is to lead the fronted part of Agreeable.</p>
-    </AboutMe></Row>
-    <Row><AboutMe>
-      <h1 className="mb-3">Welcome 👋🏻</h1>
-      <p className="mb-3">
-        I'm currently working from home as a Senior Software Engineer for Zartis.
-      </p>
-      <p className="mb-3">My role is to lead the fronted part of Agreeable.</p>
-    </AboutMe></Row>
-
+    <Row>
+      <AboutMe>
+        <h1 className="mb-3">Welcome 👋🏻</h1>
+        <p className="mb-3">
+          I'm currently working from home as a Senior Software Engineer for Zartis.
+        </p>
+        <p className="mb-3">My role is to lead the fronted part of Agreeable.</p>
+      </AboutMe>
+    </Row>
+    <Row>
+      <AboutMe>
+        <h1 className="mb-3">Welcome 👋🏻</h1>
+        <p className="mb-3">
+          I'm currently working from home as a Senior Software Engineer for Zartis.
+        </p>
+        <p className="mb-3">My role is to lead the fronted part of Agreeable.</p>
+      </AboutMe>
+    </Row>
   </main>
 );
 

@@ -1,8 +1,8 @@
 import { h } from 'preact';
 import { FC } from 'preact/compat';
-import { TIcon } from './TIcon';
+import { IJvIcon } from './IJvIcon';
 
-export const Linkedin: FC<TIcon> = (props) => (
+export const Linkedin: FC<IJvIcon> = (props) => (
   <svg viewBox="0 0 291.319 291.319" width="1em" height="1em" {...props}>
     <path d="M145.659 0c80.45 0 145.66 65.219 145.66 145.66s-65.21 145.659-145.66 145.659S0 226.1 0 145.66 65.21 0 145.659 0z" />
     <path

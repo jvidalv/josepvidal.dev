@@ -1,24 +1,43 @@
 import { useEffect, useState } from 'preact/hooks';
 import { StateUpdater } from 'preact/compat';
 
-export const useObservable = () : [ StateUpdater<HTMLElement>, boolean] => {
+interface Return<T> {
+  ref: StateUpdater<T>;
+  isIntersecting: boolean;
+}
+
+interface Props {
+  rootMargin?: string;
+  threshold?: number;
+  root?: HTMLElement;
+}
+
+const defaultOptions = {
+  rootMargin: '100px',
+  threshold: 0.8,
+};
+
+export const useObservable = <T>(options: Props = {}): Return<T> => {
   const [node, setNode] = useState(null);
-  const [isIntersecting, setIsIntersecting] = useState(false)
+  const [isIntersecting, setIsIntersecting] = useState(false);
+
   useEffect(() => {
     if (node) {
-      const handleObserve = (entries) => {
-        entries.forEach(entry => {
-          setIsIntersecting(entry.isIntersecting)
-        })
+      const handleObserve = (entries: IntersectionObserverEntry[]) => {
+        entries.forEach((entry) => {
+          setIsIntersecting(entry.isIntersecting);
+        });
       };
-      const options = {
-        rootMargin: '400px',
-        threshold: 0.8,
-      };
-      const observer = new IntersectionObserver(handleObserve, options);
+      const observer: IntersectionObserver = new IntersectionObserver(handleObserve, {
+        ...defaultOptions,
+        ...options,
+      });
       observer.observe(node);
     }
   }, [node]);
 
-  return [setNode, isIntersecting];
+  return {
+    ref: setNode,
+    isIntersecting,
+  };
 };

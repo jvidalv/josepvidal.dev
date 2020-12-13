@@ -1,4 +1,4 @@
-export type TIcon = {
+export type IJvIcon = {
   width?: string;
   height?: string;
   viewport?: string;
