@@ -12,7 +12,7 @@ const defaultOptions = {
   threshold: 0.8,
 };
 
-export const useObservable = <T>(options: Props): [ setNode : StateUpdater<T>, isIntersecting : boolean] => {
+export const useObservable = <T>(options?: Props): [ setNode : StateUpdater<T>, isIntersecting : boolean] => {
   const [node, setNode] = useState(null);
   const [isIntersecting, setIsIntersecting] = useState(false);
   const memoizedOptions = useMemo(() => options ?? {}, [options])

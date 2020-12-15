@@ -11,14 +11,14 @@ type Props = {
 };
 
 export const Row: FC<Props> = ({ children }) => {
-  const { ref, isIntersecting } = useObservable<HTMLElement>();
+  const [setNode, isIntersecting] = useObservable<HTMLElement>();
   const className = classNames({
     [styles.row] : true,
     [animations.scale__base] : true,
     [animations.scale__entered]: isIntersecting
   })
   return (
-    <section ref={ref}>
+    <section ref={setNode}>
       <div className={className} >
         {children}
       </div>
