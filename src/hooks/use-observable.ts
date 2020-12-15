@@ -1,10 +1,5 @@
-import { useEffect, useState } from 'preact/hooks';
+import { useEffect, useMemo, useState } from 'preact/hooks';
 import { StateUpdater } from 'preact/compat';
-
-interface Return<T> {
-  ref: StateUpdater<T>;
-  isIntersecting: boolean;
-}
 
 interface Props {
   rootMargin?: string;
@@ -17,9 +12,10 @@ const defaultOptions = {
   threshold: 0.8,
 };
 
-export const useObservable = <T>(options: Props = {}): Return<T> => {
+export const useObservable = <T>(options: Props): [ setNode : StateUpdater<T>, isIntersecting : boolean] => {
   const [node, setNode] = useState(null);
   const [isIntersecting, setIsIntersecting] = useState(false);
+  const memoizedOptions = useMemo(() => options ?? {}, [options])
 
   useEffect(() => {
     if (node) {
@@ -30,14 +26,15 @@ export const useObservable = <T>(options: Props = {}): Return<T> => {
       };
       const observer: IntersectionObserver = new IntersectionObserver(handleObserve, {
         ...defaultOptions,
-        ...options,
+        ...memoizedOptions,
       });
       observer.observe(node);
-    }
-  }, [node]);
 
-  return {
-    ref: setNode,
-    isIntersecting,
-  };
+      return () => {
+        observer.disconnect()
+      }
+    }
+  }, [node, memoizedOptions]);
+
+  return [setNode, isIntersecting]
 };
