@@ -12,9 +12,10 @@ const defaultOptions = {
   threshold: 0.8,
 };
 
-export const useObservable = <T>(options?: Props): [ setNode : StateUpdater<T>, isIntersecting : boolean] => {
+export const useIntersectionObserver = <T>(options?: Props): [ setNode : StateUpdater<T>, isIntersecting : boolean, hasIntersected : boolean] => {
   const [node, setNode] = useState(null);
   const [isIntersecting, setIsIntersecting] = useState(false);
+  const [hasIntersected, setHasIntersected] = useState(false);
   const memoizedOptions = useMemo(() => options ?? {}, [options])
 
   useEffect(() => {
@@ -36,5 +37,11 @@ export const useObservable = <T>(options?: Props): [ setNode : StateUpdater<T>, 
     }
   }, [node, memoizedOptions]);
 
-  return [setNode, isIntersecting]
+  useEffect(() =>{
+    if(!hasIntersected && isIntersecting){
+      setHasIntersected(true)
+    }
+  }, [isIntersecting, hasIntersected, setHasIntersected])
+  
+  return [setNode, isIntersecting, hasIntersected]
 };

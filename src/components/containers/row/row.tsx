@@ -1,7 +1,7 @@
 import { FC } from 'preact/compat';
 import { ComponentChildren, h } from 'preact';
 import classNames from 'classnames'
-import { useObservable } from '../../../hooks/use-observable';
+import { useIntersectionObserver } from '../../../hooks/use-intersection-observer';
 
 const styles = require('./row.pcss');
 const animations = require('../../../styles/animations.pcss')
@@ -11,12 +11,13 @@ type Props = {
 };
 
 export const Row: FC<Props> = ({ children }) => {
-  const [setNode, isIntersecting] = useObservable<HTMLElement>();
+  const [setNode, isIntersecting, hasIntersected] = useIntersectionObserver<HTMLElement>();
   const className = classNames({
     [styles.row] : true,
     [animations.scale__base] : true,
-    [animations.scale__entered]: isIntersecting
+    [animations.scale__entered]: isIntersecting || hasIntersected
   })
+
   return (
     <section ref={setNode}>
       <div className={className} >
