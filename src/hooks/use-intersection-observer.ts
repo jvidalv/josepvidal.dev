@@ -42,6 +42,6 @@ export const useIntersectionObserver = <T>(options?: Props): [ setNode : StateUp
       setHasIntersected(true)
     }
   }, [isIntersecting, hasIntersected, setHasIntersected])
-  
+
   return [setNode, isIntersecting, hasIntersected]
 };

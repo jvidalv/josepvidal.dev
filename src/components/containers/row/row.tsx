@@ -17,7 +17,7 @@ export const Row: FC<Props> = ({ children }) => {
     [animations.scale__base] : true,
     [animations.scale__entered]: isIntersecting || hasIntersected
   })
-
+  
   return (
     <section ref={setNode}>
       <div className={className} >
