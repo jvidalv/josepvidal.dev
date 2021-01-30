@@ -21,21 +21,21 @@ type Texts = {
 const T: Texts = {
   intro: {
     ca: (
-      <p className="text-3xl w-full p-2 md:p-0 md:w-11/12 text-center mx-auto my-10 text-gray-800">
-        I'm Josep, a <span className="bg-red-500 text-white font-medium">software</span> developer
-        specialized in <span className="bg-react text-white font-medium">React</span>
+      <p className="text-3xl w-11/12 p-2 text-center mx-auto my-10 text-gray-800">
+        I'm Josep, a <span className="bg-red-500 text-white font-thin">software</span> developer
+        specialized in <span className="bg-react text-white font-thin">React</span>
       </p>
     ),
     es: (
-      <p className="text-3xl w-full p-2 md:p-0 md:w-11/12 text-center mx-auto my-10 text-gray-800">
-        I'm Josep, a <span className="bg-red-500 text-white font-medium">software</span> developer
-        specialized in <span className="bg-react text-white font-medium">React</span>
+      <p className="text-3xl w-11/12 p-2 text-center mx-auto my-10 text-gray-800">
+        I'm Josep, a <span className="bg-red-500 text-white font-thin">software</span> developer
+        specialized in <span className="bg-react text-white font-thin">React</span>
       </p>
     ),
     en: (
-      <p className="text-3xl w-full p-2 md:p-0 md:w-11/12 text-center mx-auto my-10 text-gray-800">
-        I'm Josep, a <span className="bg-red-500 text-white font-medium">software</span> developer
-        specialized in <span className="bg-react text-white font-medium">React</span>
+      <p className="text-3xl w-11/12 p-2 text-center mx-auto my-10 text-gray-800">
+        I'm Josep, a <span className="bg-red-500 text-white font-thin">software</span> developer
+        specialized in <span className="bg-react text-white font-thin">React</span>
       </p>
     ),
   },
@@ -63,7 +63,7 @@ const T: Texts = {
         <a
           href="https://www.linkedin.com/company/zartis/"
           target="_blank"
-          className="bg-blue-800 text-white font-medium">
+          className="bg-blue-800 text-white font-thin">
           Zartis
         </a>{' '}
         as a software engineer. My role is to lead the frontend part of Agreeable, a brand new
@@ -76,7 +76,7 @@ const T: Texts = {
         <a
           href="https://www.linkedin.com/company/zartis/"
           target="_blank"
-          className="bg-blue-800 text-white font-medium">
+          className="bg-blue-800 text-white font-thin">
           Zartis
         </a>{' '}
         as a software engineer. My role is to lead the frontend part of Agreeable, a brand new
@@ -89,7 +89,7 @@ const T: Texts = {
         <a
           href="https://www.linkedin.com/company/zartis/"
           target="_blank"
-          className="bg-blue-800 text-white font-medium">
+          className="bg-blue-800 text-white font-thin">
           Zartis
         </a>{' '}
         as a software engineer. My role is to lead the frontend part of Agreeable, a brand new
@@ -101,21 +101,21 @@ const T: Texts = {
     ca: (
       <p>
         My actual work requires me to code mostly in React (Preact &{' '}
-        <span className="bg-typescript text-white font-medium normal-case">TypeScript</span>), .NET
+        <span className="bg-typescript text-white font-thin  normal-case">TypeScript</span>), .NET
         and MongoDB, but my experience includes React Native, PHP, SQL and more.
       </p>
     ),
     es: (
       <p>
         My actual work requires me to code mostly in React (Preact &{' '}
-        <span className="bg-typescript text-white font-medium normal-case">TypeScript</span>), .NET
+        <span className="bg-typescript text-white font-thin  normal-case">TypeScript</span>), .NET
         and MongoDB, but my experience includes React Native, PHP, SQL and more.
       </p>
     ),
     en: (
       <p>
         My actual work requires me to code mostly in React (Preact &{' '}
-        <span className="bg-typescript text-white font-medium normal-case">TypeScript</span>), .NET
+        <span className="bg-typescript text-white font-thin  normal-case">TypeScript</span>), .NET
         and MongoDB, but my experience includes React Native, PHP, SQL and more.
       </p>
     ),
@@ -127,14 +127,14 @@ const T: Texts = {
         <a
           href="https://github.com/jvidalv"
           target="_blank"
-          className="bg-gray-900 text-white font-medium">
+          className="bg-gray-900 text-white font-thin">
           Github
         </a>{' '}
         I have a collection of open source projects, like{' '}
         <a
           href="https://github.com/jvidalv/astrale"
           target="_blank"
-          className="bg-purple-600 text-white font-medium">
+          className="bg-purple-600 text-white font-thin">
           Astrale
         </a>
         , a mobile app powered by React Native and Python.
@@ -146,14 +146,14 @@ const T: Texts = {
         <a
           href="https://github.com/jvidalv"
           target="_blank"
-          className="bg-gray-900 text-white font-medium">
+          className="bg-gray-900 text-white font-thin">
           Github
         </a>{' '}
         I have a collection of open source projects, like{' '}
         <a
           href="https://github.com/jvidalv/astrale"
           target="_blank"
-          className="bg-purple-600 text-white font-medium">
+          className="bg-purple-600 text-white font-thin">
           Astrale
         </a>
         , a mobile app powered by React Native and Python.
@@ -165,14 +165,14 @@ const T: Texts = {
         <a
           href="https://github.com/jvidalv"
           target="_blank"
-          className="bg-gray-900 text-white font-medium">
+          className="bg-gray-900 text-white font-thin">
           Github
         </a>{' '}
         I have a collection of open source projects, like{' '}
         <a
           href="https://github.com/jvidalv/astrale"
           target="_blank"
-          className="bg-purple-600 text-white font-medium">
+          className="bg-purple-600 text-white font-thin">
           Astrale
         </a>
         , a mobile app powered by React Native and Python.
@@ -184,7 +184,7 @@ const T: Texts = {
       <p>
         From time to time I do side jobs for personal clients, if you are interested in having a
         cutting edge, well document codebase{' '}
-        <a className="bg-red-500 text-white" href="mailto:josepvidalvidal@gmail.com">
+        <a className="bg-red-500 text-white font-thin" href="mailto:josepvidalvidal@gmail.com">
           contact me
         </a>
         .
@@ -194,7 +194,7 @@ const T: Texts = {
       <p>
         From time to time I do side jobs for personal clients, if you are interested in having a
         cutting edge, well document codebase{' '}
-        <a className="bg-red-500 text-white" href="mailto:josepvidalvidal@gmail.com">
+        <a className="bg-red-500 text-white font-thin" href="mailto:josepvidalvidal@gmail.com">
           contact me
         </a>
         .
@@ -204,7 +204,7 @@ const T: Texts = {
       <p>
         From time to time I do side jobs for personal clients, if you are interested in having a
         cutting edge, well document codebase{' '}
-        <a className="bg-red-500 text-white" href="mailto:josepvidalvidal@gmail.com">
+        <a className="bg-red-500 text-white font-thin" href="mailto:josepvidalvidal@gmail.com">
           contact me
         </a>
         .

@@ -13,6 +13,7 @@ import { AboutMe } from 'components/containers/about-me/about-me';
 import { Row } from 'components/containers/row/row';
 
 const me = require('assets/images/me.jpg');
+const styles = require('./app.pcss');
 
 export const App: FC = () => {
   const {
@@ -25,8 +26,8 @@ export const App: FC = () => {
   } = useTexts();
 
   return (
-    <main className="space-y-12 md:space-y-0">
-      <div className="absolute w-full h-129 md:h-5/6 top-0 left-0">
+    <main>
+      <div className={styles.constellation}>
         <Circle />
         <Dots />
         <Triangle />
@@ -41,7 +42,7 @@ export const App: FC = () => {
             className="mx-auto -mt-24"
           />
           {intro}
-          <div className="flex items-center justify-evenly w-5/6 mx-auto">
+          <div className="flex items-center justify-evenly space-x-2 w-5/6 mx-auto">
             {NETWORKS.map(({ url, Icon, name }) => (
               <a
                 href={url}
