@@ -16,7 +16,12 @@
     "declaration": true,
     "paths" : {
       "react": ["preact/compat"],
-      "react-dom": ["preact/compat"]
+      "react-dom": ["preact/compat"],
+      "components/*": ["src/components/*"],
+      "styles/*": ["src/styles/*"],
+      "hooks/*": ["src/hooks/*"],
+      "store/*": ["src/store/*"],
+      "assets/*": ["src/assets/*"],
     }
   },
   "include": ["./src/**/*.ts", "./src/**/*.tsx"],

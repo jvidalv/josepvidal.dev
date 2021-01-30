@@ -7,13 +7,10 @@ const styles = require('./round-image.pcss');
 type Props = {
   src: string;
   alt?: string;
-  imageClassName?: string;
+  className?: string;
+  title?: string;
 };
 
-export const RoundImage: FC<Props> = ({ src, alt, imageClassName }) => (
-  <img className={classNames(imageClassName, styles.round__image)} src={src} alt={alt} />
+export const RoundImage: FC<Props> = ({ src, alt, title, className }) => (
+  <img className={classNames(className, styles.round__image)} src={src} alt={alt} title={title} />
 );
-
-RoundImage.defaultProps = {
-  alt: 'Just a random image',
-};

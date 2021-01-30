@@ -4,14 +4,13 @@
   "main": "index.html",
   "license": "MIT",
   "scripts": {
-    "start": "parcel public/index.html",
-    "build": "parcel build public/index.html",
-    "test" : "",
-    "sync:snapshots" : ""
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@types/classnames": "^2.2.11",
+    "@types/react-redux": "^7.1.16",
     "@types/webpack-env": "^1.16.0",
     "@typescript-eslint/eslint-plugin": "^4.1.0",
     "autoprefixer": "9",
@@ -34,11 +33,24 @@
     "typescript-plugin-css-modules": "^3.0.1"
   },
   "dependencies": {
+    "assemble": "~0.3.11",
+    "assets": "^3.0.1",
     "classnames": "^2.2.6",
-    "preact": "^10.4.8"
+    "components": "^0.1.0",
+    "grunt": "~0.4.0",
+    "hooks": "^0.3.2",
+    "preact": "^10.4.8",
+    "react-redux": "^7.2.2",
+    "redux": "^4.0.5",
+    "styles": "^0.2.1"
   },
   "alias": {
     "react": "preact/compat",
-    "react-dom": "preact/compat"
+    "react-dom": "preact/compat",
+    "components": "/src/components",
+    "hooks": "/src/hooks",
+    "styles": "/src/styles",
+    "store": "/src/store",
+    "assets": "/src/assets"
   }
 }

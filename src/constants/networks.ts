@@ -1,17 +1,17 @@
 import { FC } from 'preact/compat';
-import { Linkedin } from '../components/icons/linkedin';
-import { StackOverflow } from '../components/icons/stack-overflow';
-import { Github } from '../components/icons/github';
-import { Email } from '../components/icons/email';
-import { IJvIcon } from '../components/icons/TIcon';
+import { Linkedin } from 'components/icons/linkedin';
+import { StackOverflow } from 'components/icons/stack-overflow';
+import { Github } from 'components/icons/github';
+import { Email } from 'components/icons/email';
+import { iICON } from 'components/icons/IICON';
 
 type Network = {
   name: string;
   url: string;
-  Icon: FC<IJvIcon>;
+  Icon: FC<iICON>;
 };
 
-export const networks: Array<Network> = [
+export const NETWORKS: Network[] = [
   {
     name: 'Linkedin',
     url: 'https://www.linkedin.com/in/josepvidalvidal',
