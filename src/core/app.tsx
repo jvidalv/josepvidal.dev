@@ -21,6 +21,7 @@ export const App: FC = () => {
     contentParagraph1,
     contentParagraph2,
     contentParagraph3,
+    contentParagraph4,
   } = useTexts();
 
   return (
@@ -39,10 +40,7 @@ export const App: FC = () => {
             title="Josep Vidal Vidal"
             className="mx-auto -mt-24"
           />
-          <p
-            className="text-3xl w-11/12 text-center mx-auto my-10 text-gray-800"
-            dangerouslySetInnerHTML={{ __html: intro }}
-          />
+          {intro}
           <div className="flex items-center justify-evenly w-5/6 mx-auto">
             {NETWORKS.map(({ url, Icon, name }) => (
               <a
@@ -58,11 +56,13 @@ export const App: FC = () => {
       </VerticalSlice>
       <Row>
         <AboutMe>
-          <h1 className="text-3xl" dangerouslySetInnerHTML={{ __html: contentTitle }} />
-          <div className="space-y-3 text-gray-700">
-            <p dangerouslySetInnerHTML={{ __html: contentParagraph1 }} />
-            <p dangerouslySetInnerHTML={{ __html: contentParagraph2 }} />
-            <p dangerouslySetInnerHTML={{ __html: contentParagraph3 }} />
+          {contentTitle}
+          <div className="space-y-3 text-xl text-gray-700">
+            {contentParagraph1}
+            {contentParagraph2}
+            {contentParagraph3}
+            {contentParagraph4}
+            <p>🚀🌕</p>
           </div>
         </AboutMe>
       </Row>
