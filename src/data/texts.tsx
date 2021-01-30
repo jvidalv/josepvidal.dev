@@ -21,20 +21,20 @@ type Texts = {
 const T: Texts = {
   intro: {
     ca: (
-      <p className="text-3xl w-11/12 text-center mx-auto my-10 text-gray-800">
-        I'm Josep, a <span className="bg-red-500 text-white font-medium">software</span> developer{' '}
+      <p className="text-3xl w-full p-2 md:p-0 md:w-11/12 text-center mx-auto my-10 text-gray-800">
+        I'm Josep, a <span className="bg-red-500 text-white font-medium">software</span> developer
         specialized in <span className="bg-react text-white font-medium">React</span>
       </p>
     ),
     es: (
-      <p className="text-3xl w-11/12 text-center mx-auto my-10 text-gray-800">
-        I'm Josep, a <span className="bg-red-500 text-white font-medium">software</span> developer{' '}
+      <p className="text-3xl w-full p-2 md:p-0 md:w-11/12 text-center mx-auto my-10 text-gray-800">
+        I'm Josep, a <span className="bg-red-500 text-white font-medium">software</span> developer
         specialized in <span className="bg-react text-white font-medium">React</span>
       </p>
     ),
     en: (
-      <p className="text-3xl w-11/12 text-center mx-auto my-10 text-gray-800">
-        I'm Josep, a <span className="bg-red-500 text-white font-medium">software</span> developer{' '}
+      <p className="text-3xl w-full p-2 md:p-0 md:w-11/12 text-center mx-auto my-10 text-gray-800">
+        I'm Josep, a <span className="bg-red-500 text-white font-medium">software</span> developer
         specialized in <span className="bg-react text-white font-medium">React</span>
       </p>
     ),
@@ -101,21 +101,21 @@ const T: Texts = {
     ca: (
       <p>
         My actual work requires me to code mostly in React (Preact &{' '}
-        <span className="bg-typescript text-white font-medium normal-case">TypeScript</span>) , .NET
+        <span className="bg-typescript text-white font-medium normal-case">TypeScript</span>), .NET
         and MongoDB, but my experience includes React Native, PHP, SQL and more.
       </p>
     ),
     es: (
       <p>
         My actual work requires me to code mostly in React (Preact &{' '}
-        <span className="bg-typescript text-white font-medium normal-case">TypeScript</span>) , .NET
+        <span className="bg-typescript text-white font-medium normal-case">TypeScript</span>), .NET
         and MongoDB, but my experience includes React Native, PHP, SQL and more.
       </p>
     ),
     en: (
       <p>
         My actual work requires me to code mostly in React (Preact &{' '}
-        <span className="bg-typescript text-white font-medium normal-case">TypeScript</span>) , .NET
+        <span className="bg-typescript text-white font-medium normal-case">TypeScript</span>), .NET
         and MongoDB, but my experience includes React Native, PHP, SQL and more.
       </p>
     ),

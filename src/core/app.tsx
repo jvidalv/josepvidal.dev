@@ -25,8 +25,8 @@ export const App: FC = () => {
   } = useTexts();
 
   return (
-    <main>
-      <div className="absolute w-full h-5/6 top-0 left-0">
+    <main className="space-y-12 md:space-y-0">
+      <div className="absolute w-full h-129 md:h-5/6 top-0 left-0">
         <Circle />
         <Dots />
         <Triangle />

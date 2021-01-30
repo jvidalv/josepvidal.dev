@@ -14,6 +14,9 @@ module.exports = {
         react: '#4edcff',
         typescript: '#007acc',
       },
+      height: {
+        129: '32rem',
+      },
       minHeight: {
         0: '0',
         '1/4': '25%',
