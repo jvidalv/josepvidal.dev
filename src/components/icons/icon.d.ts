@@ -1,4 +1,4 @@
-export type iICON = {
+export type icon = {
   width?: string;
   height?: string;
   viewport?: string;

@@ -11,7 +11,7 @@ module.exports = {
       colors: {
         gold: '#ffdd00',
         background: '#131315',
-        react: '#4edcff',
+        react: '#181616',
         typescript: '#007acc',
       },
       height: {

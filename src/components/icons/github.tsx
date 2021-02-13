@@ -1,8 +1,8 @@
 import { h } from 'preact';
 import { FC } from 'preact/compat';
-import { iICON } from './IICON';
+import { icon } from './icon';
 
-export const Github: FC<iICON> = (props) => (
+export const Github: FC<icon> = (props) => (
   <svg height="1em" viewBox="0 0 32 32" width="1em" {...props}>
     <path
       clipRule="evenodd"

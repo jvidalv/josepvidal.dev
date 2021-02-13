@@ -1,8 +1,8 @@
 import { h } from 'preact';
 import { FC } from 'preact/compat';
-import { iICON } from './IICON';
+import { icon } from './icon';
 
-export const StackOverflow: FC<iICON> = (props) => (
+export const StackOverflow: FC<icon> = (props) => (
   <svg viewBox="0 0 512 512" width="1em" height="1em" {...props}>
     <circle cx={256} cy={256} r={256} />
     <path

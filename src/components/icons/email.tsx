@@ -1,8 +1,8 @@
 import { h } from 'preact';
 import { FC } from 'preact/compat';
-import { iICON } from './IICON';
+import { icon } from './icon';
 
-export const Email: FC<iICON> = (props) => (
+export const Email: FC<icon> = (props) => (
   <svg height="1em" viewBox="0 0 72 72" width="1em" {...props}>
     <path d="M36 72c19.882 0 36-16.118 36-36S55.882 0 36 0 0 16.118 0 36s16.118 36 36 36z" />
     <path

@@ -12,5 +12,5 @@ type Props = {
 };
 
 export const RoundImage: FC<Props> = ({ src, alt, title, className }) => (
-  <img className={classNames(className, styles.round__image)} src={src} alt={alt} title={title} />
+  <img className={classNames(className, styles.roundImage)} src={src} alt={alt} title={title} />
 );
