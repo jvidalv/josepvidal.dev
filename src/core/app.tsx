@@ -38,7 +38,7 @@ export const App = () => (
                             className={styles.networks__link}
                             title={name}
                             target="_blank">
-                            <Icon width="3rem" height="3rem"/>
+                            <Icon width="3em" height="3em"/>
                         </a>
                     ))}
                 </div>
