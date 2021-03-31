@@ -1,4 +1,4 @@
-.default {
+.dots {
   -webkit-mask: url(../../../assets/svgs/dots.svg) no-repeat top left;
   background-color: #7baae2;
   content: ' ';

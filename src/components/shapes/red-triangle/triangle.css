@@ -1,4 +1,4 @@
-.default {
+.triangle {
   mask: url(../../../assets/svgs/triangle.svg) no-repeat bottom left;
   animation: spin-around 9.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   background-color: #f48024;

@@ -2,8 +2,7 @@ import { FC } from 'preact/compat';
 import { h } from 'preact';
 import classNames from 'classnames';
 import { useImageOnload } from 'hooks/use-image-onload';
-
-const styles = require('./round-image.pcss');
+import * as styles from './round-image.css'
 
 type Props = {
   src: string;

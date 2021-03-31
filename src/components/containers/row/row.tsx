@@ -1,14 +1,23 @@
 import { FC } from 'preact/compat';
-import { ComponentChildren, h } from 'preact';
+import { h } from 'preact';
+import { useIntersectionObserver } from 'hooks/use-intersection-observer';
+import classNames from 'classnames';
 
-const styles = require('./row.pcss');
+import * as styles from './row.css'
+import * as animations from 'styles/animations.css'
 
-type Props = {
-  children: ComponentChildren;
+
+export const Row: FC = ({ children }) => {
+  const [setRef, isIntersecting, hasIntersected] = useIntersectionObserver<HTMLElement>();
+  const className = classNames({
+    [styles.row]: true,
+    [animations.scale__base]: true,
+    [animations.scale__entered]: isIntersecting || hasIntersected,
+  });
+
+  return (
+      <div ref={setRef} className={className}>
+        {children}
+      </div>
+  );
 };
-
-export const Row: FC<Props> = ({ children }) => (
-  <section>
-    <div className={styles.row}>{children}</div>
-  </section>
-);

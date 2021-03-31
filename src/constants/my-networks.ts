@@ -11,7 +11,7 @@ type Network = {
   Icon: FC<icon>;
 };
 
-export const NETWORKS: Network[] = [
+export const myNetworks: Network[] = [
   {
     name: 'Linkedin',
     url: 'https://www.linkedin.com/in/josepvidalvidal',

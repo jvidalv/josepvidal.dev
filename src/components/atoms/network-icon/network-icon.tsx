@@ -2,7 +2,7 @@ import { FC } from 'preact/compat';
 import { h } from 'preact';
 import classNames from 'classnames';
 
-const styles = require('./network-icon.pcss');
+import * as styles from './network-icon.css'
 
 type Props = {
   src: string;

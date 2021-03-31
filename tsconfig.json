@@ -4,14 +4,13 @@
     "outDir": "./dist",
     "sourceMap": true,
     "noImplicitAny": true,
-    "module": "es6",
+    "module": "ESNext",
     "moduleResolution": "node",
-    "target": "es6",
+    "target": "ESNext",
     "jsx": "react",
     "jsxFactory": "h",
     "esModuleInterop": true,
     "allowJs": true,
-    "plugins": [{ "name": "typescript-plugin-css-modules" }],
     "allowSyntheticDefaultImports": true,
     "declaration": true,
     "paths" : {
@@ -22,8 +21,9 @@
       "hooks/*": ["src/hooks/*"],
       "store/*": ["src/store/*"],
       "assets/*": ["src/assets/*"],
+      "constants/*": ["src/constants/*"],
     }
   },
-  "include": ["./src/**/*.ts", "./src/**/*.tsx"],
-  "exclude": ["**/*.pcss"]
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["**/*.css"]
 }

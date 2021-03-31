@@ -1,0 +1,10 @@
+{
+  "modules": true,
+  "plugins": {
+    "postcss-modules": {
+      "generateScopedName": "[name]_[local]"
+    },
+    "@tailwindcss/jit": {},
+    "autoprefixer": {}
+  }
+}

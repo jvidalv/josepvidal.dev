@@ -1,11 +1,11 @@
-.default {
+.circle {
   animation: wander-around-x 9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   left: calc(67% - 50px);
   top: calc(8% - 26px);
   position: absolute;
 }
 
-.default::after {
+.circle::after {
   -webkit-mask: url(../../../assets/svgs/circle.svg) no-repeat top left;
   animation: wander-around-y 9s cubic-bezier(0.25, 0, 0.2, 1) infinite;
   background-color: #7baae28d;

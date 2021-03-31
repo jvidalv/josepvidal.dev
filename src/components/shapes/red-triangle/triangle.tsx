@@ -1,6 +1,5 @@
 import { h } from 'preact';
 import { FC } from 'preact/compat';
+import * as styles from './triangle.css';
 
-const styles = require('./triangle.pcss');
-
-export const Triangle: FC = () => <div className={styles.default} />;
+export const Triangle: FC = () => <div className={styles.triangle} />;

@@ -1,8 +1,8 @@
 module.exports = {
-  purge: {
-    enabled: process.env.NODE_ENV === 'production',
-    content: ['src/**/*.tsx'],
-  },
+  purge: [
+    './public/*.html',
+    './src/**/*.{ts,tsx}',
+  ],
   theme: {
     extend: {
       outline: {

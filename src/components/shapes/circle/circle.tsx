@@ -1,6 +1,5 @@
 import { h } from 'preact';
 import { FC } from 'preact/compat';
+import * as styles from './circle.css';
 
-const styles = require('./circle.pcss');
-
-export const Circle: FC = () => <div className={styles.default} />;
+export const Circle: FC = () => <div className={styles.circle} />;

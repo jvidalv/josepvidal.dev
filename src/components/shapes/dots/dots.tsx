@@ -1,6 +1,5 @@
 import { h } from 'preact';
 import { FC } from 'preact/compat';
+import * as styles from './dots.css';
 
-const styles = require('./dots.pcss');
-
-export const Dots: FC = () => <div className={styles.default} />;
+export const Dots: FC = () => <div className={styles.dots} />;
