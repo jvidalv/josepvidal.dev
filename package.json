@@ -9,7 +9,10 @@
     "build": "parcel build index.html"
   },
   "engines": {
-    "node": "^12.18.3 || >=14"
+    "browsers": "> 0.25%"
+  },
+  "targets": {
+    "app": {}
   },
   "devDependencies": {
     "@babel/core": "^7.13.14",
