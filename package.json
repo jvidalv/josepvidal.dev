@@ -5,7 +5,7 @@
   "source": "index.html",
   "scripts": {
     "start": "parcel serve index.html",
-    "start:clean": "(rm -r dist || true && rm -r .parcel-cache || true) && parcel serve ndex.html",
+    "start:clean": "(rm -r dist || true && rm -r .parcel-cache || true) && parcel serve index.html",
     "build": "NODE_ENV=production parcel build index.html"
   },
   "browserslist": ["> 0.2%", "not dead"],
