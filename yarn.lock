@@ -1454,6 +1454,14 @@
     "@parcel/utils" "2.0.0-nightly.634+59e6f1c8"
     nullthrows "^1.1.1"
 
+"@parcel/packager-raw-url@2.0.0-nightly.2256":
+  version "2.0.0-nightly.2256"
+  resolved "https://registry.yarnpkg.com/@parcel/packager-raw-url/-/packager-raw-url-2.0.0-nightly.2256.tgz#49bf6f1c6b2fc356e54358a0c684977437d28278"
+  integrity sha512-RbJ6iX4YjISzefBunAu2xBBCXDu65+arhWim+XpPBtNcr+SnGjS2S2XBuKn5dlMStDWfbClxUrW/v1lZz7U64g==
+  dependencies:
+    "@parcel/plugin" "2.0.0-nightly.634+59e6f1c8"
+    "@parcel/utils" "2.0.0-nightly.634+59e6f1c8"
+
 "@parcel/packager-raw@2.0.0-nightly.634+59e6f1c8":
   version "2.0.0-nightly.634"
   resolved "https://registry.yarnpkg.com/@parcel/packager-raw/-/packager-raw-2.0.0-nightly.634.tgz#7848ff362a59dd541cc436f5fc0038370edc1d12"
@@ -1700,6 +1708,16 @@
   dependencies:
     "@parcel/plugin" "2.0.0-nightly.634+59e6f1c8"
     "@parcel/ts-utils" "2.0.0-nightly.634+59e6f1c8"
+
+"@parcel/transformer-webmanifest@2.0.0-nightly.2256":
+  version "2.0.0-nightly.2256"
+  resolved "https://registry.yarnpkg.com/@parcel/transformer-webmanifest/-/transformer-webmanifest-2.0.0-nightly.2256.tgz#3d8843ba669de31bf84e721719c3880419f842c0"
+  integrity sha512-p96AbLp9zJZwer6j7dYIF4G9yFUn7rNPVzioXS11BN3vL6hL8lqbWqgW6Tdo1iWENFCbkR5rkUq+ez8jonZVxQ==
+  dependencies:
+    "@parcel/diagnostic" "2.0.0-nightly.634+59e6f1c8"
+    "@parcel/plugin" "2.0.0-nightly.634+59e6f1c8"
+    "@parcel/utils" "2.0.0-nightly.634+59e6f1c8"
+    json-source-map "^0.6.1"
 
 "@parcel/ts-utils@2.0.0-nightly.634+59e6f1c8":
   version "2.0.0-nightly.634"
@@ -6369,6 +6387,11 @@ rc@^1.2.7:
     ini "~1.3.0"
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
+
+react-ga@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/react-ga/-/react-ga-3.3.0.tgz#c91f407198adcb3b49e2bc5c12b3fe460039b3ca"
+  integrity sha512-o8RScHj6Lb8cwy3GMrVH6NJvL+y0zpJvKtc0+wmH7Bt23rszJmnqEQxRbyrqUzk9DTJIHoP42bfO5rswC9SWBQ==
 
 react-is@^16.8.1:
   version "16.13.1"

@@ -8,14 +8,19 @@
     "start:clean": "(rm -r dist || true && rm -r .parcel-cache || true) && parcel serve index.html",
     "build": "NODE_ENV=production parcel build index.html"
   },
-  "browserslist": ["> 0.2%", "not dead"],
+  "browserslist": [
+    "> 0.2%",
+    "not dead"
+  ],
   "targets": {
     "app": {}
   },
   "devDependencies": {
     "@babel/core": "^7.13.14",
+    "@parcel/packager-raw-url": "2.0.0-nightly.2256",
     "@parcel/transformer-image": "2.0.0-nightly.2256",
     "@parcel/transformer-typescript-tsc": "^2.0.0-beta.2",
+    "@parcel/transformer-webmanifest": "2.0.0-nightly.2256",
     "@parcel/validator-typescript": "^2.0.0-beta.2",
     "@tailwindcss/jit": "^0.1.17",
     "@types/classnames": "^2.2.11",
@@ -36,7 +41,8 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "preact": "^10.5.13"
+    "preact": "^10.5.13",
+    "react-ga": "^3.3.0"
   },
   "alias": {
     "react": "preact/compat",
