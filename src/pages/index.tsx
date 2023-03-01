@@ -1,6 +1,8 @@
-import Head from 'next/head'
+import Head from "next/head";
+import { useTheme } from "next-themes";
 
 export default function Home() {
+  const { setTheme } = useTheme();
   return (
     <>
       <Head>
@@ -9,11 +11,16 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="" style={{ fontSize: 20}} >
-          I enjoy building fast apps that feel like a physical extension of your mind with considerate motion design and sound effects.
-
-          I’m the person who can bridge the gap between design and engineering to give your product that extra attention to detail to stand out from competitors
+      <main
+        className="dark:text-red-500"
+        style={{ fontSize: 20 }}
+        onClick={() => setTheme("light")}
+      >
+        I enjoy building fast apps that feel like a physical extension of your
+        mind with considerate motion design and sound effects. I’m the person
+        who can bridge the gap between design and engineering to give your
+        product that extra attention to detail to stand out from competitors
       </main>
     </>
-  )
+  );
 }

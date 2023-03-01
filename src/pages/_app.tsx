@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import localFont from "next/font/local";
+import { ThemeProvider } from "next-themes";
 
 const basier = localFont({
   src: [
@@ -15,14 +16,14 @@ const basier = localFont({
       style: "bold",
     },
   ],
-  variable: "--basier-font",
-  weight: "400",
 });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div className={basier.className}>
-      <Component {...pageProps} />
-    </div>
+    <ThemeProvider attribute="class">
+      <div className={basier.className}>
+        <Component {...pageProps} />
+      </div>
+    </ThemeProvider>
   );
 }
