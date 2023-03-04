@@ -3,7 +3,12 @@ module.exports = {
   darkMode: "class",
   content: ["./src/pages/**/*.tsx", "./src/components/**/*.tsx"],
   theme: {
-    extends: {},
+    extend: {
+      colors: {
+        accent: "var(--accent)",
+        accent2: "var(--accent2)",
+      },
+    },
   },
   plugins: [],
 };
