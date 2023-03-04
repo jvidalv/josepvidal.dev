@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "./dist",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "target": "ESNext",
+    "jsx": "react",
+    "jsxFactory": "h",
+    "esModuleInterop": true,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "paths" : {
+      "react": ["preact/compat"],
+      "react-dom": ["preact/compat"],
+      "components/*": ["src/components/*"],
+      "styles/*": ["src/styles/*"],
+      "hooks/*": ["src/hooks/*"],
+      "store/*": ["src/store/*"],
+      "assets/*": ["src/assets/*"],
+      "constants/*": ["src/constants/*"],
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["**/*.css"]
+}

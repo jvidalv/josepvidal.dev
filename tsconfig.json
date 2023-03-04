@@ -1,29 +1,23 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "outDir": "./dist",
-    "sourceMap": true,
-    "noImplicitAny": true,
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "target": "ESNext",
-    "jsx": "react",
-    "jsxFactory": "h",
-    "esModuleInterop": true,
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "declaration": true,
-    "paths" : {
-      "react": ["preact/compat"],
-      "react-dom": ["preact/compat"],
-      "components/*": ["src/components/*"],
-      "styles/*": ["src/styles/*"],
-      "hooks/*": ["src/hooks/*"],
-      "store/*": ["src/store/*"],
-      "assets/*": ["src/assets/*"],
-      "constants/*": ["src/constants/*"],
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "paths": {
+      "@/*": ["./src/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["**/*.css"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }
