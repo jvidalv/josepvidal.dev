@@ -1,5 +1,6 @@
 import { SectionHeader, WithArrow } from "@/components/atoms";
 import socials from "@/lib/socials";
+import projects from "@/lib/projects";
 
 export default function Home() {
   return (
@@ -53,6 +54,47 @@ export default function Home() {
           </a>
           .
         </WithArrow>
+      </section>
+      <section>
+        <SectionHeader>/before</SectionHeader>
+        <WithArrow>
+          Leading the frontend team on a brand new electronic signature app ✳️.
+        </WithArrow>
+        <br />
+        <WithArrow>
+          Helping the biggest{" "}
+          <a href="https://www.artbasel.com/" target="_blank" rel="noreferrer">
+            art merchant 🖼️
+          </a>{" "}
+          in the world on transitioning from offline to fully online expos.
+        </WithArrow>
+        <br />
+        <WithArrow>
+          Automating and reshaping processes as a full-stack dev on an{" "}
+          <a href="https://factorenergia.com" target="_blank" rel="noreferrer">
+            energy company ⚡️
+          </a>
+          .
+        </WithArrow>
+      </section>
+      <section>
+        <SectionHeader>/projects</SectionHeader>
+        <p className="flex flex-wrap text-lg gap-4 text-black dark:text-white mb-3 container-ch">
+          {projects.map(({ name, href, secret }) =>
+            secret ? (
+              <span
+                key={name}
+                className="text-neutral-300 line-through	dark:text-neutral-600 font-bold"
+              >
+                Secret
+              </span>
+            ) : (
+              <a key={name} href={href} target="_blank" rel="noreferrer">
+                {name}
+              </a>
+            )
+          )}
+        </p>
       </section>
     </>
   );
