@@ -6,20 +6,20 @@ export default function Home() {
   return (
     <>
       <section>
-        <SectionHeader>/work</SectionHeader>
+        <SectionHeader>/me</SectionHeader>
         <h1 className="-mt-1.5 w-fit text-5xl font-bold bg-gradient-to-r from-accent to-accent2 text-transparent bg-clip-text mb-2.5">
           Josep Vidal
         </h1>
         <p className="text-2xl text-black dark:text-white mb-3 container-ch">
-          Senior UI Engineer focused on UX.
+          Senior UI Engineer.
         </p>
         <p className="text-neutral-600 dark:text-neutral-400 text-xl leading-7">
           I enjoy building smooth web apps that just feel natural to use.
         </p>
         <br />
         <p className="text-neutral-600 dark:text-neutral-400 text-xl">
-          Focused on delivering the best possible user experience by placing the
-          user at the center of the design process, understanding their goals,
+          Delivering the best possible user experience by placing the user at
+          the center of the design process, understanding their goals,
           motivations, and pain points.
         </p>
       </section>

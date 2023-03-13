@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
 
 export const SectionHeader = ({ children }: PropsWithChildren) => (
-  <p className="mt-16 mb-4 text-shadow font-bold text-neutral-400 dark:text-neutral-600 text-3xl opacity-75">
+  <p className="mt-16 mb-4 font-mono text-shadow text-neutral-400 dark:text-neutral-600 text-2xl opacity-75">
     {children}
   </p>
 );

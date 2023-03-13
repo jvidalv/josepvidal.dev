@@ -36,7 +36,6 @@ html {
     top: -100%;
     width: 300%;
     pointer-events: none;
-    z-index: 99;
 }
 
 .light #__next:before {
@@ -51,7 +50,7 @@ html {
     text-shadow: 0 1px 5px rgba(255,255,255,1)
 }
 
-a {
+section a {
     display: inline-block;
     position: relative;
     color: var(--accent2);
@@ -60,7 +59,7 @@ a {
     border-radius: 0.275em;
 }
 
-a:after {
+section a:after {
     content: "";
     width: 100%;
     height: 2px;
@@ -73,12 +72,12 @@ a:after {
     transition: all .15s cubic-bezier(.175,.885,.32,1.275)
 }
 
-a:focus:after, a:hover:after, a:visited:hover:after {
+section a:focus:after, a:hover:after, a:visited:hover:after {
     transform: translateY(3px) scaleX(.65);
     opacity: 1;
 }
 
-a:focus, a:hover, a:visited:hover {
+section a:focus, a:hover, a:visited:hover {
     color: var(--accent2);
     transform: skewX(-4deg) scaleX(.98);
 }
