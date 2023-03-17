@@ -68,7 +68,8 @@ export const Spotlight = () => {
       },
     },
   ].filter(
-    ({ hidden, label }) => !hidden && (!filter || label.includes(filter))
+    ({ hidden, label }) =>
+      !hidden && (!filter || label.toUpperCase().includes(filter.toUpperCase()))
   );
 
   return (
