@@ -15,6 +15,7 @@ export const Header = () => {
           name="og:description"
           content="Senior Frontend Engineer focused on UX/UI. Building fluid and fast interfaces."
         />
+        <meta property="og:image" content="https://jvidal.dev/og.png" />
         <meta name="author" content="@josepvidalvidal" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.png" />

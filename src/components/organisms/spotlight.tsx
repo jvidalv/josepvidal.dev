@@ -2,11 +2,13 @@ import { useState, Fragment, useRef, MouseEventHandler } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { useHotkeys } from "react-hotkeys-hook";
 import { useTheme } from "next-themes";
+import { DesktopIcon, MoonIcon, SunIcon } from "@radix-ui/react-icons";
 
 export const Spotlight = () => {
   const ref = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const [isOpen, setIsOpen] = useState(false);
+  const [filter, setFilter] = useState("");
 
   const closeModal = () => setIsOpen(false);
 
@@ -37,6 +39,37 @@ export const Spotlight = () => {
       panel.style.transform = "";
     }, 100);
   };
+
+  const themeOptions = [
+    {
+      icon: <SunIcon />,
+      label: "Set theme to light",
+      onClick: () => {
+        setTheme("light");
+        closeModal();
+      },
+      hidden: !isDark,
+    },
+    {
+      icon: <MoonIcon />,
+      label: "Set theme to dark",
+      onClick: () => {
+        setTheme("dark");
+        closeModal();
+      },
+      hidden: isDark,
+    },
+    {
+      icon: <DesktopIcon />,
+      label: "Set theme to system",
+      onClick: () => {
+        setTheme("system");
+        closeModal();
+      },
+    },
+  ].filter(
+    ({ hidden, label }) => !hidden && (!filter || label.includes(filter))
+  );
 
   return (
     <>
@@ -71,7 +104,7 @@ export const Spotlight = () => {
             <div className="fixed inset-0 bg-black bg-opacity-25" />
           </Transition.Child>
           <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center">
+            <div className="flex sm:mt-32 justify-center p-4 text-center">
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
@@ -97,43 +130,28 @@ export const Spotlight = () => {
                     type="text"
                     className="h-16 bg-transparent w-full focus:outline-none text-xl dark:placeholder:text-neutral-600"
                     placeholder="Search"
+                    onChange={(e) => setFilter(e.target.value)}
                   />
                   <div className="h-[2px] bg-gradient-to-r from-accent to-accent2 -mx-4 opacity-50" />
-                  <ul role="listbox" className="flex flex-col gap-1 my-4">
-                    <span className="block text-xs text-gray-500 mb-1 ">
-                      Theme
-                    </span>
-                    {isDark ? (
-                      <li
-                        onClick={() => {
-                          setTheme("light");
-                          closeModal();
-                        }}
-                        className="cursor-pointer transition hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded-md -mx-2 px-2 py-2 text-gray-400"
-                      >
-                        Set theme to light
-                      </li>
-                    ) : (
-                      <li
-                        onClick={() => {
-                          setTheme("dark");
-                          closeModal();
-                        }}
-                        className="cursor-pointer transition hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded-md -mx-2 px-2 py-2 text-gray-400"
-                      >
-                        Set theme to light
-                      </li>
-                    )}
-                    <li
-                      onClick={() => {
-                        setTheme("system");
-                        closeModal();
-                      }}
-                      className="cursor-pointer transition hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded-md -mx-2 px-2 py-2 text-gray-400"
-                    >
-                      Set theme to system
-                    </li>
-                  </ul>
+                  {!!themeOptions?.length && (
+                    <ul role="listbox" className="flex flex-col my-4">
+                      <span className="block text-xs text-gray-500 mb-2">
+                        Theme
+                      </span>
+                      {themeOptions.map(({ label, icon, onClick }) => (
+                        <li
+                          key={label}
+                          onClick={onClick}
+                          className="cursor-pointer flex gap-4 transition hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded-md -mx-2 px-2 py-2 text-gray-500 hover:text-black dark:hover:text-white"
+                        >
+                          <span className="flex items-center justify-center">
+                            {icon}
+                          </span>
+                          <span>{label}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </Dialog.Panel>
               </Transition.Child>
             </div>
