@@ -10,10 +10,16 @@ export const Spotlight = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [filter, setFilter] = useState("");
 
-  const closeModal = () => setIsOpen(false);
+  const closeModal = () => {
+    setIsOpen(false);
+    setFilter("");
+  };
 
   const openModal = () => setIsOpen(true);
-  const toggleModal = () => setIsOpen((v) => !v);
+  const toggleModal = () => {
+    setIsOpen((v) => !v);
+    setFilter("");
+  };
 
   const { resolvedTheme, setTheme } = useTheme();
   const isDark = resolvedTheme === "dark";
