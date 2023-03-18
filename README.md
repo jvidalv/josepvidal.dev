@@ -4,7 +4,7 @@
 
 Hi, thanks for being curious about the code behind my personal website :)
 
-Visit it on https://jvidal.dev ⚡️.
+Live on https://jvidal.dev ⚡️.
 
 In order to run it locally `yarn dev` or `npm run dev`, have fun!
 
@@ -19,11 +19,6 @@ In order to run it locally `yarn dev` or `npm run dev`, have fun!
 - [ ] Books
 - [ ] Used Tools
 - [ ] Paintings
-
-## Contact
-
-Reach me at josepvidalvidal@gmail.com.
-
 
 ## Older sites
 
