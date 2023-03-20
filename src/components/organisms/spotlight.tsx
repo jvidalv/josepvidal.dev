@@ -2,7 +2,13 @@ import { useState, Fragment, useRef, MouseEventHandler } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { useHotkeys } from "react-hotkeys-hook";
 import { useTheme } from "next-themes";
-import { DesktopIcon, MoonIcon, SunIcon } from "@radix-ui/react-icons";
+import {
+  DesktopIcon,
+  MoonIcon,
+  Pencil2Icon,
+  SunIcon,
+} from "@radix-ui/react-icons";
+import Link from "next/link";
 
 export const Spotlight = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -45,6 +51,14 @@ export const Spotlight = () => {
       panel.style.transform = "";
     }, 100);
   };
+
+  const options = [
+    {
+      href: "/blog",
+      label: "Blog",
+      icon: <Pencil2Icon />,
+    },
+  ];
 
   const themeOptions = [
     {
@@ -108,7 +122,7 @@ export const Spotlight = () => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 bg-black bg-opacity-25" />
+            <div className="fixed inset-0 bg-black bg-opacity-75" />
           </Transition.Child>
           <div className="fixed inset-0 overflow-y-auto">
             <div className="flex sm:mt-32 justify-center p-4 text-center">
@@ -126,12 +140,21 @@ export const Spotlight = () => {
                   ref={ref}
                   className="w-full sm:min-w-[600px] will-change-transform transition-all duration-100 px-4 max-w-md transform overflow-hidden rounded-2xl bg-white dark:bg-neutral-900 text-left align-middle shadow-xl"
                 >
-                  <Dialog.Title
-                    as="button"
-                    className="text-xs bg-neutral-100 dark:bg-neutral-800 text-neutral-500 dark:hover:text-white transition hover:text-black rounded px-1.5 py-1 mt-4"
-                  >
-                    Home
-                  </Dialog.Title>
+                  <div className="flex justify-between mt-4">
+                    <Dialog.Title
+                      as="button"
+                      className="text-xs bg-neutral-100 dark:bg-neutral-800 text-neutral-500 dark:hover:text-white transition hover:text-black rounded px-1.5 py-1"
+                    >
+                      Home
+                    </Dialog.Title>
+                    <button
+                      onClick={toggleModal}
+                      aria-label="Close dialog"
+                      className="font-mono text-xs text-neutral-500 hover:text-neutral-600 hover:dark:text-neutral-400"
+                    >
+                      (esc)
+                    </button>
+                  </div>
                   <input
                     ref={inputRef}
                     type="text"
@@ -140,6 +163,21 @@ export const Spotlight = () => {
                     onChange={(e) => setFilter(e.target.value)}
                   />
                   <div className="h-[2px] bg-gradient-to-r from-accent to-accent2 -mx-4 opacity-50" />
+                  <nav role="listbox" className="flex flex-col my-4">
+                    {options.map(({ label, icon, href }) => (
+                      <Link
+                        key={label}
+                        href={href}
+                        onClick={toggleModal}
+                        className="cursor-pointer flex gap-4 transition hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded-md -mx-2 px-2 py-2 text-gray-500 hover:text-black dark:hover:text-white"
+                      >
+                        <span className="flex items-center justify-center">
+                          {icon}
+                        </span>
+                        <span>{label}</span>
+                      </Link>
+                    ))}
+                  </nav>
                   {!!themeOptions?.length && (
                     <ul role="listbox" className="flex flex-col my-4">
                       <span className="block text-xs text-gray-500 mb-2">

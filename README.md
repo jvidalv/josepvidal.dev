@@ -19,6 +19,7 @@ In order to run it locally `yarn dev` or `npm run dev`, have fun!
 - [ ] Books
 - [ ] Used Tools
 - [ ] Paintings
+- [ ] Random stats about me (years, months, weeks, days, alive, and the remaining estimate, visited countries, number of jobs etc...)
 
 ## Older sites
 

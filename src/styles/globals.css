@@ -77,7 +77,7 @@ section a:focus:after, a:hover:after, a:visited:hover:after {
     opacity: 1;
 }
 
-section a:focus, a:hover, a:visited:hover {
+section a:focus, section a:hover, section a:visited:hover {
     color: var(--accent2);
     transform: skewX(-4deg) scaleX(.98);
 }

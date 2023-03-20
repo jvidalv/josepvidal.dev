@@ -3,7 +3,7 @@ import type { AppProps } from "next/app";
 import localFont from "next/font/local";
 import { ThemeProvider } from "next-themes";
 import clsx from "clsx";
-import { Header } from "@/components/organisms";
+import { Header, Footer } from "@/components/organisms";
 
 const basier = localFont({
   src: [
@@ -26,7 +26,10 @@ export default function App({ Component, pageProps }: AppProps) {
       <main className="p-8 sm:p-12 md:p-16">
         <div className={clsx(basier.className, "mx-auto md:max-w-[37.5rem]")}>
           <Header />
-          <Component {...pageProps} />
+          <div className="min-h-screen">
+            <Component {...pageProps} />
+          </div>
+          <Footer />
         </div>
       </main>
     </ThemeProvider>
