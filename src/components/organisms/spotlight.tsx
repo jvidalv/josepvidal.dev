@@ -4,6 +4,7 @@ import { useHotkeys } from "react-hotkeys-hook";
 import { useTheme } from "next-themes";
 import {
   DesktopIcon,
+  LapTimerIcon,
   MoonIcon,
   Pencil2Icon,
   SunIcon,
@@ -57,6 +58,11 @@ export const Spotlight = () => {
       href: "/blog",
       label: "Blog",
       icon: <Pencil2Icon />,
+    },
+    {
+      href: "/memento-mori",
+      label: "Memento Mori",
+      icon: <LapTimerIcon />,
     },
   ];
 

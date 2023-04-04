@@ -25,10 +25,10 @@ export const Header = () => {
         <meta content="https://josepvidal.dev" property="og:url" />
       </Head>
       <header>
-        <nav className="flex justify-between">
+        <nav className="flex items-center justify-between">
           <Link
             href="/"
-            className="block rounded-full bg-gradient-to-r from-accent to-accent2 w-10 h-10 transition border border-transparent hover:scale-105"
+            className="block bg-gradient-to-r from-accent to-accent2 w-8 h-8 transition border border-transparent hover:scale-105"
           >
             <span className="sr-only">josepvidal.dev</span>
           </Link>

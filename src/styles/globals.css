@@ -39,7 +39,7 @@ html {
 }
 
 .light #__next:before {
-    opacity: .30
+    opacity: .15
 }
 
 .text-shadow {
