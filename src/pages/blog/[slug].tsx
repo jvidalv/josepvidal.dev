@@ -1,7 +1,7 @@
 import { SectionHeader } from "@/components/atoms";
 import { allPosts } from "contentlayer/generated";
 import { GetStaticProps } from "next";
-import parseISO from "date-fns/parseISO";
+import { parseISO } from "date-fns/parseISO";
 import { format } from "date-fns";
 import Head from "next/head";
 

@@ -1,10 +1,10 @@
 import { SectionHeader, WithArrow } from "@/components/atoms";
 import { GetStaticProps } from "next";
 import { allPosts } from "contentlayer/generated";
-import compareDesc from "date-fns/compareDesc";
+import { compareDesc } from "date-fns/compareDesc";
 import Link from "next/link";
 import { format } from "date-fns";
-import parseISO from "date-fns/parseISO";
+import { parseISO } from "date-fns/parseISO";
 import Head from "next/head";
 
 type Props = {
@@ -23,7 +23,7 @@ export default function Blog({ posts }: Props) {
         <title>Blog</title>
         <meta
           property="og:image"
-          content={`https://jvidal.dev/api/og?title=Blog`}
+          content="https://jvidal.dev/api/og?title=Blog"
         />
       </Head>
       <SectionHeader>/blog</SectionHeader>
