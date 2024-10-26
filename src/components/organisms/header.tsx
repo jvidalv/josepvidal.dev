@@ -9,11 +9,11 @@ export const Header = () => {
         <title>Josep Vidal</title>
         <meta
           name="description"
-          content="Senior Frontend Engineer focused on UX/UI. Building fluid and fast interfaces."
+          content="Senior Frontend Engineer focused on UX/UI."
         />
         <meta
           name="og:description"
-          content="Senior Frontend Engineer focused on UX/UI. Building fluid and fast interfaces."
+          content="Senior Frontend Engineer focused on UX/UI."
         />
         <meta property="og:image" content="https://jvidal.dev/og.png" />
         <meta name="author" content="@josepvidalvidal" />

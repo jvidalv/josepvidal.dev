@@ -64,7 +64,9 @@ export const Spotlight = () => {
       label: "Memento Mori",
       icon: <LapTimerIcon />,
     },
-  ];
+  ].filter(
+    ({ label }) => !filter || label.toUpperCase().includes(filter.toUpperCase())
+  );
 
   const themeOptions = [
     {
