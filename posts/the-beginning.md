@@ -9,12 +9,12 @@ under different alias and with different hobbies and time fillers.
 
 Today is the day I start blogging and journaling.
 
-## Why?
+### Why?
 
 These lasts years I tried very hard to journal, manually, with paper and pencil, and as expected I have failed spectacularly,
 so, if something is not working, try a different approach, and this is what I plan to do with this blog/journal.
 
-## Objectives
+### Objectives
 
 Ordered by how important are to me (DESC):
 
@@ -23,6 +23,6 @@ Ordered by how important are to me (DESC):
 - Share and receive knowledge.
 - Improve my writing skills in english.
 
-## Fin
+### Fin
 
 Really, this is all, I don't want to procrastinate trying to be smart on my first ever post. So I will keep it simple for now.

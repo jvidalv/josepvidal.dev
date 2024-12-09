@@ -1,5 +1,5 @@
 import { SectionHeader } from "@/components/atoms";
-import { allPosts } from "contentlayer/generated";
+import { allPosts } from "content-collections";
 import { GetStaticProps } from "next";
 import { parseISO } from "date-fns/parseISO";
 import { format } from "date-fns";
@@ -9,8 +9,6 @@ type Props = {
   post: {
     title: string;
     date: string;
-    url: string;
-    category?: "dev" | "life" | "general" | "notes";
     html: string;
   };
 };
@@ -27,12 +25,7 @@ export default function BlogSlug({ post }: Props) {
           content={`https://jvidal.dev/api/og?title=${title}`}
         />
       </Head>
-      <SectionHeader>
-        {format(parseISO(date), "LLLL d, yyyy")}
-        {/*<span className="text-base ml-4">*/}
-        {/*  under <span className="text-neutral-500">{category}</span>*/}
-        {/*</span>*/}
-      </SectionHeader>
+      <SectionHeader>{format(parseISO(date), "LLLL d, yyyy")}</SectionHeader>
       <h1 className="-mt-1.5 w-fit text-5xl font-bold bg-gradient-to-r from-accent to-accent2 text-transparent bg-clip-text mb-4 leading-[1.1]">
         {title}
       </h1>
@@ -45,7 +38,7 @@ export default function BlogSlug({ post }: Props) {
 }
 
 export async function getStaticPaths() {
-  const paths: string[] = allPosts.map((post) => post.url);
+  const paths: string[] = allPosts.map((post) => `/blog/${post._meta.path}`);
 
   return {
     paths,
@@ -54,7 +47,7 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps: GetStaticProps<Props> = ({ params }) => {
-  const post = allPosts.find((post) => post.url === `/blog/${params?.slug}`);
+  const post = allPosts.find((post) => post._meta.path === params?.slug);
 
   if (!post) {
     return {
@@ -62,21 +55,13 @@ export const getStaticProps: GetStaticProps<Props> = ({ params }) => {
     };
   }
 
-  const {
-    title,
-    date,
-    category,
-    url,
-    body: { html },
-  } = post;
+  const { title, date, html } = post;
 
   return {
     props: {
       post: {
         title,
         date,
-        url,
-        category,
         html,
       },
     },

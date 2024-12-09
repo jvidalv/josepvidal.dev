@@ -1,6 +1,6 @@
 import { SectionHeader, WithArrow } from "@/components/atoms";
 import { GetStaticProps } from "next";
-import { allPosts } from "contentlayer/generated";
+import { allPosts } from "content-collections";
 import { compareDesc } from "date-fns/compareDesc";
 import Link from "next/link";
 import { format } from "date-fns";
@@ -12,7 +12,6 @@ type Props = {
     title: string;
     date: string;
     url: string;
-    category?: "dev" | "life" | "general" | "notes";
   }[];
 };
 
@@ -53,11 +52,10 @@ export const getStaticProps: GetStaticProps<Props> = () => {
 
   return {
     props: {
-      posts: posts.map(({ title, date, category, url }) => ({
+      posts: posts.map(({ title, date, _meta: { path } }) => ({
         title,
         date,
-        url,
-        category,
+        url: `/blog/${path}`,
       })),
     },
   };
