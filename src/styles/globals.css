@@ -2,59 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    --accent: #ffb696;
-    --accent2: #ff7a95;
-}
-
-html {
-    font-size: 16px;
-    scroll-behavior: smooth;
-}
-
-.p {
-    max-width: 60ch;
-    letter-spacing: -.01em;
-}
-
-@media (min-width:1800px) {
-    html {
-        font-size: 1vmax;
+@layer base {
+    :root {
+        --primary: #ffb696;
+        --accent: #ff7a95;
     }
-}
-
-#__next:before {
-    will-change: transform;
-    animation: grain 1s steps(10) infinite;
-    background-image: url(/images/noise.png);
-    background-size: 340px;
-    content: "";
-    height: 300%;
-    left: -50%;
-    opacity: .45;
-    position: fixed;
-    top: -100%;
-    width: 300%;
-    pointer-events: none;
-}
-
-.light #__next:before {
-    opacity: .15
-}
-
-.text-shadow {
-    text-shadow: 0 1px 5px rgba(0,0,0,.5)
-}
-
-.light .text-shadow {
-    text-shadow: 0 1px 5px rgba(255,255,255,1)
 }
 
 section a {
     display: inline-block;
     position: relative;
-    color: var(--accent2);
-    box-shadow: 0 0 0 0 var(--accent2);
+    color: var(--accent);
+    box-shadow: 0 0 0 0 var(--accent);
     transition: color .175s ease,background-color .15s ease,box-shadow .15s cubic-bezier(.175,.885,.32,1.275),transform .175s cubic-bezier(.175,.885,.32,1.275);
     border-radius: 0.275em;
 }
@@ -65,20 +24,20 @@ section a:after {
     height: 2px;
     border-radius: 20rem;
     opacity: .35;
-    background-color: var(--accent2);
+    background-color: var(--accent);
     position: absolute;
     bottom: 0;
     left: 0;
     transition: all .15s cubic-bezier(.175,.885,.32,1.275)
 }
 
-section a:focus:after, a:hover:after, a:visited:hover:after {
+section a:focus:after, section a:hover:after, section a:visited:hover:after {
     transform: translateY(3px) scaleX(.65);
     opacity: 1;
 }
 
 section a:focus, section a:hover, section a:visited:hover {
-    color: var(--accent2);
+    color: var(--accent);
     transform: skewX(-4deg) scaleX(.98);
 }
 

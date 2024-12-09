@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <section>
         <SectionHeader>/me</SectionHeader>
-        <h1 className="-mt-1.5 w-fit text-5xl font-bold bg-gradient-to-r from-accent to-accent2 text-transparent bg-clip-text mb-2.5">
+        <h1 className="-mt-1.5 w-fit text-5xl font-bold bg-gradient-to-r from-primary to-accent text-transparent bg-clip-text mb-2.5">
           Josep Vidal
         </h1>
         <p className="text-2xl text-black dark:text-white mb-3 container-ch">
@@ -75,7 +75,7 @@ export default function Home() {
       </section>
       <section>
         <SectionHeader>/projects</SectionHeader>
-        <p className="flex flex-wrap text-lg gap-4 text-black dark:text-white mb-3 container-ch">
+        <p className="flex flex-wrap text-lg gap-4 mb-3 container-ch">
           {projects.map(({ name, href, secret }) =>
             secret ? (
               <span

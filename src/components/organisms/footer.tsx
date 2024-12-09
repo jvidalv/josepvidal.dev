@@ -1,15 +1,29 @@
 import Link from "next/link";
 
 export const Footer = () => {
+  const links = [
+    {
+      href: "/blog",
+      name: "Blog",
+    },
+    {
+      href: "/memento-mori",
+      name: "Memento mori",
+    },
+  ];
   return (
-    <footer className="flex justify-between mt-16 bg-gray-400/10 dark:bg-black/10 rounded-xl p-4 backdrop-blur-lg font-mono">
-      <h3 className="text-neutral-400 dark:text-neutral-500">
-        ✨ jvidal.dev © {new Date().getFullYear()}
-      </h3>
-      <div className="text-neutral-600 dark:text-neutral-300">
-        <Link href="/blog" className="hover:underline">
-          Blog
-        </Link>
+    <footer className="flex justify-between mt-20 border-t-4 border-dashed pt-6 font-mono">
+      <h3>jvidal.dev ✨ {new Date().getFullYear()}</h3>
+      <div className="flex gap-6">
+        {links.map(({ href, name }) => (
+          <Link
+            key={href}
+            href={href}
+            className="relative hover:underline after:content-['/'] after:absolute after:text-gray-500 after:right-[-16px] after:top-0 last:after:content-none"
+          >
+            {name}
+          </Link>
+        ))}
       </div>
     </footer>
   );

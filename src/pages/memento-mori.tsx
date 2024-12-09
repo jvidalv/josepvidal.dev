@@ -15,7 +15,7 @@ export default function Home() {
       </Head>
       <section className="font-serif">
         <SectionHeader>/☠ memento mori </SectionHeader>
-        <h1 className="-mt-1.5 w-fit text-5xl font-bold bg-gradient-to-r from-accent to-accent2 text-transparent bg-clip-text mb-2.5">
+        <h1 className="-mt-1.5 w-fit text-5xl font-bold bg-gradient-to-r from-primary to-accent text-transparent bg-clip-text mb-2.5">
           You have to die
         </h1>
       </section>
@@ -41,7 +41,7 @@ export default function Home() {
                         "col-span-1 w-full h-1.5 border border-white dark:border-black",
                         j + x * 52 < weeks
                           ? "bg-black dark:bg-white"
-                          : "bg-gray-300 dark:bg-gray-800"
+                          : "bg-gray-300 dark:bg-gray-800",
                       )}
                     />
                   ))}
@@ -56,7 +56,7 @@ export default function Home() {
             );
           })}
         </div>
-        <cite className="block text-sm mt-4 text-neutral-500">
+        <cite className="block text-sm mt-8">
           “It is not that we have a short time to live, but that we waste a lot
           of it. Life is long enough, and a sufficiently generous amount has
           been given to us for the highest achievements if it were all well

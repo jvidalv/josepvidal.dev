@@ -65,7 +65,8 @@ export const Spotlight = () => {
       icon: <LapTimerIcon />,
     },
   ].filter(
-    ({ label }) => !filter || label.toUpperCase().includes(filter.toUpperCase())
+    ({ label }) =>
+      !filter || label.toUpperCase().includes(filter.toUpperCase()),
   );
 
   const themeOptions = [
@@ -74,7 +75,6 @@ export const Spotlight = () => {
       label: "Set theme to light",
       onClick: () => {
         setTheme("light");
-        closeModal();
       },
       hidden: !isDark,
     },
@@ -83,7 +83,6 @@ export const Spotlight = () => {
       label: "Set theme to dark",
       onClick: () => {
         setTheme("dark");
-        closeModal();
       },
       hidden: isDark,
     },
@@ -92,12 +91,12 @@ export const Spotlight = () => {
       label: "Set theme to system",
       onClick: () => {
         setTheme("system");
-        closeModal();
       },
     },
   ].filter(
     ({ hidden, label }) =>
-      !hidden && (!filter || label.toUpperCase().includes(filter.toUpperCase()))
+      !hidden &&
+      (!filter || label.toUpperCase().includes(filter.toUpperCase())),
   );
 
   return (
@@ -106,7 +105,7 @@ export const Spotlight = () => {
         <button
           onClick={openModal}
           title="cmd + k"
-          className="hover:bg-neutral-200 dark:hover:bg-neutral-700 p-2 rounded-md transition"
+          className="border-2 border-transparent hover:border-primary p-2 rounded-md transition-all"
         >
           <svg height="25" viewBox="0 0 20 20" fill="currentColor">
             <path d="M6.023 7.296v5.419H3.648C1.644 12.715 0 14.316 0 16.342 0 18.355 1.644 20 3.648 20a3.657 3.657 0 003.648-3.659v-2.375h5.397v2.376A3.657 3.657 0 0016.343 20c2.004 0 3.647-1.644 3.647-3.659 0-2.025-1.643-3.626-3.648-3.626h-2.375v-5.42h2.376c2.004 0 3.647-1.611 3.647-3.626C19.99 1.644 18.346 0 16.341 0c-2.014 0-3.648 1.644-3.648 3.67v2.364H7.296V3.669C7.296 1.644 5.663 0 3.648 0 1.644 0 0 1.644 0 3.67c0 2.014 1.644 3.626 3.648 3.626h2.375zm-2.375-1.24c-1.294 0-2.375-1.083-2.375-2.387 0-1.315 1.081-2.396 2.375-2.396 1.304 0 2.375 1.081 2.375 2.396v2.386H3.648zm12.694 0h-2.376V3.668c0-1.315 1.071-2.396 2.376-2.396 1.293 0 2.375 1.081 2.375 2.396 0 1.304-1.082 2.386-2.375 2.386zm-9.046 6.67V7.274h5.397v5.45H7.296zm-3.648 1.219h2.375v2.386a2.387 2.387 0 01-2.375 2.386 2.394 2.394 0 01-2.375-2.386 2.394 2.394 0 012.375-2.386zm12.694 0a2.394 2.394 0 012.375 2.386 2.394 2.394 0 01-2.375 2.386 2.387 2.387 0 01-2.376-2.386v-2.386h2.376z" />
@@ -130,7 +129,7 @@ export const Spotlight = () => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 bg-black bg-opacity-75" />
+            <div className="fixed inset-0 bg-black bg-opacity-60" />
           </Transition.Child>
           <div className="fixed inset-0 overflow-y-auto">
             <div className="flex sm:mt-32 justify-center p-4 text-center">
@@ -146,19 +145,19 @@ export const Spotlight = () => {
                 <Dialog.Panel
                   onClick={onClickPanel}
                   ref={ref}
-                  className="w-full sm:min-w-[600px] will-change-transform transition-all duration-100 px-4 max-w-md transform overflow-hidden rounded-2xl bg-white dark:bg-neutral-900 text-left align-middle shadow-xl"
+                  className="w-full sm:min-w-[600px] will-change-transform transition-all duration-100 px-4 max-w-md transform overflow-hidden rounded bg-white dark:bg-black dark:border dark:border-neutral-700 text-left align-middle shadow-xl"
                 >
                   <div className="flex justify-between mt-4">
                     <Dialog.Title
                       as="button"
-                      className="text-xs bg-neutral-100 dark:bg-neutral-800 text-neutral-500 dark:hover:text-white transition hover:text-black rounded px-1.5 py-1"
+                      className="text-xs bg-neutral-100 dark:bg-neutral-800 transition border border-transparent hover:border-neutral-500 rounded px-1.5 py-1"
                     >
                       Home
                     </Dialog.Title>
                     <button
                       onClick={toggleModal}
                       aria-label="Close dialog"
-                      className="font-mono text-xs text-neutral-500 hover:text-neutral-600 hover:dark:text-neutral-400"
+                      className="font-mono text-xs transition-all hover:-translate-y-0.5"
                     >
                       (esc)
                     </button>
@@ -166,18 +165,18 @@ export const Spotlight = () => {
                   <input
                     ref={inputRef}
                     type="text"
-                    className="h-16 bg-transparent w-full focus:outline-none text-xl dark:placeholder:text-neutral-600"
+                    className="h-16 bg-transparent w-full focus:outline-none text-xl placeholder:text-neutral-500"
                     placeholder="Search"
                     onChange={(e) => setFilter(e.target.value)}
                   />
-                  <div className="h-[2px] bg-gradient-to-r from-accent to-accent2 -mx-4 opacity-50" />
+                  <div className="h-2 bg-gradient-to-r from-primary to-accent -mx-4" />
                   <nav role="listbox" className="flex flex-col my-4">
                     {options.map(({ label, icon, href }) => (
                       <Link
                         key={label}
                         href={href}
                         onClick={toggleModal}
-                        className="cursor-pointer flex gap-4 transition hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded-md -mx-2 px-2 py-2 text-gray-500 hover:text-black dark:hover:text-white"
+                        className="cursor-pointer flex gap-4 transition-all hover:text-accent dark:hover:bg-neutral-800 rounded-md -mx-2 p-2"
                       >
                         <span className="flex items-center justify-center">
                           {icon}
@@ -188,14 +187,14 @@ export const Spotlight = () => {
                   </nav>
                   {!!themeOptions?.length && (
                     <ul role="listbox" className="flex flex-col my-4">
-                      <span className="block text-xs text-gray-500 mb-2">
+                      <span className="block text-xs dark:text-gray-200 text-gray-600 mb-2">
                         Theme
                       </span>
                       {themeOptions.map(({ label, icon, onClick }) => (
                         <li
                           key={label}
                           onClick={onClick}
-                          className="cursor-pointer flex gap-4 transition hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded-md -mx-2 px-2 py-2 text-gray-500 hover:text-black dark:hover:text-white"
+                          className="cursor-pointer flex gap-4 transition-all hover:text-accent dark:hover:bg-neutral-800 rounded-md -mx-2 p-2"
                         >
                           <span className="flex items-center justify-center">
                             {icon}

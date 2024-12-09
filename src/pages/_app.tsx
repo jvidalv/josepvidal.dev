@@ -23,7 +23,7 @@ const basier = localFont({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class">
-      <main className="p-8 sm:p-12 md:p-16">
+      <main className="p-6 sm:p-12 md:p-16">
         <div className={clsx(basier.className, "mx-auto md:max-w-[37.5rem]")}>
           <Header />
           <div className="min-h-screen">

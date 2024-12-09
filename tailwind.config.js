@@ -5,8 +5,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        primary: "var(--primary)",
         accent: "var(--accent)",
-        accent2: "var(--accent2)",
       },
     },
   },
