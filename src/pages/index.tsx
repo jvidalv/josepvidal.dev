@@ -14,13 +14,7 @@ export default function Home() {
           Senior UI Engineer.
         </p>
         <p className="text-neutral-600 dark:text-neutral-400 text-xl leading-7">
-          I enjoy building smooth web apps that just feel natural to use.
-        </p>
-        <br />
-        <p className="text-neutral-600 dark:text-neutral-400 text-xl">
-          Delivering the best possible user experience by placing the user at
-          the center of the design process, understanding their goals,
-          motivations, and pain points.
+          I enjoy building smooth web apps that feel natural to use.
         </p>
       </section>
       <section>
@@ -40,23 +34,25 @@ export default function Home() {
         </WithArrow>
         <br />
         <WithArrow>
-          Building the next generation platform for GraphQL edge apps on{" "}
-          <a href="https://grafbase.com" target="_blank" rel="noreferrer">
-            Grafbase
+          Growing as an engineer within the top{" "}
+          <a href="https://qonto.com/" target="_blank" rel="noreferrer">
+            european fintech unicorn 🦄
           </a>
           .
         </WithArrow>
         <br />
-        <WithArrow>
-          Bootstrapping a foodie web app on{" "}
-          <a href="https://foodieninjas.app" target="_blank" rel="noreferrer">
-            Foodieninjas 🍔
-          </a>
-          .
-        </WithArrow>
+        <WithArrow>Indie hacking 👨🏽‍💻.</WithArrow>
       </section>
       <section>
         <SectionHeader>/before</SectionHeader>
+        <WithArrow>
+          Founder engineer on a{" "}
+          <a href="https://www.grafbase.com/" target="_blank" rel="noreferrer">
+            GraphQL startup ☄️
+          </a>
+          .
+        </WithArrow>
+        <br />
         <WithArrow>
           Leading the frontend team on a brand new electronic signature app ✳️.
         </WithArrow>
@@ -92,7 +88,7 @@ export default function Home() {
               <a key={name} href={href} target="_blank" rel="noreferrer">
                 {name}
               </a>
-            )
+            ),
           )}
         </p>
       </section>
