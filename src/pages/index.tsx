@@ -34,7 +34,7 @@ export default function Home() {
         </WithArrow>
         <br />
         <WithArrow>
-          Growing as an engineer within the top{" "}
+          Growing as an engineer within a top{" "}
           <a href="https://qonto.com/" target="_blank" rel="noreferrer">
             european fintech unicorn 🦄
           </a>
