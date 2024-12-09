@@ -2,20 +2,20 @@
 
 # josepvidal.dev
 
-Hi, thanks for being curious about the code behind my personal website :)
-
 Live on https://jvidal.dev ⚡️.
 
-In order to run it locally `yarn dev` or `npm run dev`, have fun!
+## Run
+
+To run it locally `yarn & yarn dev` or `npm install & npm run dev`, have fun!
 
 ## Stack 
 
-- NextJs
-- Tailwind
-- TypeScript
+- Next.js
+- TailwindCSS
+- content-collections for Markdown.
 
 ## Todo
-- [ ] Blog
+- [X] Blog
 - [ ] Books
 - [ ] Used Tools
 - [ ] Paintings
@@ -23,6 +23,5 @@ In order to run it locally `yarn dev` or `npm run dev`, have fun!
 
 ## Older sites
 
-Inside `/old` you can check my older sites.
+Inside `/old` I store my older websites.
 
-- [2021-2023](https://2021.jvidal.dev/)
