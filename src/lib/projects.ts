@@ -1,24 +1,24 @@
 const projects = [
   {
+    name: "Expofast",
+    href: "https://expofa.st",
+  },
+  {
+    name: "100cims",
+    href: "https://100cims.app",
+  },
+  {
     name: "Astrale",
-    href: "https://play.google.com/store/apps/details?id=josep.astrale&hl=en&gl=US",
+    href: "https://github.com/jvidalv/astrale",
   },
   {
-    name: "Festes de Poble",
-    href: "https://play.google.com/store/apps/details?id=josep.festespoble&gl=US",
+    name: "Vital",
+    href: "https://github.com/jvidalv/vital",
   },
   {
-    name: "Adolfo Constructors",
-    href: "https://play.google.com/store/apps/details?id=adolfoconstructors2.app&gl=US&pli=1",
-  },
-  {
-    name: "",
-    href: "",
-    secret: true,
-  },
-  {
-    name: "Foodieninjas",
-    href: "https://foodieninjas.app",
+    name: "Nextal",
+    href: "https://github.com/jvidalv/nextal",
   },
 ];
+
 export default projects;
