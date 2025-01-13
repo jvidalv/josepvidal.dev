@@ -8,6 +8,10 @@ const projects = [
     href: "https://100cims.app",
   },
   {
+    name: "mv-ignited",
+    href: "https://chromewebstore.google.com/detail/mv-ignited/eajomfdkpghamhpfkoemijokpomnohef?authuser=0&hl=es",
+  },
+  {
     name: "Astrale",
     href: "https://github.com/jvidalv/astrale",
   },
