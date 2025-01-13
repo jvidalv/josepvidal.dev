@@ -6,14 +6,11 @@ export const Header = () => {
   return (
     <>
       <Head>
-        <title>Josep Vidal</title>
-        <meta
-          name="description"
-          content="Senior Frontend Engineer focused on UX/UI."
-        />
+        <title>Josep Vidal — UX engineer</title>
+        <meta name="description" content="UX engineer with a product mindset" />
         <meta
           name="og:description"
-          content="Senior Frontend Engineer focused on UX/UI."
+          content="UX engineer with a product mindset"
         />
         <meta property="og:image" content="https://jvidal.dev/og.png" />
         <meta name="author" content="@josepvidalvidal" />

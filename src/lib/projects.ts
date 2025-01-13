@@ -1,8 +1,8 @@
 const projects = [
-  {
-    name: "Expofast",
-    href: "https://expofa.st",
-  },
+  // {
+  //   name: "Expofast",
+  //   href: "https://expofa.st",
+  // },
   {
     name: "100cims",
     href: "https://100cims.app",

@@ -11,8 +11,9 @@ export const Footer = () => {
       name: "Memento mori",
     },
   ];
+
   return (
-    <footer className="flex flex-col gap-4 sm:flex-row justify-between mt-20 border-t-4 border-dashed pt-6 font-mono">
+    <footer className="flex flex-col gap-4 sm:flex-row justify-between mt-12 border-dashed font-mono">
       <h3>jvidal.dev ✨ {new Date().getFullYear()}</h3>
       <div className="flex gap-6">
         {links.map(({ href, name }) => (

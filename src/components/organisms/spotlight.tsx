@@ -145,7 +145,7 @@ export const Spotlight = () => {
                 <Dialog.Panel
                   onClick={onClickPanel}
                   ref={ref}
-                  className="w-full sm:min-w-[600px] will-change-transform transition-all duration-100 px-4 max-w-md transform overflow-hidden rounded bg-white dark:bg-black dark:border dark:border-neutral-700 text-left align-middle shadow-xl"
+                  className="w-full sm:min-w-[600px] will-change-transform transition-all duration-100 px-4 max-w-md transform overflow-hidden rounded-xl bg-white dark:bg-black dark:border dark:border-neutral-700 text-left align-middle shadow-xl"
                 >
                   <div className="flex justify-between mt-4">
                     <Dialog.Title

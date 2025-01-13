@@ -11,10 +11,10 @@ export default function Home() {
           Josep Vidal
         </h1>
         <p className="text-2xl text-black dark:text-white mb-3 container-ch">
-          Senior UI Engineer.
+          UX Engineer
         </p>
         <p className="text-neutral-600 dark:text-neutral-400 text-xl leading-7">
-          I enjoy building smooth web apps that feel natural to use.
+          I build smooth apps that feel natural to use.
         </p>
       </section>
       <section>
@@ -29,9 +29,7 @@ export default function Home() {
       </section>
       <section>
         <SectionHeader>/now</SectionHeader>
-        <WithArrow>
-          Learning new things & working on small side projects.
-        </WithArrow>
+        <WithArrow>Learning while working on small side projects.</WithArrow>
         <br />
         <WithArrow>
           Growing as an engineer within a top{" "}
@@ -40,8 +38,6 @@ export default function Home() {
           </a>
           .
         </WithArrow>
-        <br />
-        <WithArrow>Indie hacking 👨🏽‍💻.</WithArrow>
       </section>
       <section>
         <SectionHeader>/before</SectionHeader>
@@ -58,15 +54,7 @@ export default function Home() {
         </WithArrow>
         <br />
         <WithArrow>
-          Helping the biggest{" "}
-          <a href="https://www.artbasel.com/" target="_blank" rel="noreferrer">
-            art merchant 🖼️
-          </a>{" "}
-          in the world on transitioning from offline to fully online expos.
-        </WithArrow>
-        <br />
-        <WithArrow>
-          Automating and reshaping processes as a full-stack dev on an{" "}
+          Automating processes as a full-stack dev on an{" "}
           <a href="https://factorenergia.com" target="_blank" rel="noreferrer">
             energy company ⚡️
           </a>
@@ -76,20 +64,11 @@ export default function Home() {
       <section>
         <SectionHeader>/projects</SectionHeader>
         <p className="flex flex-wrap text-lg gap-4 mb-3 container-ch">
-          {projects.map(({ name, href, secret }) =>
-            secret ? (
-              <span
-                key={name}
-                className="text-neutral-300 line-through	dark:text-neutral-600 font-bold"
-              >
-                Secret
-              </span>
-            ) : (
-              <a key={name} href={href} target="_blank" rel="noreferrer">
-                {name}
-              </a>
-            ),
-          )}
+          {projects.map(({ name, href }) => (
+            <a key={name} href={href} target="_blank" rel="noreferrer">
+              {name}
+            </a>
+          ))}
         </p>
       </section>
     </>
