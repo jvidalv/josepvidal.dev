@@ -11,18 +11,18 @@ Today is the day I start blogging and journaling.
 
 ### Why?
 
-These lasts years I tried very hard to journal, manually, with paper and pencil, and as expected I have failed spectacularly,
-so, if something is not working, try a different approach, and this is what I plan to do with this blog/journal.
+These last years I tried very hard to a journal, manually, with paper and pencil, and as expected I have failed spectacularly,
+so if something is not working, try a different approach, and this is what I plan to do with this blog/journal.
 
 ### Objectives
 
 Ordered by how important are to me (DESC):
 
 - Have fun.
-- Save my brain state for any given day. As some sort of save file.
+- Save my brain state for any given day. As some kind of save file.
 - Share and receive knowledge.
 - Improve my writing skills in english.
 
 ### Fin
 
-Really, this is all, I don't want to procrastinate trying to be smart on my first ever post. So I will keep it simple for now.
+Really, this is all; I don't want to procrastinate trying to be smart on my first ever post. So I will keep it simple for now.
