@@ -2,7 +2,7 @@
 
 # josepvidal.dev
 
-Live on https://jvidal.dev ⚡️.
+Live on https://josepvidal.dev ⚡️.
 
 ## Run
 
