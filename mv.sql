@@ -746,3 +746,75 @@ WHERE slug IN (
                'aiguille-du-dru',
                'aiguille-de-bionnassay'
     );
+
+
+
+-- Aporte de Cristian Morano desde aquí
+
+-- Montes gallegos
+-- Insert challenge
+INSERT INTO challenge (id, name, slug, country)
+VALUES ('01961783-e221-7dbb-8c14-99a4377d3c9e', 'O desafío da Terra Chá', 'Montes-gallegos', 'ESP');
+
+-- Insert mountains
+INSERT INTO mountain (slug, name, location, height, latitude, longitude, essential, image_url)
+VALUES
+    ('pena-trevinca', 'Peña Trevinca', 'Valdeorras - Sierra del Eje', 2127, 42.2424, -6.7960, TRUE, 'https://imgur.com/Sjifivk')
+    ('pena-negra', 'Peña Negra', 'Valdeorras - Sierra del Eje', 2121, 42.2495, -6.7942, TRUE, 'https://imgur.com/tEFWLqC')
+    ('pena-surbia', 'Peña Surbia', 'Valdeorras - Sierra del Eje', 2116, 42.2556, -6.7758, TRUE, 'https://imgur.com/RP7GZoC')
+    ('alto-ladeira-de-la-medias', 'Alto Ladeira de la Medias', 'Valdeorras - Sierra del Eje', 2066, 42.2536, -6.7892, FALSE, 'https://imgur.com/izo0t1P')
+    ('cuina', 'Pico Cuíña', 'Sierra de Ancares', 1987, 42.8438, -6.8323, TRUE, 'https://imgur.com/Dmab8s7')
+    ('mustallar', 'Mustallar', 'Los Ancares - Sierra de Ancares', 1935, 42.8227, -6.8419, TRUE, 'https://imgur.com/StkyASg')
+    ('tres-bispos', 'Pico Tres Bispos', 'Los Ancares - Sierra de Ancares', 1795, 42.8013, -6.8690, TRUE, 'https://imgur.com/O6C0L2x')
+    ('cabeza-de-manzaneda', 'Cabeza de Manzaneda', 'Tierra de Trives - Sierra de Queija', 1781, 42.2592, -7.2983, TRUE, 'https://imgur.com/Db3cKYL')
+    ('seixo', 'Monte Seixo', 'Tierra de Trives - Sierra del Fial de las Corzas', 1705, 42.1943, -7.3577, FALSE, 'https://imgur.com/sRLN36r')
+    ('formigueiros', 'Pico Formigueiros', 'Sierra del Caurel', 1639, 42.6056, -7.1000, TRUE, 'https://imgur.com/5ZzWYZk')
+    ('piapaxaro', 'Pia Paxaro', 'Sierra del Caurel', 1619, 42.5792, -7.1473, TRUE, 'https://imgur.com/OtkgSmE')
+    ('faro', 'Faro', 'Sierra del Caurel', 1615, 42.6312, -7.0469, FALSE, 'https://imgur.com/yuzgSF5')
+    ('el-turrieiro', 'El Turrieiro', 'Valdeorras - Sierra de la Enciña de la Lastra', 1612, 42.5054, -7.0009, FALSE, 'https://imgur.com/qRUsKvv')
+    ('a-nevosa', 'Pico Nevosa', 'La Baja Limia - Sierra de Gerez', 1539, 41.8275, -8.0409, FALSE, 'https://imgur.com/LilqQKV')
+    ('alto-do-couto', 'Alto do Couto', 'Sierra del Caurel', 1308, 42.6143, -7.0967, TRUE, 'https://imgur.com/EgW6yhY')
+    ('penagache', 'Alto do Penagache', 'Tierra de Celanova - Sierra de Laboreiro', 1225, 42.0904, -8.0945, TRUE, 'https://imgur.com/Y8o7D3j')
+    ('monte-faro', 'Monte Faro', 'Chantada / El Deza - Sierra del Faro', 1187, 42.6214, -7.8976, TRUE, 'https://imgur.com/iGssNUc')
+    ('pico-de-los-cuatro-caballeros', 'Pico de los Cuatro Caballeros', 'Sierra del Caurel', 1131, 42.6058, -7.2803, FALSE, 'https://imgur.com/Nwz3UDJ')
+    ('monte-coco', 'Alto do Coco', 'El Deza / Tabeirós - Tierra de Montes - Sierra del Candán', 969, 42.5629, -8.2499, FALSE, 'https://imgur.com/TFBZWJW')
+    ('monte-farelo', 'Monte Farelo', 'El Deza / Ulloa - Sierra del Farelo', 951, 42.7538, -7.9513, TRUE, 'https://imgur.com/WHAJPL1')
+    ('pena-grande', 'Monte Peña Grande', 'Meira', 935, 43.2217, -7.2506, FALSE, 'https://imgur.com/NI8Md8W')
+    ('monseivane', 'Monte Monseivane', 'Tierra Llana - Sierra de la Carba', 929, 43.3893, -7.5736, FALSE, 'https://imgur.com/kksafKn')
+    ('el-candan', 'El Candán', 'Sierra del Candán', 845, 42.5962, -8.2642, FALSE, 'https://imgur.com/nKhY6ws')
+    ('monte-de-la-cova-de-la-serpe', 'Monte da Cova da Serpe', 'Friol - Serra Cova da Serpe', 836, 43.0878, -7.9120, FALSE, 'https://imgur.com/pJm46nL')
+
+
+
+-- Associate mountains with the challenge
+INSERT INTO challenge_has_mountain (challenge_id, mountain_id)
+SELECT
+    (SELECT id FROM challenge WHERE slug = 'Montes-gallegos') AS challenge_id,
+    id AS mountain_id
+FROM mountain
+WHERE slug IN (
+               'pena-trevinca',
+               'pena-negra',
+               'pena-surbia',
+               'alto-ladeira-de-la-medias',
+               'cuina',
+               'mustallar',
+               'tres-bispos',
+               'cabeza-de-manzaneda',
+               'seixo',
+               'formigueiros',
+               'piapaxaro',
+               'faro',
+               'el-turrieiro',
+               'a-nevosa',
+               'alto-do-couto',
+               'penagache',
+               'monte-faro',
+               'pico-de-los-cuatro-caballeros',
+               'monte-coco',
+               'monte-farelo',
+               'pena-grande',
+               'monseivane',
+               'el-candan',
+               'monte-de-la-cova-de-la-serpe'
+);
