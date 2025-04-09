@@ -754,7 +754,7 @@ WHERE slug IN (
 -- Montes gallegos
 -- Insert challenge
 INSERT INTO challenge (id, name, slug, country)
-VALUES ('01961783-e221-7dbb-8c14-99a4377d3c9e', 'O desafío da Terra Chá', 'Montes-gallegos', 'ESP');
+VALUES ('01961783-e221-7dbb-8c14-99a4377d3c9e', 'O desafío da Terra Chá', 'montes-gallegos', 'ESP');
 
 -- Insert mountains
 INSERT INTO mountain (slug, name, location, height, latitude, longitude, essential, image_url)
@@ -789,7 +789,7 @@ VALUES
 -- Associate mountains with the challenge
 INSERT INTO challenge_has_mountain (challenge_id, mountain_id)
 SELECT
-    (SELECT id FROM challenge WHERE slug = 'Montes-gallegos') AS challenge_id,
+    (SELECT id FROM challenge WHERE slug = 'montes-gallegos') AS challenge_id,
     id AS mountain_id
 FROM mountain
 WHERE slug IN (
