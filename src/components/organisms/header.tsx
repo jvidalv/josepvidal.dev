@@ -25,7 +25,7 @@ export const Header = () => {
         <nav className="flex items-center justify-between">
           <Link
             href="/"
-            className="block bg-gradient-to-r from-primary to-accent w-8 h-8 transition border border-transparent hover:scale-105"
+            className="block bg-linear-to-r from-primary to-accent w-8 h-8 transition border border-transparent hover:scale-105"
           >
             <span className="sr-only">josepvidal.dev</span>
           </Link>

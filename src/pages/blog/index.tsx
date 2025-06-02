@@ -26,7 +26,7 @@ export default function Blog({ posts }: Props) {
         />
       </Head>
       <SectionHeader>/blog</SectionHeader>
-      <h1 className="-mt-1.5 w-fit text-5xl font-bold bg-gradient-to-r from-primary to-accent text-transparent bg-clip-text mb-2.5">
+      <h1 className="-mt-1.5 w-fit text-5xl font-bold bg-linear-to-r from-primary to-accent text-transparent bg-clip-text mb-2.5">
         Posts
       </h1>
       <div className="mt-6 space-y-2">

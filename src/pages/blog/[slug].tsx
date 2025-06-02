@@ -33,7 +33,7 @@ export default function BlogSlug({ post }: Props) {
         />
       </Head>
       <SectionHeader>{format(parseISO(date), "LLLL d, yyyy")}</SectionHeader>
-      <h1 className="-mt-1.5 w-fit text-5xl font-bold bg-gradient-to-r from-primary to-accent text-transparent bg-clip-text mb-8 leading-[1.1]">
+      <h1 className="-mt-1.5 w-fit text-5xl font-bold bg-linear-to-r from-primary to-accent text-transparent bg-clip-text mb-8 leading-[1.1]">
         {title}
       </h1>
       <article
