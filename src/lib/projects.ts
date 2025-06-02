@@ -5,7 +5,7 @@ const projects = [
   },
   {
     name: "100cims",
-    href: "https://100cims.app",
+    href: "https://github.com/expofast/100cims",
   },
   {
     name: "mv-ignited",

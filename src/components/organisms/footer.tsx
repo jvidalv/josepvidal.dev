@@ -14,7 +14,7 @@ export const Footer = () => {
 
   return (
     <footer className="flex flex-col gap-4 sm:flex-row justify-between mt-12 border-dashed font-mono">
-      <h3>jvidal.dev ✨ {new Date().getFullYear()}</h3>
+      <Link href="/">jvidal.dev ✨ {new Date().getFullYear()}</Link>
       <div className="flex gap-6">
         {links.map(({ href, name }) => (
           <Link

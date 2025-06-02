@@ -6,12 +6,9 @@ export const Header = () => {
   return (
     <>
       <Head>
-        <title>Josep Vidal — UX engineer</title>
-        <meta name="description" content="UX engineer with a product mindset" />
-        <meta
-          name="og:description"
-          content="UX engineer with a product mindset"
-        />
+        <title>Josep Vidal — Product Engineer</title>
+        <meta name="description" content="Product engineer" />
+        <meta name="og:description" content="Product engineer" />
         <meta property="og:image" content="https://jvidal.dev/og.png" />
         <meta name="author" content="@josepvidalvidal" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -25,7 +22,7 @@ export const Header = () => {
         <nav className="flex items-center justify-between">
           <Link
             href="/"
-            className="block bg-linear-to-r from-primary to-accent w-8 h-8 transition border border-transparent hover:scale-105"
+            className="block bg-linear-to-r from-primary to-accent w-8 h-8 transition-all will-change-auto border border-transparent hover:w-16"
           >
             <span className="sr-only">josepvidal.dev</span>
           </Link>
