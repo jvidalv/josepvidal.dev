@@ -1,6 +1,6 @@
 import { SectionHeader, WithArrow } from "@/components/atoms";
 import { socials } from "@/lib/socials";
-import projects from "@/lib/projects";
+import projectCategories from "@/lib/projects";
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
         <h1 className="text-3xl font-bold text-accent">Josep Vidal</h1>
         <WithArrow className="text-gray-500 dark:text-gray-400 mb-4">
           <span className="text-black dark:text-white">Product Engineer</span>,
-          producing apps that feel natural to use.
+          making apps that feel natural to use.
         </WithArrow>
         <ul className="flex flex-wrap gap-2 text-black dark:text-white">
           {socials.map(({ name, href, Icon }) => (
@@ -85,13 +85,38 @@ export default function Home() {
       </section>
       <section>
         <SectionHeader>/projects</SectionHeader>
-        <p className="flex flex-wrap text-lg gap-4 mb-3 container-ch">
-          {projects.map(({ name, href }) => (
-            <a key={name} href={href} target="_blank" rel="noreferrer">
-              {name}
-            </a>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {projectCategories.map(({ category, emoji, projects }) => (
+            <div
+              key={category}
+              className="border-2 border-dashed border-border/80 p-4"
+            >
+              <h3 className="text-base font-semibold mb-3 text-neutral-600 dark:text-neutral-400">
+                <span className="mr-2">{emoji}</span>
+                {category}
+              </h3>
+              <ul className="space-y-2">
+                {projects.map(({ name, href, description }) => (
+                  <li key={name}>
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-base"
+                    >
+                      {name}
+                    </a>
+                    {description && (
+                      <span className="text-sm text-neutral-500 dark:text-neutral-400 ml-2">
+                        · {description}
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
-        </p>
+        </div>
       </section>
     </>
   );

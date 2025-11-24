@@ -1,28 +1,88 @@
-const projects = [
+type Project = {
+  name: string;
+  href: string;
+  description?: string;
+};
+
+type ProjectCategory = {
+  category: string;
+  emoji: string;
+  projects: Project[];
+};
+
+const projectCategories: ProjectCategory[] = [
   {
-    name: "Expofast",
-    href: "https://expofast.app",
+    category: "Games",
+    emoji: "🎮",
+    projects: [
+      {
+        name: "Berrüs",
+        href: "https://berrus.app",
+      },
+    ],
   },
   {
-    name: "100cims",
-    href: "https://github.com/expofast/100cims",
+    category: "Web Apps & Analytics",
+    emoji: "📊",
+    projects: [
+      {
+        name: "React Analytics",
+        href: "https://github.com/jvidalv/react-analytics",
+      },
+    ],
   },
   {
-    name: "mv-ignited",
-    href: "https://chromewebstore.google.com/detail/mv-ignited/eajomfdkpghamhpfkoemijokpomnohef?authuser=0&hl=es",
+    category: "Templates",
+    emoji: "📐",
+    projects: [
+      {
+        name: "Vital",
+        href: "https://github.com/jvidalv/vital",
+      },
+      {
+        name: "Nextal",
+        href: "https://github.com/jvidalv/nextal",
+      },
+    ],
   },
   {
-    name: "Astrale",
-    href: "https://github.com/jvidalv/astrale",
+    category: "Browser Extensions",
+    emoji: "🧩",
+    projects: [
+      {
+        name: "mv-ignited",
+        href: "https://github.com/jvidalv/mv-ignited",
+      },
+    ],
   },
   {
-    name: "Vital",
-    href: "https://github.com/jvidalv/vital",
+    category: "Mobile Apps",
+    emoji: "📱",
+    projects: [
+      {
+        name: "Cims",
+        href: "https://github.com/expofast/100cims",
+      },
+      {
+        name: "Astrale",
+        href: "https://github.com/jvidalv/astrale",
+      },
+    ],
   },
   {
-    name: "Nextal",
-    href: "https://github.com/jvidalv/nextal",
+    category: "Tools",
+    emoji: "🛠️",
+    projects: [
+      {
+        name: "Sitemap generator",
+        href: "https://github.com/jvidalv/super-simple-sitemap-generator",
+      },
+      {
+        name: "Parcel File Copier",
+        href: "https://github.com/jvidalv/parcel-reporter-multiple-static-file-copier",
+      },
+    ],
   },
 ];
 
-export default projects;
+export default projectCategories;
