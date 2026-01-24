@@ -20,7 +20,7 @@ export default function Home() {
                 href={href}
                 target="_blank"
                 rel="noreferrer"
-                aria-description={name}
+                aria-label={name}
               >
                 <Icon className="size-4" />
               </a>
