@@ -5,6 +5,7 @@ export const config = {
   api: {
     bodyParser: {
       sizeLimit: "5mb",
+      bodyParser: false,
     },
   },
 };
@@ -22,13 +23,7 @@ const ALLOWED_MIME_TYPES = [
   "image/heif",
 ];
 
-const MAX_FILE_SIZE_KB = 5 * 1024; // 5MB in KB
-
-type UploadRequest = {
-  file: string; // base64 encoded file
-  filename: string;
-  mimeType: string;
-};
+const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
 
 type SuccessResponse = {
   success: true;
@@ -52,13 +47,23 @@ function validateAdminToken(req: NextApiRequest): boolean {
 }
 
 function validateMimeType(mimeType: string): boolean {
-  return ALLOWED_MIME_TYPES.includes(mimeType);
+  return ALLOWED_MIME_TYPES.some((allowed) => mimeType.startsWith(allowed));
 }
 
-function isBase64SizeValid(base64Data: string, maxSizeInKB: number): boolean {
-  const sizeInBytes = Buffer.byteLength(base64Data, "base64");
-  const sizeInKB = sizeInBytes / 1024;
-  return sizeInKB <= maxSizeInKB;
+function getExtensionFromMimeType(mimeType: string): string {
+  const map: Record<string, string> = {
+    "image/jpeg": "jpg",
+    "image/png": "png",
+    "image/gif": "gif",
+    "image/webp": "webp",
+    "image/svg+xml": "svg",
+    "image/bmp": "bmp",
+    "image/tiff": "tiff",
+    "image/avif": "avif",
+    "image/heic": "heic",
+    "image/heif": "heif",
+  };
+  return map[mimeType] || "jpg";
 }
 
 function getS3Client() {
@@ -95,52 +100,56 @@ async function uploadToS3(
   return getPublicUrl(key);
 }
 
+async function getRawBody(req: NextApiRequest): Promise<Buffer> {
+  const chunks: Buffer[] = [];
+  for await (const chunk of req) {
+    chunks.push(typeof chunk === "string" ? Buffer.from(chunk) : chunk);
+  }
+  return Buffer.concat(chunks);
+}
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<SuccessResponse | ErrorResponse>
 ) {
-  // Only allow POST requests
   if (req.method !== "POST") {
     return res.status(405).json({ success: false, error: "Method not allowed" });
   }
 
-  // Validate admin token
   if (!validateAdminToken(req)) {
     return res.status(401).json({ success: false, error: "Unauthorized" });
   }
 
   try {
-    const body = req.body as UploadRequest;
+    const contentType = req.headers["content-type"] || "";
 
-    // Validate required fields
-    if (!body.file || !body.filename || !body.mimeType) {
-      return res.status(400).json({
-        success: false,
-        error: "Missing required fields: file, filename, mimeType",
-      });
-    }
-
-    // Validate MIME type
-    if (!validateMimeType(body.mimeType)) {
+    if (!validateMimeType(contentType)) {
       return res.status(400).json({
         success: false,
         error: `Invalid file type. Allowed types: ${ALLOWED_MIME_TYPES.join(", ")}`,
       });
     }
 
-    // Validate file size
-    if (!isBase64SizeValid(body.file, MAX_FILE_SIZE_KB)) {
+    const content = await getRawBody(req);
+
+    if (content.length === 0) {
       return res.status(400).json({
         success: false,
-        error: `File too large. Maximum size is ${MAX_FILE_SIZE_KB / 1024}MB`,
+        error: "No file content received",
       });
     }
 
-    // Decode base64 file
-    const content = Buffer.from(body.file, "base64");
+    if (content.length > MAX_FILE_SIZE) {
+      return res.status(400).json({
+        success: false,
+        error: `File too large. Maximum size is ${MAX_FILE_SIZE / 1024 / 1024}MB`,
+      });
+    }
 
-    // Upload to S3
-    const url = await uploadToS3(content, body.filename, body.mimeType);
+    const ext = getExtensionFromMimeType(contentType);
+    const filename = `image.${ext}`;
+
+    const url = await uploadToS3(content, filename, contentType);
 
     return res.status(200).json({
       success: true,
@@ -148,13 +157,6 @@ export default async function handler(
     });
   } catch (error) {
     console.error("Upload error:", error);
-
-    if (error instanceof SyntaxError) {
-      return res.status(400).json({
-        success: false,
-        error: "Invalid JSON in request body",
-      });
-    }
 
     if (error instanceof Error) {
       const message =
