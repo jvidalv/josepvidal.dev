@@ -83,7 +83,7 @@ async function uploadToS3(
   mimeType: string
 ): Promise<string> {
   const client = getS3Client();
-  const key = `uploads/${Date.now()}-${filename}`;
+  const key = `recipes/${Date.now()}-${filename}`;
 
   await client.send(
     new PutObjectCommand({
