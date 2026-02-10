@@ -4,7 +4,7 @@ import { useTheme } from "next-themes";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { Computer, Moon, Pencil, Skull, Sun } from "lucide-react";
+import { Computer, Moon, Pencil, Skull, Sun, Blocks } from "lucide-react";
 
 export const Spotlight = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -58,6 +58,11 @@ export const Spotlight = () => {
       href: "/memento-mori",
       label: "Memento Mori",
       Icon: Skull,
+    },
+    {
+      href: "/lo-claude",
+      label: "Lo-Claude",
+      Icon: Blocks,
     },
   ];
 

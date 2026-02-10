@@ -10,6 +10,10 @@ export const Footer = () => {
       href: "/memento-mori",
       name: "Memento mori",
     },
+    {
+      href: "/lo-claude",
+      name: "Lo-Claude",
+    },
   ];
 
   return (
