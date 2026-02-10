@@ -12,7 +12,7 @@ export const Footer = () => {
     },
     {
       href: "/lo-claude",
-      name: "Lo-Claude",
+      name: "lo-claude",
     },
   ];
 

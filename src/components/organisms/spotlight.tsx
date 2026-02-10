@@ -61,7 +61,7 @@ export const Spotlight = () => {
     },
     {
       href: "/lo-claude",
-      label: "Lo-Claude",
+      label: "lo-claude",
       Icon: Blocks,
     },
   ];
