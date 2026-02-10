@@ -28,7 +28,7 @@ Beyond the practical modules, lo-claude ships with a setup wizard that lets you 
 
 **OSRS sound effects** — 41 Old School RuneScape sounds mapped to Claude Code events. Task completes? Level up sound. Error? The "wrong" buzzer from the game. Subagent finishes? Teleport sound. It's absurd and I love it.
 
-**Custom spinner verbs** — Instead of the default "Thinking..." you get things like _"Harvesting Garnatxa grapes"_, _"Chasing a Goblin Pringao"_, or _"Haggling at the Konomat"_. These are themed around my hometown in Terra Alta and a tabletop RPG I'm building called [Berrüs](https://berrus.app). There's also a developer humor pack if Catalan fantasy isn't your thing.
+**Custom spinner verbs** — Instead of the default "Thinking..." you get things like _"Harvesting Garnatxa grapes"_, _"Chasing a Goblin Pringao"_, or _"Haggling at the Konomat"_. These are themed around my hometown in Terra Alta and a tabletop RPG I'm building called [Berrus](https://berrus.app). There's also a developer humor pack if Catalan fantasy isn't your thing.
 
 **Permission presets** — Pre-approve common CLI commands so Claude doesn't ask you every single time if it can run `git status`. Small thing, big quality of life improvement.
 

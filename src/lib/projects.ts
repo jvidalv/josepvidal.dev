@@ -16,7 +16,7 @@ const projectCategories: ProjectCategory[] = [
     emoji: "🎮",
     projects: [
       {
-        name: "Berrüs",
+        name: "Berrus",
         href: "https://berrus.app",
       },
     ],
