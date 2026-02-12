@@ -34,6 +34,7 @@ const soundPacks = [
   "Portal 2",
   "Team Fortress 2",
   "Left 4 Dead 2",
+  "Stardew Valley",
 ];
 
 const verbs = [
@@ -81,7 +82,7 @@ export default function LoClaude() {
       <section>
         <SectionHeader>/sounds</SectionHeader>
         <p className="text-neutral-600 dark:text-neutral-400 text-xl leading-7 mb-6">
-          8 curated game sound packs for Claude Code hooks. Each pack maps 8
+          9 curated game sound packs for Claude Code hooks. Each pack maps 8
           sounds to lifecycle events like task completion, errors, and
           notifications.
         </p>
