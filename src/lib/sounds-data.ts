@@ -10,6 +10,7 @@ export type SoundPack = {
   game: string;
   logo: string;
   sounds: SoundEntry[];
+  verbs: string[];
 };
 
 export const soundPacks: SoundPack[] = [
@@ -17,6 +18,16 @@ export const soundPacks: SoundPack[] = [
     id: "cstrike",
     game: "Counter-Strike 1.6",
     logo: "/sounds/cstrike/logo.png",
+    verbs: [
+      "Rushing B",
+      "Planting the bomb",
+      "Buying an AWP",
+      "Flashing mid",
+      "Defusing the bomb",
+      "Camping in tunnels",
+      "Saving for next round",
+      "Checking corners",
+    ],
     sounds: [
       {
         hook: "SessionStart",
@@ -72,6 +83,16 @@ export const soundPacks: SoundPack[] = [
     id: "osrs",
     game: "Old School RuneScape",
     logo: "/sounds/osrs/logo.png",
+    verbs: [
+      "Mining runite ore",
+      "Chopping magic trees",
+      "Fishing dark crabs",
+      "Alching for profit",
+      "Running to the bank",
+      "Grinding slayer tasks",
+      "Brewing potions",
+      "Telegrabbing wines",
+    ],
     sounds: [
       {
         hook: "SessionStart",
@@ -127,6 +148,16 @@ export const soundPacks: SoundPack[] = [
     id: "csgo",
     game: "Counter-Strike: GO",
     logo: "/sounds/csgo/logo.png",
+    verbs: [
+      "Queuing for competitive",
+      "Warming up in deathmatch",
+      "Trading up skins",
+      "Watching the demo",
+      "Holding the angle",
+      "Rotating to B site",
+      "Dropping the AWP",
+      "Opening a case",
+    ],
     sounds: [
       {
         hook: "SessionStart",
@@ -182,6 +213,16 @@ export const soundPacks: SoundPack[] = [
     id: "hl2",
     game: "Half-Life 2",
     logo: "/sounds/hl2/logo.png",
+    verbs: [
+      "Charging the gravity gun",
+      "Navigating Ravenholm",
+      "Driving the airboat",
+      "Stacking crates",
+      "Outrunning a strider",
+      "Loading the HEV suit",
+      "Solving the physics puzzle",
+      "Listening to Dr. Kleiner",
+    ],
     sounds: [
       {
         hook: "SessionStart",
@@ -237,6 +278,16 @@ export const soundPacks: SoundPack[] = [
     id: "hl1",
     game: "Half-Life",
     logo: "/sounds/hl1/logo.png",
+    verbs: [
+      "Crowbarring a crate",
+      "Riding the tram",
+      "Avoiding headcrabs",
+      "Activating the HEV suit",
+      "Calling the elevator",
+      "Traversing Xen",
+      "Dodging a turret",
+      "Pressing the button",
+    ],
     sounds: [
       {
         hook: "SessionStart",
@@ -292,6 +343,16 @@ export const soundPacks: SoundPack[] = [
     id: "portal2",
     game: "Portal 2",
     logo: "/sounds/portal2/logo.png",
+    verbs: [
+      "Thinking with portals",
+      "Testing for science",
+      "Dodging turret fire",
+      "Riding the excursion funnel",
+      "Applying repulsion gel",
+      "Listening to GLaDOS",
+      "Escaping the facility",
+      "Launching through the portal",
+    ],
     sounds: [
       {
         hook: "SessionStart",

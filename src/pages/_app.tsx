@@ -1,9 +1,10 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import localFont from "next/font/local";
-import { ThemeProvider } from "next-themes";
+import { ThemeProvider, useTheme } from "next-themes";
 import clsx from "clsx";
 import { Header, Footer } from "@/components/organisms";
+import { Toaster } from "sonner";
 
 const basier = localFont({
   src: [
@@ -20,6 +21,13 @@ const basier = localFont({
   ],
 });
 
+function ThemedToaster() {
+  const { resolvedTheme } = useTheme();
+  return (
+    <Toaster richColors theme={resolvedTheme === "dark" ? "dark" : "light"} />
+  );
+}
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class">
@@ -32,6 +40,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <Footer />
         </div>
       </main>
+      <ThemedToaster />
     </ThemeProvider>
   );
 }

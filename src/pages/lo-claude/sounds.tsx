@@ -1,4 +1,4 @@
-import { SectionHeader, SoundRow } from "@/components/atoms";
+import { CopyInstallButton, SectionHeader, SoundRow } from "@/components/atoms";
 import { soundPacks } from "@/lib/sounds-data";
 import { cn } from "@/lib/utils";
 import Head from "next/head";
@@ -47,16 +47,16 @@ export default function Sounds() {
                 <Image
                   src={pack.logo}
                   alt={pack.game}
-                  width={40}
-                  height={40}
+                  width={28}
+                  height={28}
                   className="rounded"
                 />
                 <h3 className="text-base font-semibold text-neutral-600 dark:text-neutral-400">
                   {pack.game}
                 </h3>
-                <span className="ml-auto text-xs text-neutral-400 dark:text-neutral-500 font-mono">
-                  {pack.sounds.length} hooks
-                </span>
+                <div className="ml-auto">
+                  <CopyInstallButton pack={pack} />
+                </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2">

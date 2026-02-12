@@ -25,13 +25,13 @@ const modules = [
   },
 ];
 
-const soundEvents = [
-  { event: "Task complete", sounds: "Level up, coins, unique drop, mining" },
-  { event: "Error", sounds: "Wrong, spell failure, locked" },
-  { event: "Notification", sounds: "Protect melee, piety, smite" },
-  { event: "Subagent done", sounds: "Teleport, fairy rings, ice barrage" },
-  { event: "Session start", sounds: "Level up, teleport, iron door" },
-  { event: "Session end", sounds: "Ghost death, vengeance, dragonfire" },
+const soundPacks = [
+  "Counter-Strike 1.6",
+  "Old School RuneScape",
+  "Counter-Strike: GO",
+  "Half-Life 2",
+  "Half-Life",
+  "Portal 2",
 ];
 
 const verbs = [
@@ -52,7 +52,7 @@ export default function LoClaude() {
         <title>Lo-Claude — Claude Code Extension Platform</title>
         <meta
           name="description"
-          content="Give Claude superpowers through pluggable modules. OSRS sounds, custom spinners, and more."
+          content="Give Claude superpowers through pluggable modules. Game sound packs, custom spinners, and more."
         />
       </Head>
 
@@ -71,9 +71,51 @@ export default function LoClaude() {
             Claude Code
           </a>{" "}
           extension platform. Plug in modules for Gmail, Drive, S3, and more.
-          Personalize your experience with OSRS sounds, custom spinner verbs,
-          and permission presets.
+          Personalize your experience with game sound packs, custom spinner
+          verbs, and permission presets.
         </p>
+      </section>
+
+      <section>
+        <SectionHeader>/sounds</SectionHeader>
+        <p className="text-neutral-600 dark:text-neutral-400 text-xl leading-7 mb-6">
+          6 curated game sound packs for Claude Code hooks. Each pack maps 8
+          sounds to lifecycle events like task completion, errors, and
+          notifications.
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {soundPacks.map((name) => (
+            <span
+              key={name}
+              className="text-sm font-mono border-2 border-dashed border-border/80 px-3 py-1.5 text-neutral-600 dark:text-neutral-400"
+            >
+              {name}
+            </span>
+          ))}
+        </div>
+        <WithArrow className="mt-4">
+          <Link href="/lo-claude/sounds">
+            Preview & install sound packs &rarr;
+          </Link>
+        </WithArrow>
+      </section>
+
+      <section>
+        <SectionHeader>/spinner-verbs</SectionHeader>
+        <p className="text-neutral-600 dark:text-neutral-400 text-xl leading-7 mb-6">
+          Custom loading messages while Claude thinks. Choose from the bundled
+          Catalan/fantasy RPG pack, developer humor, or write your own.
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {verbs.map((verb) => (
+            <span
+              key={verb}
+              className="text-sm font-mono border-2 border-dashed border-border/80 px-3 py-1.5 text-neutral-600 dark:text-neutral-400"
+            >
+              {verb}...
+            </span>
+          ))}
+        </div>
       </section>
 
       <section>
@@ -126,53 +168,6 @@ export default function LoClaude() {
                 ))}
               </div>
             </div>
-          ))}
-        </div>
-      </section>
-
-      <section>
-        <SectionHeader>/sounds</SectionHeader>
-        <p className="text-neutral-600 dark:text-neutral-400 text-xl leading-7 mb-6">
-          41 Old School RuneScape sound effects mapped to Claude Code events.
-          Every task completion, error, and notification gets its own audio
-          feedback.
-        </p>
-        <div className="border-2 border-dashed border-border/80">
-          {soundEvents.map(({ event, sounds }, i) => (
-            <div
-              key={event}
-              className={`flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 px-4 py-3 ${i !== soundEvents.length - 1 ? "border-b border-dashed border-border/80" : ""}`}
-            >
-              <span className="text-sm font-semibold text-neutral-600 dark:text-neutral-400 sm:w-36 shrink-0">
-                {event}
-              </span>
-              <span className="text-sm text-neutral-500 dark:text-neutral-400">
-                {sounds}
-              </span>
-            </div>
-          ))}
-        </div>
-        <WithArrow className="mt-4">
-          <Link href="/lo-claude/sounds">
-            Preview & download sound packs &rarr;
-          </Link>
-        </WithArrow>
-      </section>
-
-      <section>
-        <SectionHeader>/spinner-verbs</SectionHeader>
-        <p className="text-neutral-600 dark:text-neutral-400 text-xl leading-7 mb-6">
-          Custom loading messages while Claude thinks. Choose from the bundled
-          Catalan/fantasy RPG pack, developer humor, or write your own.
-        </p>
-        <div className="flex flex-wrap gap-2">
-          {verbs.map((verb) => (
-            <span
-              key={verb}
-              className="text-sm font-mono border-2 border-dashed border-border/80 px-3 py-1.5 text-neutral-600 dark:text-neutral-400"
-            >
-              {verb}...
-            </span>
           ))}
         </div>
       </section>

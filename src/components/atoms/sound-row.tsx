@@ -27,7 +27,7 @@ export function SoundRow({ hook, file, description, frequency }: SoundEntry) {
       <div className="relative group">
         <button
           type="button"
-          className="text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
+          className="text-muted-foreground hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
           aria-label={`${hook}: ${description} (${frequency})`}
         >
           <Info size={14} />
