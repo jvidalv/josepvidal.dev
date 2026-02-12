@@ -1,5 +1,6 @@
 import { SectionHeader, WithArrow } from "@/components/atoms";
 import Head from "next/head";
+import Link from "next/link";
 
 const modules = [
   {
@@ -151,6 +152,11 @@ export default function LoClaude() {
             </div>
           ))}
         </div>
+        <WithArrow className="mt-4">
+          <Link href="/lo-claude/sounds">
+            Preview & download sound packs &rarr;
+          </Link>
+        </WithArrow>
       </section>
 
       <section>
