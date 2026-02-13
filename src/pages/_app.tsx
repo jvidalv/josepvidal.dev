@@ -5,6 +5,7 @@ import { ThemeProvider, useTheme } from "next-themes";
 import clsx from "clsx";
 import { Header, Footer } from "@/components/organisms";
 import { Toaster } from "sonner";
+import { Analytics } from "@vercel/analytics/next";
 
 const basier = localFont({
   src: [
@@ -41,6 +42,7 @@ export default function App({ Component, pageProps }: AppProps) {
         </div>
       </main>
       <ThemedToaster />
+      <Analytics />
     </ThemeProvider>
   );
 }
