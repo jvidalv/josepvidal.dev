@@ -23,14 +23,7 @@ export default function BlogSlug({ post }: Props) {
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="og:description" content={description} />
-        <meta
-          property="og:image"
-          content={`https://jvidal.dev/api/og?title=${title}`}
-        />
-        <meta
-          property="og:image"
-          content={`https://jvidal.dev/api/og?title=${title}`}
-        />
+        <meta property="og:image" content="https://josepvidal.dev/og.png" />
       </Head>
       <SectionHeader>{format(parseISO(date), "LLLL d, yyyy")}</SectionHeader>
       <h1 className="-mt-1.5 w-fit text-5xl font-bold bg-linear-to-r from-primary to-accent text-transparent bg-clip-text mb-8 leading-[1.1]">

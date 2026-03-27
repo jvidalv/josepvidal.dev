@@ -20,10 +20,7 @@ export default function Blog({ posts }: Props) {
     <div>
       <Head>
         <title>Blog</title>
-        <meta
-          property="og:image"
-          content="https://jvidal.dev/api/og?title=Blog"
-        />
+        <meta property="og:image" content="https://josepvidal.dev/og.png" />
       </Head>
       <SectionHeader>/blog</SectionHeader>
       <h1 className="-mt-1.5 w-fit text-5xl font-bold bg-linear-to-r from-primary to-accent text-transparent bg-clip-text mb-2.5">

@@ -162,9 +162,13 @@ Post content here...
 
 ### OG Images
 
-- Generated dynamically via `@vercel/og`
-- API route: `/api/og`
-- Uses Vercel's Edge runtime
+- Static OG image at `public/og.png`
+
+### Deployment
+
+- **Hosting**: Railway (config-as-code via `railway.toml`)
+- **Build**: Dockerfile with multi-stage build, Next.js standalone output
+- **No Vercel dependencies** — fully portable
 
 ## Important Notes
 
