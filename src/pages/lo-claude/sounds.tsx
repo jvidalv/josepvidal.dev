@@ -23,15 +23,10 @@ export default function Sounds() {
         </h1>
         <p className="text-neutral-600 dark:text-neutral-400 text-xl leading-7">
           Curated game sound packs for{" "}
-          <a
-            href="https://github.com/jvidalv/lo-claude"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href="https://github.com/jvidalv/lo-claude" target="_blank" rel="noreferrer">
             Claude Code
           </a>{" "}
-          hooks. Preview each sound and map them to hook events for audio
-          feedback while you code.
+          hooks. Preview each sound and map them to hook events for audio feedback while you code.
         </p>
       </section>
 
@@ -39,18 +34,9 @@ export default function Sounds() {
         <SectionHeader>/packs</SectionHeader>
         <div className="space-y-4">
           {soundPacks.map((pack) => (
-            <div
-              key={pack.id}
-              className="border-2 border-dashed border-border/80"
-            >
+            <div key={pack.id} className="border-2 border-dashed border-border/80">
               <div className="flex items-center gap-3 px-4 py-4 border-b border-dashed border-border/80">
-                <Image
-                  src={pack.logo}
-                  alt={pack.game}
-                  width={28}
-                  height={28}
-                  className="rounded"
-                />
+                <Image src={pack.logo} alt={pack.game} width={28} height={28} className="rounded" />
                 <h3 className="text-base font-semibold text-neutral-600 dark:text-neutral-400">
                   {pack.game}
                 </h3>

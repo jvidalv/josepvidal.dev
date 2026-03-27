@@ -29,9 +29,7 @@ export default function Blog({ posts }: Props) {
       <div className="mt-6 space-y-2">
         {posts.map(({ title, date, url }) => (
           <WithArrow as="div" key={url}>
-            <span className="opacity-50 font-medium">
-              {format(parseISO(date), "yyyy-MM-dd")}
-            </span>
+            <span className="opacity-50 font-medium">{format(parseISO(date), "yyyy-MM-dd")}</span>
             <Link className="ml-2 font-medium hover:underline" href={url}>
               {title}
             </Link>

@@ -79,8 +79,7 @@ export function CopyInstallButton({ pack }: { pack: SoundPack }) {
           <DialogHeader>
             <DialogTitle>Install {pack.game}</DialogTitle>
             <DialogDescription>
-              Copy and paste this script into your terminal to install the sound
-              pack.
+              Copy and paste this script into your terminal to install the sound pack.
             </DialogDescription>
           </DialogHeader>
           <div className="flex items-center justify-between">

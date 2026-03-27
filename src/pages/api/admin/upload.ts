@@ -77,11 +77,7 @@ function getPublicUrl(key: string): string {
   return `https://${process.env.AWS_PUBLIC_BUCKET_NAME}.s3.${process.env.AWS_BUCKET_REGION}.amazonaws.com/${key}`;
 }
 
-async function uploadToS3(
-  content: Buffer,
-  filename: string,
-  mimeType: string
-): Promise<string> {
+async function uploadToS3(content: Buffer, filename: string, mimeType: string): Promise<string> {
   const client = getS3Client();
   const key = `recipes/${Date.now()}-${filename}`;
 
@@ -91,7 +87,7 @@ async function uploadToS3(
       Key: key,
       Body: content,
       ContentType: mimeType,
-    })
+    }),
   );
 
   return getPublicUrl(key);
@@ -107,7 +103,7 @@ async function getRawBody(req: NextApiRequest): Promise<Buffer> {
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<SuccessResponse | ErrorResponse>
+  res: NextApiResponse<SuccessResponse | ErrorResponse>,
 ) {
   if (req.method !== "POST") {
     return res.status(405).json({ success: false, error: "Method not allowed" });
@@ -157,9 +153,7 @@ export default async function handler(
 
     if (error instanceof Error) {
       const message =
-        process.env.NODE_ENV === "development"
-          ? error.message
-          : "Internal server error";
+        process.env.NODE_ENV === "development" ? error.message : "Internal server error";
       return res.status(500).json({ success: false, error: message });
     }
 

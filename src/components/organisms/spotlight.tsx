@@ -26,18 +26,14 @@ export const Spotlight = () => {
   const { resolvedTheme, setTheme } = useTheme();
   const isDark = resolvedTheme === "dark";
 
-  useHotkeys("metaKey+k", toggleModal, { enableOnFormTags: ["INPUT"] }, [
-    toggleModal,
-  ]);
+  useHotkeys("metaKey+k", toggleModal, { enableOnFormTags: ["INPUT"] }, [toggleModal]);
 
   const onClickPanel: MouseEventHandler<HTMLDivElement> = (event) => {
     if (!ref.current) {
       return;
     }
 
-    if (
-      (event.target as unknown as { localName: string }).localName === "input"
-    ) {
+    if ((event.target as unknown as { localName: string }).localName === "input") {
       return;
     }
 
@@ -154,9 +150,7 @@ export const Spotlight = () => {
           </nav>
           {!!themeOptions?.length && (
             <ul role="listbox" className="flex flex-col mt-4">
-              <span className="block text-xs dark:text-gray-400 text-gray-600 mb-2">
-                Theme
-              </span>
+              <span className="block text-xs dark:text-gray-400 text-gray-600 mb-2">Theme</span>
               {themeOptions.map(({ label, Icon, onClick }) => (
                 <li
                   role="button"
@@ -164,8 +158,7 @@ export const Spotlight = () => {
                   onClick={onClick}
                   className={cn(
                     "cursor-pointer flex items-center gap-4 transition-all hover:text-accent dark:hover:bg-neutral-800 rounded-md -mx-2 p-2",
-                    filter &&
-                      !label.toUpperCase().includes(filter.toUpperCase())
+                    filter && !label.toUpperCase().includes(filter.toUpperCase())
                       ? "opacity-25"
                       : "opacity-100",
                   )}

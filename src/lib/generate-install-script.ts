@@ -1,7 +1,6 @@
 import type { SoundPack } from "./sounds-data";
 
-const BASE_URL =
-  "https://raw.githubusercontent.com/jvidalv/lo-claude/main";
+const BASE_URL = "https://raw.githubusercontent.com/jvidalv/lo-claude/main";
 
 export function generateInstallScript(
   pack: SoundPack,
@@ -39,9 +38,7 @@ export function generateInstallScript(
   const dataJson = JSON.stringify(pythonData, null, 2);
 
   const echoWhat = includeVerbs ? "hooks and spinner verbs" : "hooks";
-  const verbsLine = includeVerbs
-    ? '\nsettings["spinnerVerbs"] = data["verbs"]'
-    : "";
+  const verbsLine = includeVerbs ? '\nsettings["spinnerVerbs"] = data["verbs"]' : "";
 
   return `mkdir -p "${dir}" && \\
 ${curlCommands} && \\

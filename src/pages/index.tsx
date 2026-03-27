@@ -9,8 +9,8 @@ export default function Home() {
         <SectionHeader>/me</SectionHeader>
         <h1 className="text-3xl font-bold text-accent">Josep Vidal</h1>
         <WithArrow className="text-gray-500 dark:text-gray-400 mb-4">
-          <span className="text-black dark:text-white">Product Engineer</span>,
-          making apps that feel natural to use.
+          <span className="text-black dark:text-white">Product Engineer</span>, making apps that
+          feel natural to use.
         </WithArrow>
         <ul className="flex flex-wrap gap-2 text-black dark:text-white">
           {socials.map(({ name, href, Icon }) => (
@@ -46,26 +46,17 @@ export default function Home() {
           </WithArrow>
           <WithArrow>
             Founder engineer on a{" "}
-            <a
-              href="https://www.grafbase.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="https://www.grafbase.com/" target="_blank" rel="noreferrer">
               GraphQL startup ☄️
             </a>
             .
           </WithArrow>
           <WithArrow>
-            Leading the frontend team on a brand new electronic signature app
-            ✳️.
+            Leading the frontend team on a brand new electronic signature app ✳️.
           </WithArrow>
           <WithArrow>
             Automating processes as a full-stack dev on an{" "}
-            <a
-              href="https://factorenergia.com"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="https://factorenergia.com" target="_blank" rel="noreferrer">
               energy company ⚡️
             </a>
             .
@@ -87,10 +78,7 @@ export default function Home() {
         <SectionHeader>/projects</SectionHeader>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {projectCategories.map(({ category, emoji, projects }) => (
-            <div
-              key={category}
-              className="border-2 border-dashed border-border/80 p-4"
-            >
+            <div key={category} className="border-2 border-dashed border-border/80 p-4">
               <h3 className="text-base font-semibold mb-3 text-neutral-600 dark:text-neutral-400">
                 <span className="mr-2">{emoji}</span>
                 {category}
@@ -98,12 +86,7 @@ export default function Home() {
               <ul className="space-y-2">
                 {projects.map(({ name, href, description }) => (
                   <li key={name}>
-                    <a
-                      href={href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-base"
-                    >
+                    <a href={href} target="_blank" rel="noreferrer" className="text-base">
                       {name}
                     </a>
                     {description && (

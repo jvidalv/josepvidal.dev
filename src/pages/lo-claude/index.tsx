@@ -66,25 +66,19 @@ export default function LoClaude() {
         </h1>
         <p className="text-neutral-600 dark:text-neutral-400 text-xl leading-7">
           A modular{" "}
-          <a
-            href="https://github.com/jvidalv/lo-claude"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href="https://github.com/jvidalv/lo-claude" target="_blank" rel="noreferrer">
             Claude Code
           </a>{" "}
-          extension platform. Plug in modules for Gmail, Drive, S3, and more.
-          Personalize your experience with game sound packs, custom spinner
-          verbs, and permission presets.
+          extension platform. Plug in modules for Gmail, Drive, S3, and more. Personalize your
+          experience with game sound packs, custom spinner verbs, and permission presets.
         </p>
       </section>
 
       <section>
         <SectionHeader>/sounds</SectionHeader>
         <p className="text-neutral-600 dark:text-neutral-400 text-xl leading-7 mb-6">
-          9 curated game sound packs for Claude Code hooks. Each pack maps 8
-          sounds to lifecycle events like task completion, errors, and
-          notifications.
+          9 curated game sound packs for Claude Code hooks. Each pack maps 8 sounds to lifecycle
+          events like task completion, errors, and notifications.
         </p>
         <div className="flex flex-wrap gap-2">
           {soundPacks.map((name) => (
@@ -97,17 +91,15 @@ export default function LoClaude() {
           ))}
         </div>
         <WithArrow className="mt-4">
-          <Link href="/lo-claude/sounds">
-            Preview & install sound packs &rarr;
-          </Link>
+          <Link href="/lo-claude/sounds">Preview & install sound packs &rarr;</Link>
         </WithArrow>
       </section>
 
       <section>
         <SectionHeader>/spinner-verbs</SectionHeader>
         <p className="text-neutral-600 dark:text-neutral-400 text-xl leading-7 mb-6">
-          Custom loading messages while Claude thinks. Choose from the bundled
-          Catalan/fantasy RPG pack, developer humor, or write your own.
+          Custom loading messages while Claude thinks. Choose from the bundled Catalan/fantasy RPG
+          pack, developer humor, or write your own.
         </p>
         <div className="flex flex-wrap gap-2">
           {verbs.map((verb) => (
@@ -141,8 +133,8 @@ export default function LoClaude() {
           </WithArrow>
         </div>
         <p className="text-neutral-500 dark:text-neutral-400 text-sm mt-4">
-          The setup wizard configures spinner verbs, sound effects, and
-          permission defaults interactively.
+          The setup wizard configures spinner verbs, sound effects, and permission defaults
+          interactively.
         </p>
       </section>
 
@@ -150,16 +142,11 @@ export default function LoClaude() {
         <SectionHeader>/modules</SectionHeader>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {modules.map(({ name, description, tools }) => (
-            <div
-              key={name}
-              className="border-2 border-dashed border-border/80 p-4"
-            >
+            <div key={name} className="border-2 border-dashed border-border/80 p-4">
               <h3 className="text-base font-semibold mb-2 text-neutral-600 dark:text-neutral-400">
                 {name}
               </h3>
-              <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-3">
-                {description}
-              </p>
+              <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-3">{description}</p>
               <div className="flex flex-wrap gap-1.5">
                 {tools.map((tool) => (
                   <span
@@ -178,16 +165,10 @@ export default function LoClaude() {
       <section>
         <SectionHeader>/source</SectionHeader>
         <WithArrow>
-          <a
-            href="https://github.com/jvidalv/lo-claude"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href="https://github.com/jvidalv/lo-claude" target="_blank" rel="noreferrer">
             github.com/jvidalv/lo-claude
           </a>
-          <span className="text-neutral-500 dark:text-neutral-400 ml-2">
-            · MIT
-          </span>
+          <span className="text-neutral-500 dark:text-neutral-400 ml-2">· MIT</span>
         </WithArrow>
       </section>
     </>

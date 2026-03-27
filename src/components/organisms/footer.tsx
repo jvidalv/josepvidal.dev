@@ -21,12 +21,7 @@ export const Footer = () => {
     <div className="mt-12 pb-12 flex flex-col gap-10">
       <section className="berrus-banner flex flex-col items-center justify-center gap-4 px-6 py-6 font-mono text-center">
         <div className="flex items-center gap-3">
-          <Image
-            src="/images/berrus/dragon-skull.png"
-            alt=""
-            width={40}
-            height={40}
-          />
+          <Image src="/images/berrus/dragon-skull.png" alt="" width={40} height={40} />
           <span className="text-base text-gray-600 dark:text-gray-400">
             An online RPG where death is just the beginning.
           </span>

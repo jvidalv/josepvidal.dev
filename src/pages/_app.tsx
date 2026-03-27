@@ -23,9 +23,7 @@ const basier = localFont({
 
 function ThemedToaster() {
   const { resolvedTheme } = useTheme();
-  return (
-    <Toaster richColors theme={resolvedTheme === "dark" ? "dark" : "light"} />
-  );
+  return <Toaster richColors theme={resolvedTheme === "dark" ? "dark" : "light"} />;
 }
 
 export default function App({ Component, pageProps }: AppProps) {
