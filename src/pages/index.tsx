@@ -79,9 +79,9 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {projectCategories.map(({ category, emoji, projects }) => (
             <div key={category} className="border-2 border-dashed border-border/80 p-4">
-              <h3 className="text-base font-semibold mb-3 text-neutral-600 dark:text-neutral-400">
-                <span className="mr-2">{emoji}</span>
-                {category}
+              <h3 className="text-base mb-3 text-foreground flex items-center justify-between">
+                <span>{category}</span>
+                <span>{emoji}</span>
               </h3>
               <ul className="space-y-2">
                 {projects.map(({ name, href, description }) => (
