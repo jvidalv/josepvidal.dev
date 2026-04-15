@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <section>
         <SectionHeader>/me</SectionHeader>
-        <h1 className="text-3xl font-bold text-accent">Josep Vidal</h1>
+        <h1 className="text-3xl font-semibold text-accent">Josep Vidal</h1>
         <WithArrow className="text-gray-500 dark:text-gray-400 mb-4">
           <span className="text-black dark:text-white">Product Engineer</span>, making apps that
           feel natural to use.
