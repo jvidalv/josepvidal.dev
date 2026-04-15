@@ -5,10 +5,10 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "prebuild": "oxlint --ignore-pattern='old/**' --ignore-pattern='.next/**' --ignore-pattern='.content-collections/**' && oxfmt --check src/",
+    "prebuild": "oxlint src/ && oxfmt --check src/",
     "build": "next build",
     "start": "next start",
-    "lint": "oxlint --ignore-pattern='old/**' --ignore-pattern='.next/**' --ignore-pattern='.content-collections/**'",
+    "lint": "oxlint src/",
     "format": "oxfmt --write src/"
   },
   "dependencies": {
