@@ -87,6 +87,20 @@ export const Footer = () => {
               </>
             }
           />
+          <LiveProject
+            href="https://tarraco.ai"
+            title="tarraco.ai"
+            description="Claude Code onboarding and AI pilots for teams and SMBs."
+            icon={
+              <Image
+                src="/tarraco.png"
+                alt="tarraco.ai"
+                fill
+                sizes="40px"
+                className="object-contain"
+              />
+            }
+          />
         </div>
       </div>
       <footer className="flex flex-col gap-4 sm:flex-row justify-between border-dashed font-mono">
