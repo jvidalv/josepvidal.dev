@@ -61,19 +61,19 @@ export default function Home() {
         </ul>
       </section>
       <section>
-        <SectionHeader>/services</SectionHeader>
-        <WithArrow>
-          Available for Claude Code workshops & AI pilots —{" "}
-          <Link href="/services" className="underline-offset-4 hover:underline">
-            /services
-          </Link>
-        </WithArrow>
-      </section>
-      <section>
         <SectionHeader>/always</SectionHeader>
         <div className="space-y-4">
           <WithArrow>Building cool stuff 🚀</WithArrow>
         </div>
+      </section>
+      <section>
+        <SectionHeader>/services</SectionHeader>
+        <WithArrow>
+          <Link href="/services" className="underline-offset-4 hover:underline">
+            Available
+          </Link>{" "}
+          for Claude Code workshops & AI pilots.
+        </WithArrow>
       </section>
       <section>
         <SectionHeader>/highlights</SectionHeader>
