@@ -1,5 +1,4 @@
-import { SectionHeader, WithArrow } from "@/components/atoms";
-import Head from "next/head";
+import { SectionHeader, SEO, WithArrow } from "@/components/atoms";
 import Link from "next/link";
 
 const modules = [
@@ -51,13 +50,13 @@ const verbs = [
 export default function LoClaude() {
   return (
     <>
-      <Head>
-        <title>Lo-Claude — Claude Code Extension Platform</title>
-        <meta
-          name="description"
-          content="Give Claude superpowers through pluggable modules. Game sound packs, custom spinners, and more."
-        />
-      </Head>
+      <SEO
+        title="Lo-Claude — Claude Code Extension Platform"
+        titleTemplate="exact"
+        description="Give Claude superpowers through pluggable modules. Game sound packs, custom spinners, and more."
+        canonical="/lo-claude"
+        ogType="website"
+      />
 
       <section>
         <SectionHeader>/lo-claude</SectionHeader>

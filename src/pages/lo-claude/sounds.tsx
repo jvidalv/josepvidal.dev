@@ -1,20 +1,19 @@
-import { CopyInstallButton, SectionHeader, SoundRow } from "@/components/atoms";
+import { CopyInstallButton, SectionHeader, SEO, SoundRow } from "@/components/atoms";
 import { soundPacks } from "@/lib/sounds-data";
 import { cn } from "@/lib/utils";
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Sounds() {
   return (
     <>
-      <Head>
-        <title>Sound Packs — lo-claude</title>
-        <meta
-          name="description"
-          content="Curated game sound packs for Claude Code hooks. Preview sounds and copy hook configs."
-        />
-      </Head>
+      <SEO
+        title="Sound Packs — lo-claude"
+        titleTemplate="exact"
+        description="Curated game sound packs for Claude Code hooks. Preview sounds and copy hook configs."
+        canonical="/lo-claude/sounds"
+        ogType="website"
+      />
 
       <section>
         <SectionHeader>/lo-claude/sounds</SectionHeader>

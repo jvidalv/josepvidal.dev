@@ -10,6 +10,8 @@ const posts = defineCollection({
     title: z.string(),
     date: z.string(),
     content: z.string(),
+    description: z.string().optional(),
+    category: z.string().optional(),
   }),
   transform: async (document, context) => {
     const html = await compileMarkdown(context, document);

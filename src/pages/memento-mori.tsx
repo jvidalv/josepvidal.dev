@@ -1,5 +1,4 @@
-import { SectionHeader } from "@/components/atoms";
-import Head from "next/head";
+import { SectionHeader, SEO } from "@/components/atoms";
 import { differenceInWeeks } from "date-fns";
 import cx from "clsx";
 
@@ -10,9 +9,12 @@ const weeks = differenceInWeeks(Date.now(), born);
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Memento Mori</title>
-      </Head>
+      <SEO
+        title="Memento Mori"
+        description="A weekly visual of my remaining sentient time, given Spain's life expectancy."
+        canonical="/memento-mori"
+        ogType="website"
+      />
       <section className="font-serif">
         <SectionHeader>/☠ memento mori </SectionHeader>
         <h1 className="-mt-1.5 w-fit text-5xl font-bold bg-linear-to-r from-primary to-accent text-transparent bg-clip-text mb-2.5">

@@ -1,30 +1,65 @@
-import { SectionHeader } from "@/components/atoms";
+import { JsonLd, SectionHeader, SEO } from "@/components/atoms";
 import { allPosts } from "content-collections";
 import { GetStaticProps } from "next";
 import { parseISO } from "date-fns/parseISO";
 import { format } from "date-fns";
-import Head from "next/head";
+import { absoluteUrl, DEFAULT_SEO, SITE_URL, stripHtml, truncate } from "@/lib/seo";
 
 type Props = {
   post: {
+    slug: string;
     title: string;
     date: string;
     html: string;
+    description: string;
+    category: string | null;
   };
 };
 
 export default function BlogSlug({ post }: Props) {
-  const { title, html, date } = post;
-  const description = `${html.slice(0, 200).replace(/<\/?[^>]+(>|$)/g, "")}...`;
+  const { slug, title, html, date, category, description } = post;
+  const url = absoluteUrl(`/blog/${slug}`);
+  const image = absoluteUrl(DEFAULT_SEO.ogImage);
+
+  const blogPostingLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    datePublished: date,
+    description,
+    image,
+    url,
+    mainEntityOfPage: url,
+    author: { "@type": "Person", name: "Josep Vidal", url: SITE_URL },
+    publisher: { "@type": "Person", name: "Josep Vidal", url: SITE_URL },
+    ...(category ? { articleSection: category } : {}),
+  };
+
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: absoluteUrl("/") },
+      { "@type": "ListItem", position: 2, name: "Blog", item: absoluteUrl("/blog") },
+      { "@type": "ListItem", position: 3, name: title, item: url },
+    ],
+  };
 
   return (
     <div>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <meta name="og:description" content={description} />
-        <meta property="og:image" content="https://josepvidal.dev/og.png" />
-      </Head>
+      <SEO
+        title={title}
+        description={description}
+        canonical={`/blog/${slug}`}
+        ogType="article"
+        article={{
+          publishedTime: date,
+          section: category ?? undefined,
+          author: "Josep Vidal",
+        }}
+      />
+      <JsonLd data={blogPostingLd} />
+      <JsonLd data={breadcrumbLd} />
       <SectionHeader>{format(parseISO(date), "LLLL d, yyyy")}</SectionHeader>
       <h1 className="-mt-1.5 w-fit text-5xl font-bold bg-linear-to-r from-primary to-accent text-transparent bg-clip-text mb-8 leading-[1.1]">
         {title}
@@ -55,14 +90,15 @@ export const getStaticProps: GetStaticProps<Props> = ({ params }) => {
     };
   }
 
-  const { title, date, html } = post;
-
   return {
     props: {
       post: {
-        title,
-        date,
-        html,
+        slug: post._meta.path,
+        title: post.title,
+        date: post.date,
+        html: post.html,
+        description: post.description ?? truncate(stripHtml(post.html), 160),
+        category: post.category ?? null,
       },
     },
   };

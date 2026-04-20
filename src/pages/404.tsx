@@ -1,9 +1,10 @@
-import { SectionHeader, WithArrow } from "@/components/atoms";
+import { SectionHeader, SEO, WithArrow } from "@/components/atoms";
 import Link from "next/link";
 
 export default function Error404page() {
   return (
     <section>
+      <SEO title="404" description="Page not found." noindex />
       <SectionHeader>/oops</SectionHeader>
       <h1 className="-mt-1.5 w-fit text-5xl font-bold bg-linear-to-r from-primary to-accent text-transparent bg-clip-text mb-2.5">
         404 error

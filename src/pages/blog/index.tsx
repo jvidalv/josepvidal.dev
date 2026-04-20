@@ -1,11 +1,10 @@
-import { SectionHeader, WithArrow } from "@/components/atoms";
+import { SectionHeader, SEO, WithArrow } from "@/components/atoms";
 import { GetStaticProps } from "next";
 import { allPosts } from "content-collections";
 import { compareDesc } from "date-fns/compareDesc";
 import Link from "next/link";
 import { format } from "date-fns";
 import { parseISO } from "date-fns/parseISO";
-import Head from "next/head";
 
 type Props = {
   posts: {
@@ -18,10 +17,12 @@ type Props = {
 export default function Blog({ posts }: Props) {
   return (
     <div>
-      <Head>
-        <title>Blog</title>
-        <meta property="og:image" content="https://josepvidal.dev/og.png" />
-      </Head>
+      <SEO
+        title="Blog"
+        description="Writing on product engineering, Claude Code, and building things."
+        canonical="/blog"
+        ogType="website"
+      />
       <SectionHeader>/blog</SectionHeader>
       <h1 className="-mt-1.5 w-fit text-5xl font-bold bg-linear-to-r from-primary to-accent text-transparent bg-clip-text mb-2.5">
         Posts
@@ -41,7 +42,7 @@ export default function Blog({ posts }: Props) {
 }
 
 export const getStaticProps: GetStaticProps<Props> = () => {
-  const posts = allPosts.sort((a, b) => {
+  const posts = [...allPosts].sort((a, b) => {
     return compareDesc(new Date(a.date), new Date(b.date));
   });
 

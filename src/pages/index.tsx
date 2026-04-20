@@ -1,10 +1,42 @@
-import { SectionHeader, WithArrow } from "@/components/atoms";
+import { JsonLd, SectionHeader, SEO, WithArrow } from "@/components/atoms";
+import Link from "next/link";
 import { socials } from "@/lib/socials";
 import projectCategories from "@/lib/projects";
+import { DEFAULT_SEO, SITE_URL } from "@/lib/seo";
+
+const sameAs = socials.map(({ href }) => href).filter((href) => !href.startsWith("mailto:"));
+
+const personLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Josep Vidal",
+  url: SITE_URL,
+  jobTitle: "Product Engineer",
+  description: DEFAULT_SEO.description,
+  image: `${SITE_URL}${DEFAULT_SEO.ogImage}`,
+  sameAs,
+};
+
+const websiteLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: DEFAULT_SEO.siteName,
+  url: SITE_URL,
+  description: DEFAULT_SEO.description,
+  inLanguage: "en",
+};
 
 export default function Home() {
   return (
     <>
+      <SEO
+        titleTemplate="exact"
+        description={DEFAULT_SEO.description}
+        canonical="/"
+        ogType="website"
+      />
+      <JsonLd data={personLd} />
+      <JsonLd data={websiteLd} />
       <section>
         <SectionHeader>/me</SectionHeader>
         <h1 className="text-3xl font-semibold text-accent">Josep Vidal</h1>
@@ -27,6 +59,15 @@ export default function Home() {
             </li>
           ))}
         </ul>
+      </section>
+      <section>
+        <SectionHeader>/services</SectionHeader>
+        <WithArrow>
+          Available for Claude Code workshops & AI pilots —{" "}
+          <Link href="/services" className="underline-offset-4 hover:underline">
+            /services
+          </Link>
+        </WithArrow>
       </section>
       <section>
         <SectionHeader>/always</SectionHeader>
