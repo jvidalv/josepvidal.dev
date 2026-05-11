@@ -22,12 +22,12 @@ const projectCategories: ProjectCategory[] = [
     ],
   },
   {
-    category: "Web Apps & Analytics",
-    emoji: "📊",
+    category: "Desktop Apps",
+    emoji: "🖥️",
     projects: [
       {
-        name: "React Analytics",
-        href: "https://github.com/jvidalv/react-analytics",
+        name: "platan.ai",
+        href: "https://platan.ai",
       },
     ],
   },

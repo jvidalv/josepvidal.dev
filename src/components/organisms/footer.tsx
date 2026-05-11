@@ -101,6 +101,20 @@ export const Footer = () => {
               />
             }
           />
+          <LiveProject
+            href="https://platan.ai"
+            title="platan.ai"
+            description="Local-first, agent-driven pixel art generation."
+            icon={
+              <Image
+                src="/platan.png"
+                alt="platan.ai"
+                fill
+                sizes="40px"
+                className="object-contain"
+              />
+            }
+          />
         </div>
       </div>
       <footer className="flex flex-col gap-4 sm:flex-row justify-between border-dashed font-mono">
