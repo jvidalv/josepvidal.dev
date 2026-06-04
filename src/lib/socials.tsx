@@ -1,4 +1,5 @@
 import { ComponentProps } from "react";
+import { FileText } from "lucide-react";
 
 export const socials = [
   {
@@ -36,5 +37,11 @@ export const socials = [
         <path d="M12 13.065 2 6.518V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6.518l-10 6.547zM12 11 2 4h20l-10 7z" />
       </svg>
     ),
+  },
+  {
+    name: "Download CV",
+    href: "/josep-vidal-cv.pdf",
+    download: true,
+    Icon: (props: ComponentProps<"svg">) => <FileText {...props} />,
   },
 ];

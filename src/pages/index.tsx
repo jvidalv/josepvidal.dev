@@ -4,7 +4,7 @@ import { socials } from "@/lib/socials";
 import projectCategories from "@/lib/projects";
 import { DEFAULT_SEO, SITE_URL } from "@/lib/seo";
 
-const sameAs = socials.map(({ href }) => href).filter((href) => !href.startsWith("mailto:"));
+const sameAs = socials.map(({ href }) => href).filter((href) => href.startsWith("http"));
 
 const personLd = {
   "@context": "https://schema.org",
@@ -45,13 +45,12 @@ export default function Home() {
           feel natural to use.
         </WithArrow>
         <ul className="flex flex-wrap gap-2 text-black dark:text-white">
-          {socials.map(({ name, href, Icon }) => (
+          {socials.map(({ name, href, Icon, download }) => (
             <li key={href} title={name}>
               <a
                 className="border-2 border-border/80 border-dashed border-b-0 rounded rounded-b-none p-2"
                 href={href}
-                target="_blank"
-                rel="noreferrer"
+                {...(download ? { download: true } : { target: "_blank", rel: "noreferrer" })}
                 aria-label={name}
               >
                 <Icon className="size-4" />
@@ -78,6 +77,9 @@ export default function Home() {
       <section>
         <SectionHeader>/highlights</SectionHeader>
         <div className="space-y-4">
+          <WithArrow>
+            Shipping an AI agent platform for autonomous security operations 🤖🛡️.
+          </WithArrow>
           <WithArrow>
             Multiplying user acquisition numbers
             <a href="https://www.qonto.com/" target="_blank" rel="noreferrer">
