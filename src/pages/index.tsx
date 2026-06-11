@@ -1,5 +1,4 @@
 import { JsonLd, SectionHeader, SEO, WithArrow } from "@/components/atoms";
-import Link from "next/link";
 import { socials } from "@/lib/socials";
 import projectCategories from "@/lib/projects";
 import { DEFAULT_SEO, SITE_URL } from "@/lib/seo";
@@ -62,17 +61,8 @@ export default function Home() {
       <section>
         <SectionHeader>/always</SectionHeader>
         <div className="space-y-4">
-          <WithArrow>Building cool stuff 🚀</WithArrow>
+          <WithArrow>Building stuff 🚀</WithArrow>
         </div>
-      </section>
-      <section>
-        <SectionHeader>/services</SectionHeader>
-        <WithArrow>
-          <Link href="/services" className="underline-offset-4 hover:underline">
-            Available
-          </Link>{" "}
-          for Claude Code workshops & AI pilots.
-        </WithArrow>
       </section>
       <section>
         <SectionHeader>/highlights</SectionHeader>
@@ -105,15 +95,15 @@ export default function Home() {
             .
           </WithArrow>
           <WithArrow>
-            Built a{" "}
-            <a
-              href="https://apps.apple.com/es/app/anawin360-trazabilidad-y-finca/id1471403248"
-              target="_blank"
-              rel="noreferrer"
-            >
-              cool react-native app 📱
+            Founder of CIMS, a{" "}
+            <a href="https://github.com/jvidalv/100cims" target="_blank" rel="noreferrer">
+              mobile app 📱
             </a>{" "}
-            with offline capabilities.
+            and a{" "}
+            <a href="https://fescims.com" target="_blank" rel="noreferrer">
+              thriving community of outdoor people ⛰️
+            </a>
+            .
           </WithArrow>
         </div>
       </section>
