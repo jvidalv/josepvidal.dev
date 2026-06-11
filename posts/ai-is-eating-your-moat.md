@@ -26,5 +26,5 @@ And yes, the same applies to DigitalOcean but horizontally, is DO's bill too ste
 
 We know that a big company with a complex product can't switch from one provider to another in a single prompt, but even at that level, the MOAT has eroded: switching providers or building the solution in-house has never been as easy as it is today.
 
-The future is bright for consumers: competition will be fierce and quality will go up. For SaaS, it's the Hunger Games.
+The future is bright for consumers: fierce competition, better products, lower prices. For you, SaaS founder, it's the Hunger Games.
 
