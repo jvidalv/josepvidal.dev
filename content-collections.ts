@@ -12,6 +12,7 @@ const posts = defineCollection({
     content: z.string(),
     description: z.string().optional(),
     category: z.string().optional(),
+    ogImage: z.string().optional(),
   }),
   transform: async (document, context) => {
     const html = await compileMarkdown(context, document);

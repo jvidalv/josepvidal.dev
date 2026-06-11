@@ -13,13 +13,14 @@ type Props = {
     html: string;
     description: string;
     category: string | null;
+    ogImage: string | null;
   };
 };
 
 export default function BlogSlug({ post }: Props) {
-  const { slug, title, html, date, category, description } = post;
+  const { slug, title, html, date, category, description, ogImage } = post;
   const url = absoluteUrl(`/blog/${slug}`);
-  const image = absoluteUrl(DEFAULT_SEO.ogImage);
+  const image = absoluteUrl(ogImage ?? DEFAULT_SEO.ogImage);
 
   const blogPostingLd = {
     "@context": "https://schema.org",
@@ -52,6 +53,16 @@ export default function BlogSlug({ post }: Props) {
         description={description}
         canonical={`/blog/${slug}`}
         ogType="article"
+        ogImage={
+          ogImage
+            ? {
+                url: ogImage,
+                width: DEFAULT_SEO.ogImageWidth,
+                height: DEFAULT_SEO.ogImageHeight,
+                alt: title,
+              }
+            : undefined
+        }
         article={{
           publishedTime: date,
           section: category ?? undefined,
@@ -99,6 +110,7 @@ export const getStaticProps: GetStaticProps<Props> = ({ params }) => {
         html: post.html,
         description: post.description ?? truncate(stripHtml(post.html), 160),
         category: post.category ?? null,
+        ogImage: post.ogImage ?? null,
       },
     },
   };

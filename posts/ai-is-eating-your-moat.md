@@ -2,6 +2,7 @@
 title: AI is eating your MOAT
 date: 2026-06-11
 category: engineering
+ogImage: /blog/ai-is-eating-your-moat/og.png
 ---
 
 Strip away the branding and most SaaS pricing is the same sentence: "this is annoying to do yourself, pay us instead."
