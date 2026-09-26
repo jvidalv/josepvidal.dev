@@ -1,0 +1,5 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  // public/ holds verbatim files (e.g. the Google site-verification HTML) that must not change
+  "ignorePatterns": ["public/**"]
+}

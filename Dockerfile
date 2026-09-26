@@ -1,20 +1,24 @@
-FROM node:22-alpine AS base
+FROM node:24-alpine AS base
+ENV NEXT_TELEMETRY_DISABLED=1
+
+# Bun handles installs and scripts; Node stays the runtime for Next's standalone server
+FROM base AS bun
+COPY --from=oven/bun:1.4-alpine /usr/local/bin/bun /usr/local/bin/bun
 
 # Install dependencies only when needed
-FROM base AS deps
-RUN apk add --no-cache libc6-compat
+FROM bun AS deps
 WORKDIR /app
 
-COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile
+COPY package.json bun.lock ./
+RUN bun install --frozen-lockfile
 
 # Rebuild the source code only when needed
-FROM base AS builder
+FROM bun AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-RUN yarn build
+RUN bun run build
 
 # Production image, copy all the files and run next
 FROM base AS runner

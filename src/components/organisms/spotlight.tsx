@@ -93,6 +93,12 @@ export const Spotlight = () => {
     },
   ].filter(({ hidden }) => !hidden);
 
+  const itemClassName = (label: string) =>
+    cn(
+      "cursor-pointer flex items-center gap-4 transition-all hover:text-accent dark:hover:bg-neutral-800 rounded-md -mx-2 p-2",
+      filter && !label.toUpperCase().includes(filter.toUpperCase()) ? "opacity-25" : "opacity-100",
+    );
+
   return (
     <Dialog
       open={isOpen}
@@ -107,8 +113,10 @@ export const Spotlight = () => {
     >
       <DialogTrigger asChild>
         <button
+          type="button"
           onClick={openModal}
           title="cmd + k"
+          aria-label="Open command menu"
           className="cursor-pointer border-2 border-transparent hover:border-primary p-2 rounded-md transition-all"
         >
           <svg height="25" viewBox="0 0 20 20" fill="currentColor">
@@ -135,45 +143,23 @@ export const Spotlight = () => {
             </button>
           </div>
           <div className="h-1 bg-linear-to-r from-primary to-accent -mx-6 mt-2" />
-          <nav role="listbox" className="flex flex-col mt-4">
+          <nav aria-label="Pages" className="flex flex-col mt-4">
             {options.map(({ label, Icon, href }) => (
-              <Link
-                key={label}
-                href={href}
-                onClick={closeModal}
-                className={cn(
-                  "cursor-pointer flex items-center gap-4 transition-all hover:text-accent dark:hover:bg-neutral-800 rounded-md -mx-2 p-2",
-                  filter && !label.toUpperCase().includes(filter.toUpperCase())
-                    ? "opacity-25"
-                    : "opacity-100",
-                )}
-              >
+              <Link key={label} href={href} onClick={closeModal} className={itemClassName(label)}>
                 <Icon className="size-4" />
                 <span>{label}</span>
               </Link>
             ))}
           </nav>
-          {!!themeOptions?.length && (
-            <ul role="listbox" className="flex flex-col mt-4">
-              <span className="block text-xs dark:text-gray-400 text-gray-600 mb-2">Theme</span>
-              {themeOptions.map(({ label, Icon, onClick }) => (
-                <li
-                  role="button"
-                  key={label}
-                  onClick={onClick}
-                  className={cn(
-                    "cursor-pointer flex items-center gap-4 transition-all hover:text-accent dark:hover:bg-neutral-800 rounded-md -mx-2 p-2",
-                    filter && !label.toUpperCase().includes(filter.toUpperCase())
-                      ? "opacity-25"
-                      : "opacity-100",
-                  )}
-                >
-                  <Icon className="size-4" />
-                  <span>{label}</span>
-                </li>
-              ))}
-            </ul>
-          )}
+          <div className="flex flex-col mt-4">
+            <span className="block text-xs dark:text-gray-400 text-gray-600 mb-2">Theme</span>
+            {themeOptions.map(({ label, Icon, onClick }) => (
+              <button key={label} type="button" onClick={onClick} className={itemClassName(label)}>
+                <Icon className="size-4" />
+                <span>{label}</span>
+              </button>
+            ))}
+          </div>
         </div>
       </DialogContent>
     </Dialog>

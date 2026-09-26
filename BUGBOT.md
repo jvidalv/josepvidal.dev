@@ -8,14 +8,14 @@ If everything is broken, try these in order:
 
 ```bash
 # 1. Clear all caches and reinstall
-rm -rf .next .content-collections node_modules yarn.lock
-yarn install
+rm -rf .next .content-collections node_modules
+bun install
 
 # 2. Try building
-yarn build
+bun run build
 
 # 3. Try dev server
-yarn dev
+bun run dev
 ```
 
 ---
@@ -24,9 +24,10 @@ yarn dev
 
 ### 1. Build Failures
 
-#### Issue: `pnpm build` fails with errors
+#### Issue: `bun run build` fails with errors
 
 **Symptoms**:
+
 - Build process exits with error code
 - TypeScript compilation errors
 - Module not found errors
@@ -34,20 +35,23 @@ yarn dev
 **Solutions**:
 
 1. **Clear Next.js cache**
+
    ```bash
    rm -rf .next
-   yarn build
+   bun run build
    ```
 
 2. **Clear content-collections cache**
+
    ```bash
    rm -rf .content-collections
-   yarn build
+   bun run build
    ```
 
 3. **Check TypeScript errors**
+
    ```bash
-   yarn tsc --noEmit
+   bunx tsc --noEmit
    ```
 
 4. **Verify all imports**
@@ -57,8 +61,8 @@ yarn dev
 
 5. **Update dependencies**
    ```bash
-   yarn upgrade
-   yarn build
+   bun update
+   bun run build
    ```
 
 ---
@@ -68,6 +72,7 @@ yarn dev
 #### Issue: Blog posts not showing or updating
 
 **Symptoms**:
+
 - New blog posts don't appear
 - Changes to posts not reflected
 - Build errors related to content-collections
@@ -75,17 +80,19 @@ yarn dev
 **Solutions**:
 
 1. **Clear content-collections cache**
+
    ```bash
    rm -rf .content-collections
-   yarn dev
+   bun run dev
    ```
 
 2. **Verify frontmatter**
+
    ```markdown
    ---
-   title: "Post Title"  # Required
-   date: "YYYY-MM-DD"   # Required, must be this format
-   category: "engineering"  # Required
+   title: "Post Title" # Required
+   date: "YYYY-MM-DD" # Required, must be this format
+   category: "engineering" # Required
    ---
    ```
 
@@ -105,6 +112,7 @@ yarn dev
 #### Issue: Tailwind classes not applying
 
 **Symptoms**:
+
 - Styles not rendering
 - Classes appear in HTML but no styles
 - Inconsistent styling behavior
@@ -117,19 +125,21 @@ yarn dev
    - Check Tailwind v4 documentation
 
 2. **Check PostCSS configuration**
+
    ```javascript
    // postcss.config.js should have:
    module.exports = {
      plugins: {
-       '@tailwindcss/postcss': {},
+       "@tailwindcss/postcss": {},
      },
-   }
+   };
    ```
 
 3. **Clear Next.js cache**
+
    ```bash
    rm -rf .next
-   yarn dev
+   bun run dev
    ```
 
 4. **Check global styles**
@@ -143,6 +153,7 @@ yarn dev
 #### Issue: Dark mode not working or flickering
 
 **Symptoms**:
+
 - Theme toggle doesn't work
 - Flash of wrong theme on page load
 - Dark mode styles not applying
@@ -154,6 +165,7 @@ yarn dev
    - Ensure it wraps all components
 
 2. **Verify dark: classes**
+
    ```tsx
    // Correct usage
    <div className="bg-white dark:bg-gray-900">
@@ -174,6 +186,7 @@ yarn dev
 #### Issue: TypeScript compilation errors
 
 **Symptoms**:
+
 - Build fails with type errors
 - IDE shows red squiggles
 - `tsc` reports errors
@@ -181,12 +194,14 @@ yarn dev
 **Solutions**:
 
 1. **Check TypeScript version**
+
    ```bash
-   yarn list typescript
+   bun why typescript
    # Should be 5.9.3 or compatible
    ```
 
 2. **Verify path aliases**
+
    ```json
    // tsconfig.json
    {
@@ -199,24 +214,26 @@ yarn dev
    ```
 
 3. **Check React types**
+
    ```bash
-   yarn list @types/react @types/react-dom
+   bun why @types/react @types/react-dom
    # Should match React version (19.x)
    ```
 
 4. **Regenerate content-collections types**
    ```bash
    rm -rf .content-collections
-   yarn dev
+   bun run dev
    ```
 
 ---
 
 ### 6. Development Server Issues
 
-#### Issue: `yarn dev` fails or crashes
+#### Issue: `bun run dev` fails or crashes
 
 **Symptoms**:
+
 - Dev server won't start
 - Server crashes during development
 - Port already in use
@@ -224,27 +241,30 @@ yarn dev
 **Solutions**:
 
 1. **Check port availability**
+
    ```bash
    # Kill process on port 3000
    lsof -ti:3000 | xargs kill -9
    ```
 
 2. **Clear caches and restart**
+
    ```bash
    rm -rf .next .content-collections
-   yarn dev
+   bun run dev
    ```
 
 3. **Check Node.js version**
+
    ```bash
    node --version
-   # Should be compatible with Next.js 15
+   # Should be 24.x (matches the Docker runtime)
    ```
 
-4. **Verify yarn version**
+4. **Verify bun version**
    ```bash
-   yarn --version
-   # Should be 1.x or compatible
+   bun --version
+   # Should be 1.4 or newer
    ```
 
 ---
@@ -254,28 +274,32 @@ yarn dev
 #### Issue: Package conflicts or installation errors
 
 **Symptoms**:
-- `pnpm install` fails
+
+- `bun install` fails
 - Peer dependency warnings
 - Module resolution errors
 
 **Solutions**:
 
-1. **Clear yarn cache**
+1. **Clear bun cache**
+
    ```bash
-   yarn cache clean
-   rm -rf node_modules yarn.lock
-   yarn install
+   bun pm cache rm
+   rm -rf node_modules
+   bun install
    ```
 
 2. **Check for peer dependency issues**
+
    ```bash
-   yarn install --force
+   bun install --force
    ```
 
 3. **Verify React versions match**
+
    ```bash
-   yarn list react react-dom
-   # Both should be 19.2.0
+   bun why react react-dom
+   # Both should resolve to the same 19.x version
    ```
 
 4. **Check content-collections compatibility**
@@ -289,16 +313,18 @@ yarn dev
 #### Issue: Builds are slow or hang
 
 **Symptoms**:
-- `pnpm build` takes very long
+
+- `bun run build` takes very long
 - Build process appears frozen
 - High memory usage
 
 **Solutions**:
 
 1. **Clear all caches**
+
    ```bash
    rm -rf .next .content-collections node_modules
-   pnpm install
+   bun install
    ```
 
 2. **Check content-collections**
@@ -313,30 +339,16 @@ yarn dev
 
 ### 9. API Route Issues
 
-#### Issue: OG image generation fails
+#### Issue: Admin image upload fails
 
 **Symptoms**:
-- `/api/og` returns errors
-- OG images not displaying
-- Edge runtime errors
+
+- `/api/admin/upload` returns 401 or 500
 
 **Solutions**:
 
-1. **Check @vercel/og package**
-   ```bash
-   yarn list @vercel/og
-   # Should be 0.8.5
-   ```
-
-2. **Verify Edge runtime compatibility**
-   - Check for Node.js module usage
-   - Edge runtime has limitations
-
-3. **Test API route directly**
-   ```bash
-   # Visit in browser
-   http://localhost:3000/api/og?title=Test
-   ```
+1. **Check the env vars** listed in `.env.local.example` (`ADMIN_API_TOKEN` and the `AWS_*` S3 settings)
+2. **Send the token** in the `x-admin-token` header and the image MIME type as `Content-Type`
 
 ---
 
@@ -347,6 +359,7 @@ yarn dev
 **Solutions**:
 
 1. **Check git status**
+
    ```bash
    git status
    ```
@@ -364,24 +377,16 @@ yarn dev
 ## Known Limitations
 
 ### 1. Pages Router
+
 - This project uses Pages Router (not App Router)
 - App Router migration is in TODO
 - Don't use App Router patterns
 
 ### 2. content-collections Schema Deprecation
+
 - Warning about "schema as function" is known
 - Will be addressed in future update
 - Does not affect functionality
-
-### 3. Edge Runtime Warning
-- Node.js module warning in Edge runtime is known
-- Related to `url` module usage
-- Does not affect functionality
-
-### 4. ESLint Warning
-- `aria-description` warning on homepage is known
-- Related to accessibility attribute support
-- Can be safely ignored or fixed
 
 ---
 
@@ -389,25 +394,25 @@ yarn dev
 
 ### Required Software
 
-- **Node.js**: Compatible with Next.js 15 (v18.17 or higher)
-- **yarn**: Version 1.x (Classic)
+- **Node.js**: 24 LTS (matches the Docker runtime)
+- **bun**: 1.4+ (package manager and script runner)
 - **Git**: For version control
 
 ### Installation
 
 ```bash
-# Install yarn globally (if not installed)
-npm install -g yarn
+# Install bun (if not installed)
+curl -fsSL https://bun.sh/install | bash
 
 # Clone repository
 git clone <repo-url>
 cd josepvidal.dev
 
 # Install dependencies
-yarn install
+bun install
 
 # Start development
-yarn dev
+bun run dev
 ```
 
 ---
@@ -416,36 +421,40 @@ yarn dev
 
 ### Critical Dependencies
 
-| Package | Version | Notes |
-|---------|---------|-------|
-| next | 15.3.3 | Pages Router, not App Router |
-| react | 19.2.0 | Latest major version |
-| react-dom | 19.2.0 | Must match React version |
-| typescript | 5.9.3 | Latest stable |
-| tailwindcss | 4.1.17 | v4 has breaking changes from v3 |
-| @content-collections/core | 0.12.0 | Must be compatible with Next.js |
+| Package                   | Version | Notes                                                              |
+| ------------------------- | ------- | ------------------------------------------------------------------ |
+| next                      | 16.3.6  | Pages Router, not App Router                                       |
+| react                     | 19.3.0  | Latest major version                                               |
+| react-dom                 | 19.3.0  | Must match React version                                           |
+| typescript                | 7.0.2   | Native (Go) compiler; `baseUrl` is no longer supported in tsconfig |
+| tailwindcss               | 4.3.3   | v4 has breaking changes from v3                                    |
+| @content-collections/core | 0.15.3  | Must be compatible with Next.js                                    |
 
 ### Update Precautions
 
 **Before updating Next.js**:
+
 1. Check changelog for breaking changes
 2. Verify content-collections compatibility
 3. Test build and dev server
-4. Check API routes (Edge runtime)
+4. Check the admin upload API route
 
 **Before updating React**:
+
 1. Ensure react and react-dom versions match
 2. Update @types/react and @types/react-dom
 3. Test all components
 4. Check for deprecated patterns
 
 **Before updating Tailwind**:
+
 1. Review v4 migration guide (if coming from v3)
 2. Test all styling
 3. Check dark mode functionality
 4. Verify PostCSS configuration
 
 **Before updating content-collections**:
+
 1. Check compatibility with Next.js version
 2. Review changelog for breaking changes
 3. Clear `.content-collections` cache after update
@@ -458,6 +467,7 @@ yarn dev
 ### Issue: File changes not triggering rebuild
 
 **Symptoms**:
+
 - Changes not reflected in dev server
 - Hot reload not working
 - Need to restart server for changes
@@ -465,6 +475,7 @@ yarn dev
 **Solutions**:
 
 1. **Check file watcher limits (Linux)**
+
    ```bash
    # Increase file watch limit
    echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
@@ -472,9 +483,10 @@ yarn dev
    ```
 
 2. **Restart dev server**
+
    ```bash
    # Kill server and restart
-   pnpm dev
+   bun run dev
    ```
 
 3. **Check @parcel/watcher**
@@ -507,7 +519,7 @@ yarn dev
 
 ### Dependencies
 
-- Regularly run `yarn audit` to check for vulnerabilities
+- Regularly run `bun audit` to check for vulnerabilities
 - Keep dependencies up to date
 - Review security advisories for critical packages
 
@@ -524,13 +536,13 @@ yarn dev
 ### Manual Testing Checklist
 
 Before deploying:
-- [ ] Run `yarn build` successfully
-- [ ] Run `yarn lint` with no errors
+
+- [ ] Run `bun run build` successfully
+- [ ] Run `bun run lint` with no errors
 - [ ] Test all pages load correctly
 - [ ] Verify dark mode toggle works
 - [ ] Check responsive design on mobile
 - [ ] Test blog post links
-- [ ] Verify OG images generate
 - [ ] Check console for errors
 - [ ] Test navigation
 - [ ] Verify fonts load correctly
@@ -538,6 +550,7 @@ Before deploying:
 ### Automated Testing
 
 Currently, this project does not have automated tests. Consider adding:
+
 - Unit tests with Jest
 - Component tests with React Testing Library
 - E2E tests with Playwright
@@ -550,10 +563,10 @@ Currently, this project does not have automated tests. Consider adding:
 
 ```bash
 # Next.js verbose build
-DEBUG=* yarn build
+DEBUG=* bun run build
 
 # content-collections debug
-CC_DEBUG=true yarn dev
+CC_DEBUG=true bun run dev
 ```
 
 ### Browser DevTools
@@ -593,6 +606,7 @@ CC_DEBUG=true yarn dev
 ### Planned Features (Not Yet Implemented)
 
 The following features are in the TODO but not implemented:
+
 - **Books section**: Planned page for book recommendations
 - **Used Tools section**: Showcase of tools and software used
 - **Paintings section**: Gallery of paintings or artwork
@@ -605,9 +619,9 @@ If encountering errors related to these features, they may not exist yet.
 
 ## Version History
 
-| Date | Version | Changes |
-|------|---------|---------|
-| 2025-11-23 | 1.0.0 | Initial documentation |
+| Date       | Version | Changes                                       |
+| ---------- | ------- | --------------------------------------------- |
+| 2025-11-23 | 1.0.0   | Initial documentation                         |
 | 2025-11-23 | Current | Dependencies updated, documentation generated |
 
 ---
@@ -616,26 +630,26 @@ If encountering errors related to these features, they may not exist yet.
 
 ```bash
 # Full reset
-rm -rf .next .content-collections node_modules yarn.lock && yarn install
+rm -rf .next .content-collections node_modules && bun install
 
 # Clear caches only
 rm -rf .next .content-collections
 
 # Check for issues
-yarn build && yarn lint
+bun run build && bun run lint
 
 # Check outdated packages
-yarn upgrade-interactive
+bun update --interactive
 
 # Audit security
-yarn audit
+bun audit
 
 # Clean install
-yarn install --force
+bun install --force
 ```
 
 ---
 
-**Last Updated**: 2025-11-23
+**Last Updated**: 2026-09-26
 **Maintainer**: Josep Vidal
 **Project**: josepvidal.dev

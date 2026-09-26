@@ -6,16 +6,17 @@ Live on https://josepvidal.dev ⚡️.
 
 ## Run
 
-To run it locally `yarn & yarn dev` or `npm install & npm run dev`, have fun!
+To run it locally `bun install && bun run dev`, have fun!
 
-## Stack 
+## Stack
 
 - Next.js
 - TailwindCSS
 - content-collections for Markdown.
 
 ## Todo
-- [X] Blog
+
+- [x] Blog
 - [ ] Books
 - [ ] Used Tools
 - [ ] Paintings
@@ -24,4 +25,3 @@ To run it locally `yarn & yarn dev` or `npm install & npm run dev`, have fun!
 ## Older sites
 
 Inside `/old` I store my older websites.
-

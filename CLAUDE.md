@@ -7,8 +7,8 @@ This document provides guidance for AI assistants (like Claude) working on this 
 **josepvidal.dev** is a personal portfolio and blog website for Josep Vidal, a Product Engineer. The site showcases projects, blog posts, and a memento mori page.
 
 - **Live URL**: https://josepvidal.dev
-- **Tech Stack**: Next.js 15, React 19, TypeScript, Tailwind CSS v4
-- **Package Manager**: yarn
+- **Tech Stack**: Next.js 16, React 19, TypeScript 7, Tailwind CSS v4
+- **Package Manager**: bun
 - **Architecture**: Next.js Pages Router (not App Router)
 - **Content**: Markdown blog posts via content-collections
 
@@ -16,19 +16,19 @@ This document provides guidance for AI assistants (like Claude) working on this 
 
 ```bash
 # Install dependencies
-yarn install
+bun install
 
 # Start development server
-yarn dev
+bun run dev
 
-# Build for production
-yarn build
+# Build for production (runs lint + format check first via prebuild)
+bun run build
 
-# Run linting
-yarn lint
+# Run linting (oxlint)
+bun run lint
 
-# Format code
-yarn format
+# Format code (oxfmt)
+bun run format
 ```
 
 ## Project Structure
@@ -42,7 +42,7 @@ yarn format
 │   │   └── ui/           # shadcn/ui components
 │   ├── lib/              # Utilities, data, and helper functions
 │   ├── pages/            # Next.js pages (Pages Router)
-│   │   ├── api/         # API routes (e.g., OG image generation)
+│   │   ├── api/         # API routes (admin image upload to S3)
 │   │   ├── blog/        # Blog pages
 │   │   ├── index.tsx    # Homepage
 │   │   └── memento-mori.tsx
@@ -55,6 +55,7 @@ yarn format
 ### Path Aliases
 
 The project uses TypeScript path aliases:
+
 - `@/*` maps to `./src/*`
 - Example: `import { cn } from "@/lib/utils"`
 
@@ -88,9 +89,11 @@ The project uses TypeScript path aliases:
 
 ### Linting & Formatting
 
-- ESLint configuration extends `next/core-web-vitals`
-- Prettier for code formatting
-- Run `yarn lint` before committing
+- **oxlint** (`.oxlintrc.json`): the old `eslint-config-next` ruleset (React, hooks/React Compiler, jsx-a11y, import, Next) ported with `@oxlint/migrate`. Every rule is an error and `bun run lint` runs with `--deny-warnings`
+- **oxfmt** (`.oxfmtrc.json`): oxfmt defaults over the whole repo except `public/`. Don't `--migrate=prettier`, that switches to 80 columns and reformats everything
+- Both read `.gitignore` for what to skip, which is why `.dockerignore` must not exclude it
+- `prebuild` runs `bun run lint` and `bun run format:check`, so lint or format errors fail the build (and the Railway deploy)
+- Run `bun run lint && bun run format` before committing
 
 ## Content Management
 
@@ -109,6 +112,7 @@ Post content here...
 ```
 
 **Important Notes:**
+
 - content-collections automatically compiles markdown to HTML
 - Posts are type-safe via generated TypeScript types
 - Generated cache stored in `.content-collections/` (git-ignored)
@@ -124,29 +128,29 @@ Post content here...
 
 ### Next.js
 
-- **Version**: 15.3.3
+- **Version**: 16 (Turbopack)
 - **Router**: Pages Router (App Router migration in TODO)
 - **Rendering**: Static generation (SSG) for blog posts
-- **API Routes**: Used for OG image generation
+- **API Routes**: Admin image upload (`/api/admin/upload`, S3)
 
 ### React
 
-- **Version**: 19.2.0 (latest)
+- **Version**: 19.3
 - React 19 features are available
 - Uses functional components with hooks
 
 ### Tailwind CSS
 
-- **Version**: 4.1.17
+- **Version**: 4.3
 - **BREAKING CHANGE**: Tailwind v4 has significant changes from v3
 - Uses new PostCSS plugin (`@tailwindcss/postcss`)
 - Configuration may differ from v3 projects
 
 ### content-collections
 
-- **Version**: 0.12.0
+- **Version**: 0.15
 - Handles markdown compilation and type generation
-- Configuration in `content-collections.ts`
+- Configuration in `content-collections.ts` (collections go under `content`, not the deprecated `collections` key)
 - Cache in `.content-collections/` should be deleted if issues arise
 
 ### Dark Mode
@@ -167,23 +171,23 @@ Post content here...
 ### Deployment
 
 - **Hosting**: Railway (config-as-code via `railway.toml`)
-- **Build**: Dockerfile with multi-stage build, Next.js standalone output
+- **Build**: Dockerfile with multi-stage build, Next.js standalone output. Bun installs and builds; Node 24 runs `server.js`
 - **No Vercel dependencies** — fully portable
 
 ## Important Notes
 
 ### DO
 
-- Use yarn for all package management
+- Use bun for all package management
 - Follow the atomic design pattern for components
 - Use TypeScript strict mode
 - Leverage existing utilities (e.g., `cn()` for class names)
-- Test locally with `yarn dev` and `yarn build`
+- Test locally with `bun run dev` and `bun run build` (never `bun build` — that's Bun's bundler, not the script)
 - Check both light and dark modes
 
 ### DON'T
 
-- Don't use npm or pnpm (use yarn only)
+- Don't use npm, pnpm or yarn (use bun only)
 - Don't edit shadcn/ui components in `/src/components/ui` directly
 - Don't assume App Router patterns (this uses Pages Router)
 - Don't use Tailwind v3 syntax (project uses v4)
@@ -202,25 +206,29 @@ Post content here...
 
 ```bash
 # Check for outdated packages
-yarn upgrade-interactive
+bun outdated
 
-# Update all dependencies
-yarn upgrade
+# Pick updates interactively
+bun update --interactive
+
+# Update everything to latest (rewrites package.json ranges)
+# then re-pin @types/node to the Dockerfile's Node major: bun add -d @types/node@^24
+bun update --latest
 
 # Update specific package
-yarn upgrade package-name
+bun update package-name
 
 # After updates, always test:
-yarn build && yarn dev
+bun run build && bun run dev
 ```
 
 ### Debugging Build Issues
 
 ```bash
 # Clear caches and rebuild
-rm -rf .next .content-collections node_modules yarn.lock
-yarn install
-yarn build
+rm -rf .next .content-collections node_modules
+bun install
+bun run build
 ```
 
 ## Git Workflow
@@ -233,6 +241,7 @@ yarn build
 ## TODO Features
 
 The following features are planned but not yet implemented:
+
 - Books section
 - Used Tools section
 - Paintings section
@@ -242,6 +251,7 @@ The following features are planned but not yet implemented:
 ## Questions?
 
 If you're unsure about something:
+
 1. Check existing code for patterns
 2. Review this document
 3. Check Next.js and Tailwind CSS documentation
@@ -249,4 +259,4 @@ If you're unsure about something:
 
 ---
 
-Last Updated: 2025-11-23
+Last Updated: 2026-09-26

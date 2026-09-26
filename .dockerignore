@@ -4,6 +4,8 @@ node_modules
 .next
 .content-collections
 .git
-.gitignore
 *.md
 .env*
+.idea
+.vercel
+*.tsbuildinfo

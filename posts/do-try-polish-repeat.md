@@ -47,8 +47,8 @@ While the interface was getting cleaner, it didn't yet feel perfect, one more it
 
 Days have passed since the previous iteration; I continued working on other parts of the app, when I came back to it, everything finally clicked:
 
-- **The score section**, now has a bigger but shorter gray link, in the content, we can find a counter of the essentials peaks done, indicated by a circular sphere. 
-- **Latest summits**, got the borders and people names removed, de-clutering the section. 
+- **The score section**, now has a bigger but shorter gray link, in the content, we can find a counter of the essentials peaks done, indicated by a circular sphere.
+- **Latest summits**, got the borders and people names removed, de-clutering the section.
 - **Recommended**, shortened the texts, reduced the image weight, and linked visually the top section with the essential tag by using the pink sphere.
 
 On top of that, I added a dark/light button on the top bar, and while I know a _click-once-and-forget_ button like that shouldn't be on this position
@@ -57,6 +57,6 @@ is a nice filler for this app version.
 ### Finale
 
 Both the first and second version were already _shippable_ but they had something _off_, the last version while by no means final (does that concept even exist on software?)
- doesn't feel _off_ anymore.
+doesn't feel _off_ anymore.
 
 If you want to check by yourself the home page, with smooth animations not reproducible on a blog post, visit [100cims](https://100cims.app) and download the app :)
