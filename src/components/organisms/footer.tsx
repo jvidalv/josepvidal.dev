@@ -1,31 +1,38 @@
-import { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { liveProjects, type LiveProject } from "@/lib/projects";
+import { cn } from "@/lib/utils";
 
-const LiveProject = ({
-  href,
-  title,
-  description,
-  icon,
-}: {
-  href: string;
-  title: string;
-  description: string;
-  icon: ReactNode;
-}) => (
-  <a
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="flex items-center justify-between gap-6 px-4 py-4 border border-dashed hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
-  >
-    <div className="flex flex-col">
-      <span>{title}</span>
-      <span className="text-sm text-gray-600 dark:text-gray-400">{description}</span>
-    </div>
-    <div className="relative w-10 h-10 shrink-0">{icon}</div>
-  </a>
-);
+const LiveProjectRow = ({ name, href, description, icon }: LiveProject) => {
+  const iconImage = (src: string, className?: string) => (
+    <Image src={src} alt={name} fill sizes="40px" className={cn("object-contain", className)} />
+  );
+
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center justify-between gap-6 px-4 py-4 border border-dashed hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
+    >
+      <div className="flex flex-col">
+        <span>{name}</span>
+        <span className="text-sm text-gray-600 dark:text-gray-400">{description}</span>
+      </div>
+      {/* Rounded so opaque square app icons read as tiles; a no-op on transparent logos */}
+      <div className="relative w-10 h-10 shrink-0 overflow-hidden rounded-lg">
+        {typeof icon === "string" ? (
+          iconImage(icon)
+        ) : (
+          <>
+            {iconImage(icon.light, "block dark:hidden")}
+            {iconImage(icon.dark, "hidden dark:block")}
+          </>
+        )}
+      </div>
+    </a>
+  );
+};
 
 export const Footer = () => {
   const links = [
@@ -50,71 +57,9 @@ export const Footer = () => {
           /live
         </h2>
         <div className="flex flex-col gap-2">
-          <LiveProject
-            href="https://berrus.app"
-            title="Berrus"
-            description="An online RPG where death is just the beginning."
-            icon={
-              <Image
-                src="/images/berrus/dragon-skull.png"
-                alt="Berrus"
-                fill
-                sizes="40px"
-                className="object-contain"
-              />
-            }
-          />
-          <LiveProject
-            href="https://cims-sempre-amunt.app"
-            title="CIMS"
-            description="Track and climb the peaks of Catalonia."
-            icon={
-              <>
-                <Image
-                  src="/images/cims/logo-black.png"
-                  alt="CIMS"
-                  fill
-                  sizes="40px"
-                  className="object-contain block dark:hidden"
-                />
-                <Image
-                  src="/images/cims/logo-white.png"
-                  alt="CIMS"
-                  fill
-                  sizes="40px"
-                  className="object-contain hidden dark:block"
-                />
-              </>
-            }
-          />
-          <LiveProject
-            href="https://tarraco.ai"
-            title="tarraco.ai"
-            description="Claude Code onboarding and AI pilots for teams and SMBs."
-            icon={
-              <Image
-                src="/tarraco.png"
-                alt="tarraco.ai"
-                fill
-                sizes="40px"
-                className="object-contain"
-              />
-            }
-          />
-          <LiveProject
-            href="https://platan.ai"
-            title="platan.ai"
-            description="Local-first, agent-driven pixel art generation."
-            icon={
-              <Image
-                src="/platan.png"
-                alt="platan.ai"
-                fill
-                sizes="40px"
-                className="object-contain"
-              />
-            }
-          />
+          {liveProjects.map((project) => (
+            <LiveProjectRow key={project.href} {...project} />
+          ))}
         </div>
       </div>
       <footer className="flex flex-col gap-4 sm:flex-row justify-between border-dashed font-mono">
