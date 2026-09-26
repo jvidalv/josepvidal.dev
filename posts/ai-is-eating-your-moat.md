@@ -13,7 +13,7 @@ Vercel is the textbook example. Their experience was unbeatable. Connect your re
 
 Look now at Railway, one step down the convenience ladder. Generic services, you drop a Docker image on them, you write some config yourself. More cumbersome, worse UX, but way more control and a MUCH friendlier bill.
 
-I would have never switched before agents, barring some extreme necessity, but now an agent writes for us the Dockerfile, the build config, the deploy file, all of it, from one prompt. 
+I would have never switched before agents, barring some extreme necessity, but now an agent writes for us the Dockerfile, the build config, the deploy file, all of it, from one prompt.
 
 Vercel's one click deploy is now Railway's one prompt deploy.
 
@@ -28,4 +28,3 @@ And yes, the same applies to DigitalOcean but horizontally, is DO's bill too ste
 We know that a big company with a complex product can't switch from one provider to another in a single prompt, but even at that level, the MOAT has eroded: switching providers or building the solution in-house has never been as easy as it is today.
 
 The future is bright for consumers: fierce competition, better products, lower prices. For you, SaaS founder, it's the Hunger Games.
-
