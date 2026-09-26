@@ -89,7 +89,7 @@ The project uses TypeScript path aliases:
 
 ### Linting & Formatting
 
-- **oxlint** (`.oxlintrc.json`): the old `eslint-config-next` ruleset (React, hooks/React Compiler, jsx-a11y, import, Next) ported with `@oxlint/migrate`. Every rule is an error and `bun run lint` runs with `--deny-warnings`
+- **oxlint** (`.oxlintrc.json`): the old `eslint-config-next` ruleset (React, hooks/React Compiler, jsx-a11y, import, Next) ported with `@oxlint/migrate`. Every rule is an error, and `options` fails on warnings and stale disable comments (CLI and editors alike)
 - **oxfmt** (`.oxfmtrc.json`): oxfmt defaults over the whole repo except `public/`. Don't `--migrate=prettier`, that switches to 80 columns and reformats everything
 - Both read `.gitignore` for what to skip, which is why `.dockerignore` must not exclude it
 - `prebuild` runs `bun run lint` and `bun run format:check`, so lint or format errors fail the build (and the Railway deploy)

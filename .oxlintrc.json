@@ -10,6 +10,10 @@
   "categories": {
     "correctness": "error"
   },
+  "options": {
+    "denyWarnings": true,
+    "reportUnusedDisableDirectives": "error"
+  },
   "rules": {
     "react/rules-of-hooks": "error",
     "react/display-name": "error",

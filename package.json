@@ -8,7 +8,7 @@
     "prebuild": "bun run lint && bun run format:check",
     "build": "next build",
     "start": "next start",
-    "lint": "oxlint --deny-warnings --report-unused-disable-directives",
+    "lint": "oxlint",
     "format": "oxfmt",
     "format:check": "oxfmt --check"
   },
