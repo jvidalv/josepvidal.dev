@@ -6,6 +6,5 @@ node_modules
 .git
 *.md
 .env*
-.idea
 .vercel
 *.tsbuildinfo
